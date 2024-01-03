@@ -8,10 +8,15 @@ An overly simplistic, yet intuitive introduction to our supercomputer.
 2. Supercompiters such as the VACC have equipmemnt that is devoted to various purposes. 
 2.1. The analyses clusters
 	* **Bluemoon**: A 161 node, 8392 core, high-performance computing cluster, modeled after national supercomputing centers, supporting large-scale computation, low-latency networking for MPI workloads, large memory systems, and high-performance parallel ﬁlesystems.
+	
 	![bluemoon](https://www.uvm.edu/sites/default/files/Vermont-Advanced-Computing-Core/bluemoon-logo_240x140.png)
 	* **DeepGreen**: DeepGreen is a new massively parallel cluster deployed in Summer 2019 with 80 GPUs capable of over 8 petaﬂops of mixed-precision calculations based on the NVIDIA Tesla V100 architecture.
 	
+	![DeepGreen](https://www.uvm.edu/sites/default/files/Vermont-Advanced-Computing-Core/deepgreen-logo_240x140.png)
+
 	* **BlackDiamond**: This cluster is built using AMD’s 2nd Gen AMD EPYC processor, which pushes the boundaries for x86 performance, efficiency, security features, and overall system throughput.
+
+	![BlackDiamond](https://www.uvm.edu/sites/default/files/Vermont-Advanced-Computing-Core/blackdiamond-logo_240x140.png)
 
 	2.2. Storage 
 	* **Netfiles:** P.I.s usually pay a fee to maintain long term storage. Soem storage is included in the faculty package. Trainees and staff are dependent on the PI. Ususally many people can access these files.
