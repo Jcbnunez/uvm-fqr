@@ -5,3 +5,12 @@
 2. Understand the structure of the course + syllabus
 3. Review of evolutionary principles
 4. (If time permits), a tour of the VACC
+---
+# Evolutionary Theory...
+... that living things are systems that change over space and time.
+
+## These changes are driven by processes that can be measured and predicted (to some degree)
+1.Some processes are deterministic: Have predictable outcomes that are repeatable and devoid of randomness
+*Useful sometimes to think of point estimates as predictive outcomes
+2.Some processes are stochastic: Have outcomes, that can be described, yet they governed by randomness
+*Useful to think of distributions as “predictive” outcomes 
