@@ -4,6 +4,9 @@
 1. Introduce ourselves 
 2. Understand the structure of the course + syllabus
 3. Review of evolutionary principles
+* Deterministic Processess
+* Stochastic Processes
+* Evolutionary Systems through the lenses of Deterministic and Stochastic Processes
 4. (If time permits), a tour of the VACC
 ---
 # Evolutionary Theory...
