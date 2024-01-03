@@ -1,4 +1,9 @@
-# Lesson 1: Intro to the VACC
+# Goals of Practicum
+
+1. Familiarize yourself with the VACC
+2. Navigate Open On Demand
+---
+# Topic 1 (Practicum): Intro to the VACC
 Program in Biological Data Science and QuEST
 
 ## Understanding the VACC
