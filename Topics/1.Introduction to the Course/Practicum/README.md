@@ -25,7 +25,7 @@ An overly simplistic, yet intuitive introduction to our supercomputer.
 
 
 
-## VACC Cluster Specs
+# VACC Cluster Specs
 
 Introduction
 
@@ -47,49 +47,48 @@ The VACC provides a number of open-source software packages to users, as well as
 
 Andrea Elledge (Program Director) is the current Administrative Director of the VACC, where she works in partnership with UVM’s Chief Technology Officer to oversee all HPC clusters, IT technicians, user growth, HPC education, and onboarding of new faculty and students. 
 
-
 BlueMoon specs
-•	39 dual-processor, 128-core AMD Epyc 7763 PowerEdge R6525 nodes, with 1TB RAM each. Mixed use: Infiniband connected HDR100 for file access as well as MPI communication along with 25Gb Ethernet
-•	2 dual-processor, 128-core AMD Epyc 7763 PowerEdge R7525 nodes, with 1TB RAM each and 1 A100 GPU
-•	1 dual-processor, 64-core EPYC 7543 PowerEdge R7525 node, with 4TB RAM. Infiniband connected HDR100 for file access, 10/25Gb Ethernet
-•	32 dual-processor, 12-core (Intel E5-2650 v4) Dell PowerEdge R430 nodes, with 64GB RAM each, 10Gb Ethernet-connected
-•	8 dual-processor, 12-core (Intel E5-2650 v4) Dell PowerEdge R430 nodes, with 256GB RAM each, 10Gb Ethernet-connected
-•	9 dual-processor, 20 core (Intel 6230), PowerEdge R440, with 10GB RAM, 10Gb Ethernet-connected
-•	3 dual-processor, 10-core (Intel E5-2650 v3) Dell PowerEdge R630 nodes, with 256GB RAM each, Ethernet-connected
-•	40 dual-processor, 10-core (Intel E5-2650 v3) Dell PowerEdge R630 nodes, with 64GB RAM each, Inﬁniband 4XFDR (56Gb)-connected
-•	2 dual-processor, 12-core (Intel E5-2650 v4) Dell R730, with 1TB RAM
-•	1 dual-processor, 8-core (Intel E7-8837) IBM x3690 x5, with 512GB RAM
-•	2 dual-processor, 12-core (Intel E5-2650 v4) Dell R730 GPU nodes, each with 2 Nvidia Tesla P100 GPUs
-•	2 I/O nodes (Dell R740xd) with 40GbE, 200Gb HDR, along with 2 I/O nodes (Dell R430s, 10Gb Ethernet-connected) connected to:
-o	1 Dell MD3460 providing 287TB storage to GPFS
-o	1 Dell ME4084 providing 751TB of spinning disk storage
-o	1 IBM FS7200 providing 187TB of NVMe-attached FlashCore Module storage
+*	39 dual-processor, 128-core AMD Epyc 7763 PowerEdge R6525 nodes, with 1TB RAM each. Mixed use: Infiniband connected HDR100 for file access as well as MPI communication along with 25Gb Ethernet
+*	2 dual-processor, 128-core AMD Epyc 7763 PowerEdge R7525 nodes, with 1TB RAM each and 1 A100 GPU
+*	1 dual-processor, 64-core EPYC 7543 PowerEdge R7525 node, with 4TB RAM. Infiniband connected HDR100 for file access, 10/25Gb Ethernet
+*	32 dual-processor, 12-core (Intel E5-2650 v4) Dell PowerEdge R430 nodes, with 64GB RAM each, 10Gb Ethernet-connected
+*	8 dual-processor, 12-core (Intel E5-2650 v4) Dell PowerEdge R430 nodes, with 256GB RAM each, 10Gb Ethernet-connected
+*	9 dual-processor, 20 core (Intel 6230), PowerEdge R440, with 10GB RAM, 10Gb Ethernet-connected
+*	3 dual-processor, 10-core (Intel E5-2650 v3) Dell PowerEdge R630 nodes, with 256GB RAM each, Ethernet-connected
+*	40 dual-processor, 10-core (Intel E5-2650 v3) Dell PowerEdge R630 nodes, with 64GB RAM each, Inﬁniband 4XFDR (56Gb)-connected
+*	2 dual-processor, 12-core (Intel E5-2650 v4) Dell R730, with 1TB RAM
+*	1 dual-processor, 8-core (Intel E7-8837) IBM x3690 x5, with 512GB RAM
+*	2 dual-processor, 12-core (Intel E5-2650 v4) Dell R730 GPU nodes, each with 2 Nvidia Tesla P100 GPUs
+*	2 I/O nodes (Dell R740xd) with 40GbE, 200Gb HDR, along with 2 I/O nodes (Dell R430s, 10Gb Ethernet-connected) connected to:
+*	1 Dell MD3460 providing 287TB storage to GPFS
+*	1 Dell ME4084 providing 751TB of spinning disk storage
+*	1 IBM FS7200 providing 187TB of NVMe-attached FlashCore Module storage
  
  
 DeepGreen specs
-•	10 GPU nodes (Penguin Relion XE4118GTS) each with:
-o	2 Intel(R) Xeon(R) Gold 6130 CPU @ 2.10GHz (2x 16 cores, 22M cache)
-o	768GB RAM (256GB for GPFS pagepool)
-o	8 NVIDIA Tesla V100s with 32GB RAM
-o	4 2-lane HDR (100Gb/s, so 400Gb/s/node) Inﬁniband links to QM8700 switch
-o	2 NVMe nodes, each with 88TB NVMe devices (12x8TB), replicated to provide dedicated 88TB NVMe-over-fabrics ﬁlesystem
-o	Mellanox QM8700 switch running at HDR speeds
+*	10 GPU nodes (Penguin Relion XE4118GTS) each with:
+*	2 Intel(R) Xeon(R) Gold 6130 CPU @ 2.10GHz (2x 16 cores, 22M cache)
+*	768GB RAM (256GB for GPFS pagepool)
+*	8 NVIDIA Tesla V100s with 32GB RAM
+*	4 2-lane HDR (100Gb/s, so 400Gb/s/node) Inﬁniband links to QM8700 switch
+*	2 NVMe nodes, each with 88TB NVMe devices (12x8TB), replicated to provide dedicated 88TB NVMe-over-fabrics ﬁlesystem
+*	Mellanox QM8700 switch running at HDR speeds
 
 
 DataMountain specs
-•	8 large memory nodes (HPe DL380G10P) each with:
-•	2 Intel Xeon 6348 CPUs
-•	8TB of Intel Optane PMem in memory mode plus 1TB DRAM for memory
-•	10 7.68TB NVMe storage devices
-•	25Gb Ethernet
+*	8 large memory nodes (HPe DL380G10P) each with:
+*	2 Intel Xeon 6348 CPUs
+*	8TB of Intel Optane PMem in memory mode plus 1TB DRAM for memory
+*	10 7.68TB NVMe storage devices
+*	25Gb Ethernet
 
 
 BlackDiamond Specs
-•	6 GPU nodes, each with:
-o	1 AMD EPYC 7642 48-core processor
-o	8 AMD Radeon Instinct MI50 Accelerators (32GB)
-o	512GB DDR4-3200MHz RAM
-o	HDR100 Infiniband links to QM8700 switch
+*	6 GPU nodes, each with:
+*	1 AMD EPYC 7642 48-core processor
+*	8 AMD Radeon Instinct MI50 Accelerators (32GB)
+*	512GB DDR4-3200MHz RAM
+*	HDR100 Infiniband links to QM8700 switch
 
 
 
