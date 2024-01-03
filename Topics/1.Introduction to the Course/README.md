@@ -20,12 +20,10 @@
 
 ## Example of Deterministic processes 
 
-![gravity](https://clairesbasketball.weebly.com/uploads/6/4/2/3/64231753/179231_orig.png)
-
-* Always “down”
-* Always “9.8 m/s2” (+/- other factors)
-* Yes, the system has noise (i.e., air drag) … But that is not the point
+```mermaid
+graph LR
+A[X] -- process --> B[Y]
+```
 
 ## Example of Stochastic processes 
 
-![By ICMA Photos - Coin Toss, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=71147286](https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Coin_Toss_%283635981474%29.jpg/800px-Coin_Toss_%283635981474%29.jpg)
