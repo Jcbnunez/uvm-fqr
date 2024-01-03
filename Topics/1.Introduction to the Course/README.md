@@ -29,8 +29,8 @@ A[X] -- process --> B[Y]
 
 ```mermaid
 graph LR
-A[X] -- process --> B[Y_1]
-A[X] -- process --> C[Y_2]
-A[X] -- process --> D[Y_3]
+A[X] -- process --> B[Y1]
+A[X] -- process --> C[Y2]
+A[X] -- process --> D[Y3]
 ```
 
