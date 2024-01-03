@@ -16,7 +16,9 @@
 *Useful to think of distributions as “predictive” outcomes 
 
 ## Example of deterministic processes 
+
 ![gravity](https://clairesbasketball.weebly.com/uploads/6/4/2/3/64231753/179231_orig.png)
-*Always “down”
-*Always “9.8 m/s2” (+/- other factors)
-*Yes, the system has noise (i.e., air drag) … But that is not the point
+
+* Always “down”
+* Always “9.8 m/s2” (+/- other factors)
+* Yes, the system has noise (i.e., air drag) … But that is not the point
