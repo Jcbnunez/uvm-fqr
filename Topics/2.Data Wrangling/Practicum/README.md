@@ -11,7 +11,8 @@ ACTGACTGACTGCGCGGCC...
 >NAME of sequences (e.g., "chromosome 2L" gene, chromosome scaffold); ind3"
 ACTGACTGACTGCCTGGCC...
 ```
-3. The *standard* way of storing variation among sequences is the VCF file
+2. The *standard* way of storing variation among sequences is the VCF file
+```
 >##fileformat=VCFv4.3
 ##fileDate=...
 ##source=...
@@ -21,7 +22,7 @@ ACTGACTGACTGCCTGGCC...
 ##INFO=<....>
 ##FILTER=<....>
 ##FORMAT=<....>
-
+```
 |CHROM|POS |ID|REF|ALT|QUAL|FILTER|INFO|FORMAT|ind1|ind2|ind3|
 |--|-- |--|--|--|--|--|--|--|--|--|--|
 X  |   12345  |  snp_111  | G  |   A   |   29  |  PASS   | NS=3;DP=14;AF=0.5;DB;H2   |  GT:GQ:DP:HQ  | 0/0:48:1:51,51 |  1/0:48:8:51,51   |1/1:43:5:.,.|
@@ -53,7 +54,7 @@ ls /gpfs1/cl/biol6990/prac2/pycno_genome.fasta
 
 ## Adquiring the genome
 
-1. Move to your scratch directory
+1. Move to your scratch directory **(known skill!)**
 2. create a working folder for this challenge
 ```
 mkdir pycno_challenge
@@ -75,4 +76,40 @@ cp /gpfs1/cl/biol6990/prac2/pycno_genome.fasta ./
 6. Check what is inside this new folder... again.
 ```
 ls -l ./
+```
+
+## Exploring the genome
+Explore the heads and tails command
+```
+head -n 50 pycno_genome.fasta
+## head -n <nlines> <file>
+```
+
+```
+tail -n 50 pycno_genome.fasta
+## tail -n <nlines> <file>
+```
+Do we observe something strange? -- recall...
+```
+#chromosome
+pycn_heli.0008
+#location (i.e., position)
+1500000 - 1650000
+```
+What is going on?
+
+## Emailing the author...
+
+**You**: Dear author, I am interested in conducting follow up analyses on the genome of *Pycnopodia* that you published in 2018. I am interested in extracting  the loci --> pycn_heli.0008:1500000-1650000. Yet, when I download the genome from NCBI, the chromosomes are labebled with the standard NCBI genomic nomenclature (JASTWB0100...) and I cannot cross-validate scaffold "pycn_heli.0008". Do you have any thoughts about how to cross-validate scaffolds?
+
+---
+**Author**: Dear X, my appologies that you are experiencing this road block! Our analyses was conducted before the genome was made public using our own chromosome nomenclature. Here is a file with the corresponding association of the "pycn_heli" names with the JASTWB ids.
+
+```
+cp /gpfs1/cl/biol6990/prac2/JASTWB01_contigs.tsv ./
+```
+---
+## Exploring the corresponding file
+```
+head JASTWB01_contigs.tsv
 ```
