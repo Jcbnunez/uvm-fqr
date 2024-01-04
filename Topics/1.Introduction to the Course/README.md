@@ -50,7 +50,7 @@ A[X] -- process --> D[Y3]
 ### examples
 
 $$
-P(x = i) = ...
+P(X = i) = ...something...
 $$
 >Any equation that attempts to predict "states".. for example the weather...
 
@@ -62,7 +62,32 @@ $$
 > Where 1 is "heads"
 
 $$
-P(Failure) = P(X=0) = p
+P(Failure) = P(X=0) = 1 - p
 $$
 
 >Where 0 is "tails"
+
+### A Binomial process (many bernoulli processess)
+
+$$
+P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}
+$$
+
+# How does this connect with Evolution?
+Evolution is the study of how and why biological systems change as a function of time. We may want to think as the possible underlyign drivers of these process as random or deterministic. 
+
+## What are the possible outcomes of evolutionary change?
+
+1. **Directional changes**: the allele frequency or phenotypic state changes over time since underlying processess go in the same direction.
+2. **Equilibrium changes**: the allele frequency or phenotypic state stays the same over time because of opposing forces.
+3. **No Evolution**: a null model? 
+
+## Core evolutionary processess:
+1. **Mutation:** *Random* process that introduces variation.
+2. **Drift:** *Random* process that reduces variation due to finite sampling and may give rise to spatial and temporal population structure.
+3. **Selection:** *Deterministic* process that reduces variation (if directional) or maintans variation (if equilibrium).
+4. **Migration:** *Deterministic* process that homogenizes variation across space.
+5. **Recombination:** *Complex* process that shuffless variation across genomes.
+
+## The challenge of the class
+How can we predict and characterize these process in the wild?
