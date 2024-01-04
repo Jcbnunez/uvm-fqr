@@ -1,9 +1,4 @@
-# Goals of Practicum
-
-1. Familiarize yourself with the VACC
-2. Navigate Open On Demand
----
-# Topic 1 (Practicum): Intro to the VACC
+# Topic 1 (-pract): Intro to the VACC
 Program in Biological Data Science and QuEST
 
 ## Understanding the VACC
@@ -13,15 +8,8 @@ An overly simplistic, yet intuitive introduction to our supercomputer.
 2. Supercompiters such as the VACC have equipmemnt that is devoted to various purposes. 
 2.1. The analyses clusters
 	* **Bluemoon**: A 161 node, 8392 core, high-performance computing cluster, modeled after national supercomputing centers, supporting large-scale computation, low-latency networking for MPI workloads, large memory systems, and high-performance parallel ﬁlesystems.
-	
-	![bluemoon](https://www.uvm.edu/sites/default/files/Vermont-Advanced-Computing-Core/bluemoon-logo_240x140.png)
 	* **DeepGreen**: DeepGreen is a new massively parallel cluster deployed in Summer 2019 with 80 GPUs capable of over 8 petaﬂops of mixed-precision calculations based on the NVIDIA Tesla V100 architecture.
-	
-	![DeepGreen](https://www.uvm.edu/sites/default/files/Vermont-Advanced-Computing-Core/deepgreen-logo_240x140.png)
-
 	* **BlackDiamond**: This cluster is built using AMD’s 2nd Gen AMD EPYC processor, which pushes the boundaries for x86 performance, efficiency, security features, and overall system throughput.
-
-	![BlackDiamond](https://www.uvm.edu/sites/default/files/Vermont-Advanced-Computing-Core/blackdiamond-logo_240x140.png)
 
 	2.2. Storage 
 	* **Netfiles:** P.I.s usually pay a fee to maintain long term storage. Soem storage is included in the faculty package. Trainees and staff are dependent on the PI. Ususally many people can access these files.
@@ -33,7 +21,87 @@ An overly simplistic, yet intuitive introduction to our supercomputer.
 
 ## What can we do in, and how we can access into, the VACC
 
+## Stand-by flow ( checking files )
 
+``
+[yourusername@vacc-user1 somewhere]$
+``
+```mermaid
+graph LR
+A[Log in] -- Welcome node --> B((GPFS1))
+```
+Do not run any programs or *heavy* commands while in a welcome node. Also note that GPFS 1 has a very "low" storage memory. This is not the place to store files
+
+#### *where am I?*
+``pwd``
+#### *what is in here?*
+``
+ls``
+
+## Interactive work flow ( coding as you go )
+
+``cd scratch``
+
+```mermaid
+graph LR
+A[Log in] -- Welcome node --> B((GPFS1))-- scratch --> C((GPFS2))
+```
+Scratch is the place where we will run most analyses. It is a fast and flexible parition of the supercomputer. Yet, files only exist there for 90 days. Not designed to be used for long term storage!
+
+```
+srun -N 1 -n 5 --mem=50G -t 3:00:00 --pty bash
+srun: job 12417344 queued and waiting for resources
+[yourusername@node321 somewhere]$
+```
+
+```mermaid
+graph LR
+A[Log in] -- Welcome node --> B((GPFS1))-- scratch --> C((GPFS2))
+B --> E[srun] -- scratch/node --> F((GPFS2 in node))
+```
+Afert running ``srun`` we are no longer in a welcome node and thus we can start running commands without "breaking the rules" of the vacc. Notice that by inhabiting node "321," or whichever node you got, you are now interacting with an entirely diferent "machine" that has 50G of RAM. You have reserved this machine for 3 hours, after that point the system will kick you out back to the welcome node. 
+
+### *running your first command*
+``
+echo "hello world"
+``
+
+congratulations you are all coders now... if you were not one before!!
+
+### *automation 101*
+
+```
+for i in world mars jupiter venus
+do
+echo hello $i
+done
+```
+Notice that in this instance the letter ``i`` is transforming itself into a variable. the variable is being called in the code using the ``$`` simbol! The ``$`` symbol is key to distinguish the variable called ``i`` and the letter **i**. Very important distcintion!
+
+
+### *numbered sequences*
+```
+for i in {1..5}
+do
+echo $i
+done
+```
+Imagine looping from 1 to 5; easy ``for i in 1 2 3 4 5``.... Imagine looping from 1 to 1000000 ... less fun! try ``{a..b}`` (works in reverse too!).
+
+### *creating arrays in memory*
+
+#### define an array with three items 
+``myarray=( mars jupiter moon world sun kaiper )``
+
+To check the array we need to introduce some first bit of complexity
+``echo ${myarray[@]}``
+Yet, we can now use this to provide all the stuff we want into a loop
+ ```
+for i in "${myarray[@]}"
+do
+  echo $i
+done
+```
 
 # VACC Cluster Specs (for your grant proposals)
 
