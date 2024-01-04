@@ -113,3 +113,32 @@ cp /gpfs1/cl/biol6990/prac2/JASTWB01_contigs.tsv ./
 ```
 head JASTWB01_contigs.tsv
 ```
+
+# What to do?
+
+```mermaid
+graph LR
+A[DATA] -- Manual local extraction --> B(Output just the chromosome I want)
+A[DATA] -- Global relabeling of the genome --> C(All genome is renamed)
+```
+What is  the **best use of your time**? ... What is the **best use of *future you's* time**? For example what about if later on you want to look at many other loci.. or if you had multiple loci to extract to begin with. I submit to you that a global solution that re-labels the genome is the overall most efficient solution, despite having a larger initial investment (i.e., having to code the relabeling pipeline) it will be an overall more efficient use of research resources.
+  
+## Breaking down the code (lets take a reverse engineering approach!).
+Lets break down what is going on here .... the _stack overflow_ approach! 
+>**lets talk about stack overflow** for one minute...
+```
+master_file=./JASTWB01_contigs.tsv
+working_file=./pycno_genome.fasta 
+
+cp $working_file ./pycno_genome_modnames.fasta
+
+ith=$(cat $master_file | sed '1d' | wc -l)
+
+for i in $(seq $ith)
+ do
+  name1=$(cat $master_file |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
+  name2=$(cat $master_file |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
+   echo "im an changing " $name2 " to " $name1 " as per " $i
+   sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
+ done
+``` 
