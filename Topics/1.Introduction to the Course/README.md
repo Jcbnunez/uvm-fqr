@@ -86,7 +86,7 @@ Evolution is the study of how and why biological systems change as a function of
 1. **Mutation:** *Random* process that introduces variation.
 2. **Drift:** *Random* process that reduces variation due to finite sampling and may give rise to spatial and temporal population structure.
 3. **Selection:** *Deterministic* process that reduces variation (if directional) or maintans variation (if equilibrium).
-4. **Migration:** *Deterministic* process that homogenizes variation across space.
+4. **Migration:** *Complex* process that homogenizes variation across space.
 5. **Recombination:** *Complex* process that shuffless variation across genomes.
 
 ## The challenge of the class
