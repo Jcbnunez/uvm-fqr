@@ -38,14 +38,7 @@ X  |   12345  |  snp_111  | G  |   A   |   29  |  PASS   | NS=3;DP=14;AF=0.5;DB;
 
 ## Case study for *Pycnopodia*
 
-**A haplotype of interest**: A study in the sea star _Pycnopodia_ has identified a haplotype of interest. The reason why the haplotype is interesting is neither here nor there, yet you would like to extract this haplotype to do some follow-up work. 
-
-```
-#chromosome
-pycn_heli.0008
-#location (i.e., position)
-1500000 - 1650000
-```
+**A haplotype of interest**: A study in the sea star _Pycnopodia_ has identified several genes of  interest. We would like to extract these genes from the genome of pycno for further study. 
 
 I have already downloaded the genome from NCBI and have stored it in our shared VACC repository.
 ```
@@ -89,18 +82,17 @@ head -n 50 pycno_genome.fasta
 tail -n 50 pycno_genome.fasta
 ## tail -n <nlines> <file>
 ```
-Do we observe something strange? -- recall...
+
+## Adquiring the gene feature file
 ```
-#chromosome
-pycn_heli.0008
-#location (i.e., position)
-1500000 - 1650000
+cp /netfiles/nunezlab/FQR_files/GeneFeatureFile.gtf
+head -n 10 GeneFeatureFile.gtf
 ```
-What is going on?
+Do we observe something strange?  ... What is going on?
 
 ## Emailing the author...
 
-**You**: Dear author, I am interested in conducting follow up analyses on the genome of *Pycnopodia* that you published in 2018. I am interested in extracting  the loci --> pycn_heli.0008:1500000-1650000. Yet, when I download the genome from NCBI, the chromosomes are labebled with the standard NCBI genomic nomenclature (JASTWB0100...) and I cannot cross-validate scaffold "pycn_heli.0008". Do you have any thoughts about how to cross-validate scaffolds?
+**You**: Dear author, I am interested in conducting follow up analyses on the genome of *Pycnopodia* that you published in 2018. I am interested in extracting  some loci. Yet, when I download the genome from NCBI, the chromosomes are labebled with the standard NCBI genomic nomenclature (JASTWB0100...) and I cannot cross-validate scaffold "pycn_heli.0008". Do you have any thoughts about how to cross-validate scaffolds?
 
 ---
 **Author**: Dear X, my appologies that you are experiencing this road block! Our analyses was conducted before the genome was made public using our own chromosome nomenclature. Here is a file with the corresponding association of the "pycn_heli" names with the JASTWB ids.
@@ -134,6 +126,115 @@ cp $working_file ./pycno_genome_modnames.fasta
 
 ith=$(cat $master_file | sed '1d' | wc -l)
 
+for i in $(seq $ith)
+ do
+  name1=$(cat $master_file |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
+  name2=$(cat $master_file |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
+   echo "im an changing " $name2 " to " $name1 " as per " $i
+   sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
+ done
+``` 
+### Annotated code...
+```
+### Variables declared by the user... <more details>
+master_file=./JASTWB01_contigs.tsv
+working_file=./pycno_genome.fasta 
+
+### File generated in situ (to create data redundancy!; failsafe) ... <more details>
+cp $working_file ./pycno_genome_modnames.fasta
+
+### Create a varible with number of itherations ... <more details
+ith=$(cat $master_file | sed '1d' | wc -l)
+
+### Loop around the genome to rename all the chromosomes to a different name
+for i in $(seq $ith)
+ do
+  name1=$(cat $master_file |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
+  name2=$(cat $master_file |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
+   echo "im an changing " $name2 " to " $name1 " as per " $i
+   sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
+ done
+``` 
+## What are the parts of the code?
+### Variables declared by the user
+```
+master_file=./JASTWB01_contigs.tsv
+working_file=./pycno_genome.fasta 
+```
+here we are declaring environmental variables. This is a convient way to pass information to our script, code, multiple times while having user provided imput just once. Imagine how cumbersone it would to have to change one small paramter 30 times across a script.. vs. declaring a global parameter once ... and changing just that!
+
+In unix, variables are often declared with the `=` simbol and recalled with the `$` symbol. We can always spot check a variable using `echo`. lets explore some variables... **NO SPACES ALLOWED between `=` and the other stuff!**
+
+### File generated in situ (to create data redundancy!; _failsafe_)
+Why is the code asking us to do this? The reality is that it is not necessary but it is a failsafe custom. Basically, the way this code works, it constantly overwrites the original file. What about if we get this wrong? An easy solution is to introduce redundancy and safety copies to the process. 
+```
+cp $working_file ./pycno_genome_modnames.fasta
+```
+#### Commands to keep in mind:
+1. `cp` copy `cp <file> <location>`
+2. `mv` move or (oddly) rename `mv <file> <location>`
+
+### Create a varible with number of itherations & introduction to loops
+Before we can get at what the the `ith` varaiable means, we first need to take a deep dive into _loops_.
+```mermaid
+graph LR
+A[Genome] 
+B[Correspondance list]
+C[Relabel]
+B --pick a label-->C
+C -- overwrite -->A
+C --repeat--> B
+```
+
+#### A basic loop 1
+```
+for i in A B C
+do
+echo $i
+done
+```
+#### Creating a sequence with `seq`
+```
+seq 10
+#seq --help
+```
+#### A basic loop 2
+```
+for i in $(seq 10)
+do
+echo $i
+done
+```
+Here we are using the power of the `$()` construction to transform the output of the `seq` function into a variable that is, at the same time, the input of the loop itself. This reveals the first path to "scaling up the code" because we can **nest** these variables into each other... `$(seq $a)`.
+```
+a=15
+for i in $(seq $a)
+do
+echo $i
+done
+```
+#### On local vs. global variables
+Notice that our loop has two variables.. it has `a`, that is globally set, and it has `i`, that iterates inside the loop... **keep track of your variables!**  
+
+### What does _loops_ have to do with `ith`
+At this point we have covered loops. Yet, notice that we have always given the loop... either the actual objects to iterate over (`A B C`) or a number of given iterations `seq 15`. What about if we dont know how many iteration our loop may need?  That is the purpose of defining `ith`
+```
+master_file=./JASTWB01_contigs.tsv
+ith=$(cat $master_file | sed '1d' | wc -l)
+```
+#### The layers of `ith`
+1. `ith` is a global variable
+2. `ith` is the output of nested commands ... `$()`
+3. These command a **piped workflow** of commands `cat` --> `sed` --> `wc`
+
+#### 1. Piped workflow
+
+
+
+
+
+### Implementing a loop with a replacement command in it!
+```
 for i in $(seq $ith)
  do
   name1=$(cat $master_file |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
