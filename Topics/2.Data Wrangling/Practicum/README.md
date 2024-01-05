@@ -227,10 +227,59 @@ ith=$(cat $master_file | sed '1d' | wc -l)
 2. `ith` is the output of nested commands ... `$()`
 3. These command a **piped workflow** of commands `cat` --> `sed` --> `wc`
 
-#### 1. Piped workflow
+#### a. Piped workflow
+Its a coding tool that uses the `|` symbol. This symbol "re-routes" the output of a function to another function, instead of reporting it to the user.
+```
+seq 15
+``` 
+```
+seq 15 | head -n 3
+seq 15 | tail -n 3
+```
+#### b. The `cat` command
+Stands for _concatenate_ it is a versatile command with a few uses. Its most basic form is used to load the contents of a file into memory. Yet, a fancier application is to merge two, or more, files into 1. For example:
+```
+# assume that file_1.txt and file_2.txt exist
+cat file_1.txt file_2.txt > newfile.txt
+```
+1. Notice we have a new symbol here: `>` is the universal unix symbol for **save to**. In enflish this command would translate to _concatenate_ file_1.txt and file_2.txt and _save to_ newfile.txt.
 
+#### Making a chimera [mini challenge]
+Can you create a code that takes the first 5 line of the genome and the last 5 lines of the gene feature file and merges them into an ungodly new chimeric file? can you make it a "**one liner command**"?
 
+#### c. The `sed` command
+`sed` is a [stream editor](https://www.gnu.org/software/sed/manual/sed.html). It is a very versatile program capable of manipulating text in variety of ways, some of which we will cover in this course.... though, an entire course could be devoted to `sed`.
 
+>What funcions will we use `sed` for in this class?
+
+1. Removing a row of text
+2. Selecting a row of text
+3. Search and replace a set of characters in a line(s) of text.
+
+#### c. 1 `sed` to remove rows/lines of text
+```
+seq 10
+seq 10 | sed "5d"
+```
+#### c. 2 `sed` to select rows/lines of text
+```
+seq 10 | sed "5q;d"
+```
+#### c. 3 `sed` to find and replace
+One of the most powerful and widely used utilities of the program
+```
+echo "groovy UV cool cats"
+echo "groovy UV cool cats" | sed "s/cats/mooses/g"
+```
+The general structure is `s/original/replacement/g`. In this particular sintax, the `s` a the front means to use the _substitute_ function and the `g` at the end means to apply this function _globally_. There are other options one can give `sed` but you will have to dig into the manual to learn these, which, is actually super interesting! 
+
+Here is one example:
+
+```
+head JASTWB01_contigs.tsv
+
+head JASTWB01_contigs.tsv | sed "s/pycn_heli/SOMETHINGNEW/g"
+```
 
 
 ### Implementing a loop with a replacement command in it!
