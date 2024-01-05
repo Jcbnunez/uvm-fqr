@@ -444,3 +444,14 @@ Make sure that _needed_ files are in the same directory as the script.. otherwis
 ```bash
 sbatch --account=biol6990 my_renaming_script.sh
 ```
+check if the job is running by using
+```
+squeue -u <username>
+```
+Just in case, recall that you can cancell your jobs using
+```
+scancel <job id>
+##or globally for all your jobs
+scancel -u <username>
+```
+Lets discuss the results next class!
