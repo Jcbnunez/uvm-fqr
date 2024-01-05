@@ -1,172 +1,55 @@
-# Topic 1 (-pract): Intro to the VACC
-Program in Biological Data Science and QuEST
+---
 
-## Understanding the VACC
-An overly simplistic, yet intuitive introduction to our supercomputer.
 
-1. Supercomputers do not exist in the cloud. They are physical things. We can interact with them via the internet (the cloiud?)
-2. Supercompiters such as the VACC have equipmemnt that is devoted to various purposes. 
-2.1. The analyses clusters
-	* **Bluemoon**: A 161 node, 8392 core, high-performance computing cluster, modeled after national supercomputing centers, supporting large-scale computation, low-latency networking for MPI workloads, large memory systems, and high-performance parallel ﬁlesystems.
-	* **DeepGreen**: DeepGreen is a new massively parallel cluster deployed in Summer 2019 with 80 GPUs capable of over 8 petaﬂops of mixed-precision calculations based on the NVIDIA Tesla V100 architecture.
-	* **BlackDiamond**: This cluster is built using AMD’s 2nd Gen AMD EPYC processor, which pushes the boundaries for x86 performance, efficiency, security features, and overall system throughput.
+---
 
-	2.2. Storage 
-	* **Netfiles:** P.I.s usually pay a fee to maintain long term storage. Soem storage is included in the faculty package. Trainees and staff are dependent on the PI. Ususally many people can access these files.
-
-	2.3. File systems
-	
-	* **GPFS 1**: Your home directory. Only you can access this.  
-	* **GPFS 2**: Your scratch directiry. Only you can access this.  
-
-## What can we do in, and how we can access into, the VACC
-
-## Stand-by flow ( checking files )
-
-``
-[yourusername@vacc-user1 somewhere]$
-``
-```mermaid
-graph LR
-A[Log in] -- Welcome node --> B((GPFS1))
-```
-Do not run any programs or *heavy* commands while in a welcome node. Also note that GPFS 1 has a very "low" storage memory. This is not the place to store files
-
-#### *where am I?*
-``pwd``
-#### *what is in here?*
-``
-ls``
-
-## Interactive work flow ( coding as you go )
-
-``cd scratch``
-
-```mermaid
-graph LR
-A[Log in] -- Welcome node --> B((GPFS1))-- scratch --> C((GPFS2))
-```
-Scratch is the place where we will run most analyses. It is a fast and flexible parition of the supercomputer. Yet, files only exist there for 90 days. Not designed to be used for long term storage!
-
-```
-srun -N 1 -n 5 --mem=50G -t 3:00:00 --pty bash
+<h1 id="topic-1--pract-intro-to-the-vacc">Topic 1 (-pract): Intro to the VACC</h1>
+<p>Program in Biological Data Science and QuEST</p>
+<h2 id="understanding-the-vacc">Understanding the VACC</h2>
+<p>An overly simplistic, yet intuitive introduction to our supercomputer.</p>
+<ol>
+<li>
+<p>Supercomputers do not exist in the cloud. They are physical things. We can interact with them via the internet (the cloiud?)</p>
+</li>
+<li>
+<p>Supercompiters such as the VACC have equipmemnt that is devoted to various purposes.<br>
+2.1. The analyses clusters</p>
+<ul>
+<li><strong>Bluemoon</strong>: A 161 node, 8392 core, high-performance computing cluster, modeled after national supercomputing centers, supporting large-scale computation, low-latency networking for MPI workloads, large memory systems, and high-performance parallel ﬁlesystems.</li>
+<li><strong>DeepGreen</strong>: DeepGreen is a new massively parallel cluster deployed in Summer 2019 with 80 GPUs capable of over 8 petaﬂops of mixed-precision calculations based on the NVIDIA Tesla V100 architecture.</li>
+<li><strong>BlackDiamond</strong>: This cluster is built using AMD’s 2nd Gen AMD EPYC processor, which pushes the boundaries for x86 performance, efficiency, security features, and overall system throughput.</li>
+</ul>
+<p>2.2. Storage</p>
+<ul>
+<li><strong>Netfiles:</strong> P.I.s usually pay a fee to maintain long term storage. Soem storage is included in the faculty package. Trainees and staff are dependent on the PI. Ususally many people can access these files.</li>
+</ul>
+<p>2.3. File systems</p>
+<ul>
+<li><strong>GPFS 1</strong>: Your home directory. Only you can access this.</li>
+<li><strong>GPFS 2</strong>: Your scratch directiry. Only you can access this.</li>
+</ul>
+</li>
+</ol>
+<h2 id="what-can-we-do-in-and-how-we-can-access-into-the-vacc">What can we do in, and how we can access into, the VACC</h2>
+<h2 id="stand-by-flow--checking-files-">Stand-by flow ( checking files )</h2>
+<p><code>[yourusername@vacc-user1 somewhere]$</code></p>
+<pre class=" language-mermaid"><svg id="mermaid-svg-p7rMWMJymtGHNQmB" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="80.234375" style="max-width: 297.734375px;" viewBox="0 0 297.734375 80.234375"><style>#mermaid-svg-p7rMWMJymtGHNQmB{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#000000;}#mermaid-svg-p7rMWMJymtGHNQmB .error-icon{fill:#552222;}#mermaid-svg-p7rMWMJymtGHNQmB .error-text{fill:#552222;stroke:#552222;}#mermaid-svg-p7rMWMJymtGHNQmB .edge-thickness-normal{stroke-width:2px;}#mermaid-svg-p7rMWMJymtGHNQmB .edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg-p7rMWMJymtGHNQmB .edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg-p7rMWMJymtGHNQmB .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg-p7rMWMJymtGHNQmB .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg-p7rMWMJymtGHNQmB .marker{fill:#666;stroke:#666;}#mermaid-svg-p7rMWMJymtGHNQmB .marker.cross{stroke:#666;}#mermaid-svg-p7rMWMJymtGHNQmB svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg-p7rMWMJymtGHNQmB .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#000000;}#mermaid-svg-p7rMWMJymtGHNQmB .cluster-label text{fill:#333;}#mermaid-svg-p7rMWMJymtGHNQmB .cluster-label span{color:#333;}#mermaid-svg-p7rMWMJymtGHNQmB .label text,#mermaid-svg-p7rMWMJymtGHNQmB span{fill:#000000;color:#000000;}#mermaid-svg-p7rMWMJymtGHNQmB .node rect,#mermaid-svg-p7rMWMJymtGHNQmB .node circle,#mermaid-svg-p7rMWMJymtGHNQmB .node ellipse,#mermaid-svg-p7rMWMJymtGHNQmB .node polygon,#mermaid-svg-p7rMWMJymtGHNQmB .node path{fill:#eee;stroke:#999;stroke-width:1px;}#mermaid-svg-p7rMWMJymtGHNQmB .node .label{text-align:center;}#mermaid-svg-p7rMWMJymtGHNQmB .node.clickable{cursor:pointer;}#mermaid-svg-p7rMWMJymtGHNQmB .arrowheadPath{fill:#333333;}#mermaid-svg-p7rMWMJymtGHNQmB .edgePath .path{stroke:#666;stroke-width:1.5px;}#mermaid-svg-p7rMWMJymtGHNQmB .flowchart-link{stroke:#666;fill:none;}#mermaid-svg-p7rMWMJymtGHNQmB .edgeLabel{background-color:white;text-align:center;}#mermaid-svg-p7rMWMJymtGHNQmB .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#mermaid-svg-p7rMWMJymtGHNQmB .cluster rect{fill:hsl(210,66.6666666667%,95%);stroke:#26a;stroke-width:1px;}#mermaid-svg-p7rMWMJymtGHNQmB .cluster text{fill:#333;}#mermaid-svg-p7rMWMJymtGHNQmB .cluster span{color:#333;}#mermaid-svg-p7rMWMJymtGHNQmB div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(-160,0%,93.3333333333%);border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-svg-p7rMWMJymtGHNQmB:root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}#mermaid-svg-p7rMWMJymtGHNQmB flowchart{fill:apa;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-A LE-B" id="L-A-B" style="opacity: 1;"><path class="path" d="M70.84375,40.1171875L148.171875,40.1171875L225.5,40.1171875" marker-end="url(https://stackedit.io/app#arrowhead679)" style="fill:none"></path><defs><marker id="arrowhead679" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(148.171875,40.1171875)" style="opacity: 1;"><g transform="translate(-52.328125,-13.359375)" class="label"><rect rx="0" ry="0" width="104.65625" height="26.71875"></rect><foreignObject width="104.65625" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-A-B" class="edgeLabel L-LS-A' L-LE-B">Welcome node</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-4872" transform="translate(39.421875,40.1171875)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.421875" y="-23.359375" width="62.84375" height="46.71875" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.421875,-13.359375)"><foreignObject width="42.84375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Log in</div></foreignObject></g></g></g><g class="node default" id="flowchart-B-4873" transform="translate(257.6171875,40.1171875)" style="opacity: 1;"><circle x="-32.1171875" y="-23.359375" r="32.1171875" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-22.1171875,-13.359375)"><foreignObject width="44.234375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS1</div></foreignObject></g></g></g></g></g></g></svg></pre>
+<p>Do not run any programs or <em>heavy</em> commands while in a welcome node. Also note that GPFS 1 has a very “low” storage memory. This is not the place to store files</p>
+<h4 id="where-am-i"><em>where am I?</em></h4>
+<p><code>pwd</code></p>
+<h4 id="what-is-in-here"><em>what is in here?</em></h4>
+<p><code>ls</code></p>
+<h2 id="interactive-work-flow--coding-as-you-go-">Interactive work flow ( coding as you go )</h2>
+<p><code>cd scratch</code></p>
+<pre class=" language-mermaid"><svg id="mermaid-svg-lJsUoWjwrtFiR5Rf" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="80.234375" style="max-width: 464px;" viewBox="0 0 464 80.234375"><style>#mermaid-svg-lJsUoWjwrtFiR5Rf{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#000000;}#mermaid-svg-lJsUoWjwrtFiR5Rf .error-icon{fill:#552222;}#mermaid-svg-lJsUoWjwrtFiR5Rf .error-text{fill:#552222;stroke:#552222;}#mermaid-svg-lJsUoWjwrtFiR5Rf .edge-thickness-normal{stroke-width:2px;}#mermaid-svg-lJsUoWjwrtFiR5Rf .edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg-lJsUoWjwrtFiR5Rf .edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg-lJsUoWjwrtFiR5Rf .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg-lJsUoWjwrtFiR5Rf .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg-lJsUoWjwrtFiR5Rf .marker{fill:#666;stroke:#666;}#mermaid-svg-lJsUoWjwrtFiR5Rf .marker.cross{stroke:#666;}#mermaid-svg-lJsUoWjwrtFiR5Rf svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg-lJsUoWjwrtFiR5Rf .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#000000;}#mermaid-svg-lJsUoWjwrtFiR5Rf .cluster-label text{fill:#333;}#mermaid-svg-lJsUoWjwrtFiR5Rf .cluster-label span{color:#333;}#mermaid-svg-lJsUoWjwrtFiR5Rf .label text,#mermaid-svg-lJsUoWjwrtFiR5Rf span{fill:#000000;color:#000000;}#mermaid-svg-lJsUoWjwrtFiR5Rf .node rect,#mermaid-svg-lJsUoWjwrtFiR5Rf .node circle,#mermaid-svg-lJsUoWjwrtFiR5Rf .node ellipse,#mermaid-svg-lJsUoWjwrtFiR5Rf .node polygon,#mermaid-svg-lJsUoWjwrtFiR5Rf .node path{fill:#eee;stroke:#999;stroke-width:1px;}#mermaid-svg-lJsUoWjwrtFiR5Rf .node .label{text-align:center;}#mermaid-svg-lJsUoWjwrtFiR5Rf .node.clickable{cursor:pointer;}#mermaid-svg-lJsUoWjwrtFiR5Rf .arrowheadPath{fill:#333333;}#mermaid-svg-lJsUoWjwrtFiR5Rf .edgePath .path{stroke:#666;stroke-width:1.5px;}#mermaid-svg-lJsUoWjwrtFiR5Rf .flowchart-link{stroke:#666;fill:none;}#mermaid-svg-lJsUoWjwrtFiR5Rf .edgeLabel{background-color:white;text-align:center;}#mermaid-svg-lJsUoWjwrtFiR5Rf .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#mermaid-svg-lJsUoWjwrtFiR5Rf .cluster rect{fill:hsl(210,66.6666666667%,95%);stroke:#26a;stroke-width:1px;}#mermaid-svg-lJsUoWjwrtFiR5Rf .cluster text{fill:#333;}#mermaid-svg-lJsUoWjwrtFiR5Rf .cluster span{color:#333;}#mermaid-svg-lJsUoWjwrtFiR5Rf div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(-160,0%,93.3333333333%);border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-svg-lJsUoWjwrtFiR5Rf:root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}#mermaid-svg-lJsUoWjwrtFiR5Rf flowchart{fill:apa;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-A LE-B" id="L-A-B" style="opacity: 1;"><path class="path" d="M70.84375,40.1171875L148.171875,40.1171875L225.5,40.1171875" marker-end="url(https://stackedit.io/app#arrowhead680)" style="fill:none"></path><defs><marker id="arrowhead680" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-B LE-C" id="L-B-C" style="opacity: 1;"><path class="path" d="M289.734375,40.1171875L340.75,40.1171875L391.765625,40.1171875" marker-end="url(https://stackedit.io/app#arrowhead681)" style="fill:none"></path><defs><marker id="arrowhead681" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(148.171875,40.1171875)" style="opacity: 1;"><g transform="translate(-52.328125,-13.359375)" class="label"><rect rx="0" ry="0" width="104.65625" height="26.71875"></rect><foreignObject width="104.65625" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-A-B" class="edgeLabel L-LS-A' L-LE-B">Welcome node</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(340.75,40.1171875)" style="opacity: 1;"><g transform="translate(-26.015625,-13.359375)" class="label"><rect rx="0" ry="0" width="52.03125" height="26.71875"></rect><foreignObject width="52.03125" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-B-C" class="edgeLabel L-LS-B' L-LE-C">scratch</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-4877" transform="translate(39.421875,40.1171875)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.421875" y="-23.359375" width="62.84375" height="46.71875" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.421875,-13.359375)"><foreignObject width="42.84375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Log in</div></foreignObject></g></g></g><g class="node default" id="flowchart-B-4878" transform="translate(257.6171875,40.1171875)" style="opacity: 1;"><circle x="-32.1171875" y="-23.359375" r="32.1171875" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-22.1171875,-13.359375)"><foreignObject width="44.234375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS1</div></foreignObject></g></g></g><g class="node default" id="flowchart-C-4879" transform="translate(423.8828125,40.1171875)" style="opacity: 1;"><circle x="-32.1171875" y="-23.359375" r="32.1171875" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-22.1171875,-13.359375)"><foreignObject width="44.234375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS2</div></foreignObject></g></g></g></g></g></g></svg></pre>
+<p>Scratch is the place where we will run most analyses. It is a fast and flexible parition of the supercomputer. Yet, files only exist there for 90 days. Not designed to be used for long term storage!</p>
+<pre><code>srun -N 1 -n 5 --mem=50G -t 3:00:00 --pty bash
 srun: job 12417344 queued and waiting for resources
 [yourusername@node321 somewhere]$
-```
-
-```mermaid
-graph LR
-A[Log in] -- Welcome node --> B((GPFS1))-- scratch --> C((GPFS2))
-B --> E[srun] -- scratch/node --> F((GPFS2 in node))
-```
-Afert running ``srun`` we are no longer in a welcome node and thus we can start running commands without "breaking the rules" of the vacc. Notice that by inhabiting node "321," or whichever node you got, you are now interacting with an entirely diferent "machine" that has 50G of RAM. You have reserved this machine for 3 hours, after that point the system will kick you out back to the welcome node. 
-
-### *running your first command*
-``
-echo "hello world"
-``
-
-congratulations you are all coders now... if you were not one before!!
-
-### *automation 101*
-
-```
-for i in world mars jupiter venus
-do
-echo hello $i
-done
-```
-Notice that in this instance the letter ``i`` is transforming itself into a variable. the variable is being called in the code using the ``$`` simbol! The ``$`` symbol is key to distinguish the variable called ``i`` and the letter **i**. Very important distcintion!
-
-
-### *numbered sequences*
-```
-for i in {1..5}
-do
-echo $i
-done
-```
-Imagine looping from 1 to 5; easy ``for i in 1 2 3 4 5``.... Imagine looping from 1 to 1000000 ... less fun! try ``{a..b}`` (works in reverse too!).
-
-### *creating arrays in memory*
-
-#### define an array with three items 
-``myarray=( mars jupiter moon world sun kaiper )``
-
-To check the array we need to introduce some first bit of complexity
-``echo ${myarray[@]}``
-Yet, we can now use this to provide all the stuff we want into a loop
- ```
-for i in "${myarray[@]}"
-do
-  echo $i
-done
-```
-
-# VACC Cluster Specs (for your grant proposals)
-
-Introduction
-
-The Vermont Advanced Computing Center (VACC) is a core facility of UVM, managed by the Office of the Vice President for Research in partnership with UVM’s Enterprise Technology Services (ETS) in support of compute and data intensive research programs across disciplines. The VACC hosts CPU- and GPU-focused clusters.  
-
-Our CPU cluster, “BlueMoon,” has 161 nodes, providing 8392 compute cores.  5120 of these cores are available via HDR Infiniband.
-
-Additionally, VACC hosts a GPU cluster named DeepGreen, composed of 80 NVIDIA Tesla V100 SXM2 GPUs capable of over 8 petaflops of mixed precision calculations in aggregate. Each DeepGreen node is connected to its neighbors and NVMe storage by four HDR100 Infiniband connections. Its hybrid design can expedite high-throughput artificial intelligence and machine learning workflows, and its extreme parallelism allows for transformative research pipelines. It is well-suited to support training and inference using neural models.
-
-The DataMountain cluster that the VACC hosts is focused on large-memory sharded MongoDB to support near real-time access to enormous data files, supporting projects that require such speed to effectively analyze, describe, and explain rapidly growing datasets.
-
-The VACC also hosts a small cluster with 48 AMD MI50 GPUs named BlackDiamond. The VACC provides 100Gb, 40Gb, 25Gb, and 10Gb Ethernet connections to different portions of the cluster.
-  
-IBM Spectrum Scale (GPFS) filesystems are available for storing research data and software during computation.  These filesystems provide 1.6PB of storage, with roughly 20% of capacity housed on NVMe/Flash storage devices for performance.
-
-SLURM is provided for scheduling and resource management. Open OnDemand is available to users who are less comfortable with the command-line or need a graphical interface.
-
-The VACC provides a number of open-source software packages to users, as well as a variety of licensed application software, in-house community-developed code, and tools for usage. VACC also supports various libraries for chemistry, molecular dynamics, neural networks, and image processing, as well as support packages for building high-performance software applications.
-
-Andrea Elledge (Program Director) is the current Administrative Director of the VACC, where she works in partnership with UVM’s Chief Technology Officer to oversee all HPC clusters, IT technicians, user growth, HPC education, and onboarding of new faculty and students. 
-
-BlueMoon specs
-*	39 dual-processor, 128-core AMD Epyc 7763 PowerEdge R6525 nodes, with 1TB RAM each. Mixed use: Infiniband connected HDR100 for file access as well as MPI communication along with 25Gb Ethernet
-*	2 dual-processor, 128-core AMD Epyc 7763 PowerEdge R7525 nodes, with 1TB RAM each and 1 A100 GPU
-*	1 dual-processor, 64-core EPYC 7543 PowerEdge R7525 node, with 4TB RAM. Infiniband connected HDR100 for file access, 10/25Gb Ethernet
-*	32 dual-processor, 12-core (Intel E5-2650 v4) Dell PowerEdge R430 nodes, with 64GB RAM each, 10Gb Ethernet-connected
-*	8 dual-processor, 12-core (Intel E5-2650 v4) Dell PowerEdge R430 nodes, with 256GB RAM each, 10Gb Ethernet-connected
-*	9 dual-processor, 20 core (Intel 6230), PowerEdge R440, with 10GB RAM, 10Gb Ethernet-connected
-*	3 dual-processor, 10-core (Intel E5-2650 v3) Dell PowerEdge R630 nodes, with 256GB RAM each, Ethernet-connected
-*	40 dual-processor, 10-core (Intel E5-2650 v3) Dell PowerEdge R630 nodes, with 64GB RAM each, Inﬁniband 4XFDR (56Gb)-connected
-*	2 dual-processor, 12-core (Intel E5-2650 v4) Dell R730, with 1TB RAM
-*	1 dual-processor, 8-core (Intel E7-8837) IBM x3690 x5, with 512GB RAM
-*	2 dual-processor, 12-core (Intel E5-2650 v4) Dell R730 GPU nodes, each with 2 Nvidia Tesla P100 GPUs
-*	2 I/O nodes (Dell R740xd) with 40GbE, 200Gb HDR, along with 2 I/O nodes (Dell R430s, 10Gb Ethernet-connected) connected to:
-*	1 Dell MD3460 providing 287TB storage to GPFS
-*	1 Dell ME4084 providing 751TB of spinning disk storage
-*	1 IBM FS7200 providing 187TB of NVMe-attached FlashCore Module storage
- 
- 
-DeepGreen specs
-*	10 GPU nodes (Penguin Relion XE4118GTS) each with:
-*	2 Intel(R) Xeon(R) Gold 6130 CPU @ 2.10GHz (2x 16 cores, 22M cache)
-*	768GB RAM (256GB for GPFS pagepool)
-*	8 NVIDIA Tesla V100s with 32GB RAM
-*	4 2-lane HDR (100Gb/s, so 400Gb/s/node) Inﬁniband links to QM8700 switch
-*	2 NVMe nodes, each with 88TB NVMe devices (12x8TB), replicated to provide dedicated 88TB NVMe-over-fabrics ﬁlesystem
-*	Mellanox QM8700 switch running at HDR speeds
-
-
-DataMountain specs
-*	8 large memory nodes (HPe DL380G10P) each with:
-*	2 Intel Xeon 6348 CPUs
-*	8TB of Intel Optane PMem in memory mode plus 1TB DRAM for memory
-*	10 7.68TB NVMe storage devices
-*	25Gb Ethernet
-
-
-BlackDiamond Specs
-*	6 GPU nodes, each with:
-*	1 AMD EPYC 7642 48-core processor
-*	8 AMD Radeon Instinct MI50 Accelerators (32GB)
-*	512GB DDR4-3200MHz RAM
-*	HDR100 Infiniband links to QM8700 switch
-
-
+</code></pre>
+<pre class=" language-mermaid"><svg id="mermaid-svg-cn614Qn6My4eD8xU" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="214.6640625" style="max-width: 731.53125px;" viewBox="0 0 731.53125 214.6640625"><style>#mermaid-svg-cn614Qn6My4eD8xU{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#000000;}#mermaid-svg-cn614Qn6My4eD8xU .error-icon{fill:#552222;}#mermaid-svg-cn614Qn6My4eD8xU .error-text{fill:#552222;stroke:#552222;}#mermaid-svg-cn614Qn6My4eD8xU .edge-thickness-normal{stroke-width:2px;}#mermaid-svg-cn614Qn6My4eD8xU .edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg-cn614Qn6My4eD8xU .edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg-cn614Qn6My4eD8xU .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg-cn614Qn6My4eD8xU .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg-cn614Qn6My4eD8xU .marker{fill:#666;stroke:#666;}#mermaid-svg-cn614Qn6My4eD8xU .marker.cross{stroke:#666;}#mermaid-svg-cn614Qn6My4eD8xU svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg-cn614Qn6My4eD8xU .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#000000;}#mermaid-svg-cn614Qn6My4eD8xU .cluster-label text{fill:#333;}#mermaid-svg-cn614Qn6My4eD8xU .cluster-label span{color:#333;}#mermaid-svg-cn614Qn6My4eD8xU .label text,#mermaid-svg-cn614Qn6My4eD8xU span{fill:#000000;color:#000000;}#mermaid-svg-cn614Qn6My4eD8xU .node rect,#mermaid-svg-cn614Qn6My4eD8xU .node circle,#mermaid-svg-cn614Qn6My4eD8xU .node ellipse,#mermaid-svg-cn614Qn6My4eD8xU .node polygon,#mermaid-svg-cn614Qn6My4eD8xU .node path{fill:#eee;stroke:#999;stroke-width:1px;}#mermaid-svg-cn614Qn6My4eD8xU .node .label{text-align:center;}#mermaid-svg-cn614Qn6My4eD8xU .node.clickable{cursor:pointer;}#mermaid-svg-cn614Qn6My4eD8xU .arrowheadPath{fill:#333333;}#mermaid-svg-cn614Qn6My4eD8xU .edgePath .path{stroke:#666;stroke-width:1.5px;}#mermaid-svg-cn614Qn6My4eD8xU .flowchart-link{stroke:#666;fill:none;}#mermaid-svg-cn614Qn6My4eD8xU .edgeLabel{background-color:white;text-align:center;}#mermaid-svg-cn614Qn6My4eD8xU .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#mermaid-svg-cn614Qn6My4eD8xU .cluster rect{fill:hsl(210,66.6666666667%,95%);stroke:#26a;stroke-width:1px;}#mermaid-svg-cn614Qn6My4eD8xU .cluster text{fill:#333;}#mermaid-svg-cn614Qn6My4eD8xU .cluster span{color:#333;}#mermaid-svg-cn614Qn6My4eD8xU div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(-160,0%,93.3333333333%);border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-svg-cn614Qn6My4eD8xU:root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}#mermaid-svg-cn614Qn6My4eD8xU flowchart{fill:apa;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-A LE-B" id="L-A-B" style="opacity: 1;"><path class="path" d="M70.84375,92.85546875L148.171875,92.85546875L225.5,92.85546875" marker-end="url(https://stackedit.io/app#arrowhead682)" style="fill:none"></path><defs><marker id="arrowhead682" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-B LE-C" id="L-B-C" style="opacity: 1;"><path class="path" d="M284.7374895290847,75.65073246136771L340.75,40.1171875L391.765625,40.1171875" marker-end="url(https://stackedit.io/app#arrowhead683)" style="fill:none"></path><defs><marker id="arrowhead683" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-B LE-E" id="L-B-E" style="opacity: 1;"><path class="path" d="M284.7374895290847,110.06020503863229L340.75,145.59375L398.7890625,145.59375" marker-end="url(https://stackedit.io/app#arrowhead684)" style="fill:none"></path><defs><marker id="arrowhead684" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-E LE-F" id="L-E-F" style="opacity: 1;"><path class="path" d="M448.9765625,145.59375L528.6953125,145.59375L601.390625,145.59375" marker-end="url(https://stackedit.io/app#arrowhead685)" style="fill:none"></path><defs><marker id="arrowhead685" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(148.171875,92.85546875)" style="opacity: 1;"><g transform="translate(-52.328125,-13.359375)" class="label"><rect rx="0" ry="0" width="104.65625" height="26.71875"></rect><foreignObject width="104.65625" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-A-B" class="edgeLabel L-LS-A' L-LE-B">Welcome node</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(340.75,40.1171875)" style="opacity: 1;"><g transform="translate(-26.015625,-13.359375)" class="label"><rect rx="0" ry="0" width="52.03125" height="26.71875"></rect><foreignObject width="52.03125" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-B-C" class="edgeLabel L-LS-B' L-LE-C">scratch</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-B-E" class="edgeLabel L-LS-B' L-LE-E"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(528.6953125,145.59375)" style="opacity: 1;"><g transform="translate(-47.6953125,-13.359375)" class="label"><rect rx="0" ry="0" width="95.390625" height="26.71875"></rect><foreignObject width="95.390625" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-E-F" class="edgeLabel L-LS-E' L-LE-F">scratch/node</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-4886" transform="translate(39.421875,92.85546875)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.421875" y="-23.359375" width="62.84375" height="46.71875" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.421875,-13.359375)"><foreignObject width="42.84375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Log in</div></foreignObject></g></g></g><g class="node default" id="flowchart-B-4887" transform="translate(257.6171875,92.85546875)" style="opacity: 1;"><circle x="-32.1171875" y="-23.359375" r="32.1171875" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-22.1171875,-13.359375)"><foreignObject width="44.234375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS1</div></foreignObject></g></g></g><g class="node default" id="flowchart-C-4888" transform="translate(423.8828125,40.1171875)" style="opacity: 1;"><circle x="-32.1171875" y="-23.359375" r="32.1171875" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-22.1171875,-13.359375)"><foreignObject width="44.234375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS2</div></foreignObject></g></g></g><g class="node default" id="flowchart-E-4890" transform="translate(423.8828125,145.59375)" style="opacity: 1;"><rect rx="0" ry="0" x="-25.09375" y="-23.359375" width="50.1875" height="46.71875" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-15.09375,-13.359375)"><foreignObject width="30.1875" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">srun</div></foreignObject></g></g></g><g class="node default" id="flowchart-F-4891" transform="translate(662.4609375,145.59375)" style="opacity: 1;"><circle x="-61.0703125" y="-23.359375" r="61.0703125" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-51.0703125,-13.359375)"><foreignObject width="102.140625" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS2 in node</div></foreignObject></g></g></g></g></g></g></svg></pre>
+<p>Afert running <code>srun</code> we are no longer in a welcome node and thus we can start running commands without “breaking the rules” of the vacc. Notice that by inhabiting node “321,” or whichever node you got, you are now interacting with an entirely diferent “machine” that has 50G of RAM. You have reserved this machine for 3 hours, after that point the system will kick you out back to the welcome node.</p>
+<h3 id="running-your-first-command"><em>running your first command</em></h3>
+<p><code>echo "hello world"</code></p>
+<p>congratulations you are all coders now… if you were not one before!!</p>
 
