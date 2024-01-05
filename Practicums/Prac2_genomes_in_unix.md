@@ -122,39 +122,19 @@ Lets break down what is going on here .... the _stack overflow_ approach!
 master_file=./JASTWB01_contigs.tsv
 working_file=./pycno_genome.fasta 
 
-cp $working_file ./pycno_genome_modnames.fasta
+cp ${working_file} ./pycno_genome_modnames.fasta
 
-ith=$(cat $master_file | sed '1d' | wc -l)
+ith=$(cat ${master_file} | sed '1d' | wc -l)
 
-for i in $(seq $ith)
+for i in $(seq ${ith} )
  do
-  name1=$(cat $master_file |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
-  name2=$(cat $master_file |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
-   echo "im an changing " $name2 " to " $name1 " as per " $i
+  name1=$(cat ${master_file} |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
+  name2=$(cat ${master_file} |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
+   echo "im an changing " ${name2} " to " ${name1} " as per " ${i}
    sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
  done
 ``` 
-### Annotated code...
-```bash
-### Variables declared by the user... <more details>
-master_file=./JASTWB01_contigs.tsv
-working_file=./pycno_genome.fasta 
 
-### File generated in situ (to create data redundancy!; failsafe) ... <more details>
-cp $working_file ./pycno_genome_modnames.fasta
-
-### Create a varible with number of itherations ... <more details
-ith=$(cat $master_file | sed '1d' | wc -l)
-
-### Loop around the genome to rename all the chromosomes to a different name
-for i in $(seq $ith)
- do
-  name1=$(cat $master_file |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
-  name2=$(cat $master_file |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
-   echo "im an changing " $name2 " to " $name1 " as per " $i
-   sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
- done
-``` 
 ## What are the parts of the code?
 ### Variables declared by the user
 ```bash
@@ -165,19 +145,26 @@ here we are declaring environmental variables. This is a convient way to pass in
 
 In unix, variables are often declared with the `=` simbol and recalled with the `$` symbol. We can always spot check a variable using `echo`. lets explore some variables... **NO SPACES ALLOWED between `=` and the other stuff!**
 
+* We can always recall the value of a variable we can use `${variable}`
+
+```bash
+a=10
+echo ${a}
+```
+
 ### File generated in situ (to create data redundancy!; _failsafe_)
 Why is the code asking us to do this? The reality is that it is not necessary but it is a failsafe custom. Basically, the way this code works, it constantly overwrites the original file. What about if we get this wrong? An easy solution is to introduce redundancy and safety copies to the process. 
 ```bash
-cp $working_file ./pycno_genome_modnames.fasta
+cp ${working_file} ./pycno_genome_modnames.fasta
 ```
 #### Commands to keep in mind:
 1. `cp` copy `cp <file> <location>`
-2. `mv` move or (oddly) rename `mv <file> <location>`
+2. `mv` move or (_oddly_) rename `mv <file> <location>`
 
 ### Create a varible with number of itherations & introduction to loops
 Before we can get at what the the `ith` varaiable means, we first need to take a deep dive into _loops_.
 ```bash
-ith=$(cat $master_file | sed '1d' | wc -l)
+ith=$(cat ${master_file} | sed '1d' | wc -l)
 ```
 ```mermaid
 graph LR
@@ -193,9 +180,10 @@ C --repeat--> B
 ```bash
 for i in A B C
 do
-echo $i
+echo ${i}
 done
 ```
+Here the `${i}`  is the call that returns the value of `i`
 #### Creating a sequence with `seq`
 ```bash
 seq 10
@@ -205,7 +193,7 @@ seq 10
 ```bash
 for i in $(seq 10)
 do
-echo $i
+echo ${i}
 done
 ```
 Here we are using the power of the `$()` construction to transform the output of the `seq` function into a variable that is, at the same time, the input of the loop itself. This reveals the first path to "scaling up the code" because we can **nest** these variables into each other... `$(seq $a)`.
@@ -213,7 +201,7 @@ Here we are using the power of the `$()` construction to transform the output of
 a=15
 for i in $(seq $a)
 do
-echo $i
+echo ${i}
 done
 ```
 #### On local vs. global variables
@@ -223,7 +211,7 @@ Notice that our loop has two variables.. it has `a`, that is globally set, and i
 At this point we have covered loops. Yet, notice that we have always given the loop... either the actual objects to iterate over (`A B C`) or a number of given iterations `seq 15`. What about if we dont know how many iteration our loop may need?  That is the purpose of defining `ith`
 ```bash
 master_file=./JASTWB01_contigs.tsv
-ith=$(cat $master_file | sed '1d' | wc -l)
+ith=$(cat ${master_file} | sed '1d' | wc -l)
 ```
 #### The layers of `ith`
 1. `ith` is a global variable
@@ -290,7 +278,7 @@ wc -l JASTWB01_contigs.tsv
 ### Lets circle back to `ith`
 If we put toghther the different pieces of the puzzle we can infer that: `ith` is a varible whose value is defined by the output of several piped functions. These functions first load a variable called `master_file`, which we know is the chromosome correspondance file, then it removes the first line (i.e., the header), and the it count the number of lines remaining in the correspondance file. Why would we want to do this?
 ```bash
-ith=$(cat $master_file | sed '1d' | wc -l)
+ith=$(cat ${master_file} | sed '1d' | wc -l)
 ```
 
 ## Finally, the loop that will replace names!
@@ -311,5 +299,31 @@ Similar to `sed`, an entire class could be devoted to `awk`. This language is ex
 
 ```bash
 head $master_file
-awk -F  '\t' '{print $1}'
+cat $master_file | awk -F  '\t' '{print $1}'
 ```
+Here we are loading the file to memory, passing it to `awk` and then `awk` is printing the first column. 
+* the `-F` parameter is called a **flag** and they are used to modify the behaviour of functions.
+* ``awk`` _flags_ **modifier** `'{print...}'`
+* `-F` means the divider of the file and `\t` means _tabs_ (this could be `,` or `;` or other dividers)
+* The ``'{print $1}'`` is the core of the command and ``print $1`` means print the first column.
+* **NOTICE-->** inside the `awk` command the `$1` is not a global variable, but rather a parameter inherent to `awk` ... _yes, this is exactly why coding can be conflusing!_
+* How may we print the second column, third... fourth...
+
+#### thus... what is this doing?
+```bash
+  name1=$(cat ${master_file} |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
+```
+1. load the `${master_file}`
+2. remove the header
+3. print the first column
+4. extact row `${i}` ... recall here `${i}` will be supplied by the loop!
+5. hence... when ${i} = 1$ ... `${name}` will be the first name in column 1 of the file!
+
+* lets try that
+```bash
+i=1
+
+name1=$(cat ${master_file} |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
+echo ${name1}
+```
+This action... of arbritrarily setting `i = 1` is core to debugging!
