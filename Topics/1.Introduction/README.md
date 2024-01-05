@@ -1,93 +1,80 @@
-# Topic 1: Introduction to FQR + Evolutionary first principles
-
-# Goals
-1. Introduce ourselves 
-2. Understand the structure of the course + syllabus
-3. Review of evolutionary principles
-* Deterministic Processess
-* Stochastic Processes
-* Evolutionary Systems through the lenses of Deterministic and Stochastic Processes
-4. (If time permits), a tour of the VACC
 ---
-# Evolutionary Theory... as fundamentals
-... posits that living things are systems that change over space and time.
 
-## These changes are driven by processes that can be measured and predicted (to some degree)
-1.Some processes are deterministic: Have predictable outcomes that are repeatable and devoid of randomness
 
-* Useful sometimes to think of point estimates as predictive outcomes
+---
 
-2.Some processes are stochastic: Have outcomes, that can be described, yet they governed by randomness
+<h1 id="topic-1--pract-intro-to-the-vacc">Topic 1 (-pract): Intro to the VACC</h1>
+<p>Program in Biological Data Science and QuEST</p>
+<h2 id="understanding-the-vacc">Understanding the VACC</h2>
+<p>An overly simplistic, yet intuitive introduction to our supercomputer.</p>
+<ol>
+<li>
+<p>Supercomputers do not exist in the cloud. They are physical things. We can interact with them via the internet (the cloiud?)</p>
+</li>
+<li>
+<p>Supercompiters such as the VACC have equipmemnt that is devoted to various purposes.<br>
+2.1. The analyses clusters</p>
+<ul>
+<li><strong>Bluemoon</strong>: A 161 node, 8392 core, high-performance computing cluster, modeled after national supercomputing centers, supporting large-scale computation, low-latency networking for MPI workloads, large memory systems, and high-performance parallel ﬁlesystems.</li>
+<li><strong>DeepGreen</strong>: DeepGreen is a new massively parallel cluster deployed in Summer 2019 with 80 GPUs capable of over 8 petaﬂops of mixed-precision calculations based on the NVIDIA Tesla V100 architecture.</li>
+<li><strong>BlackDiamond</strong>: This cluster is built using AMD’s 2nd Gen AMD EPYC processor, which pushes the boundaries for x86 performance, efficiency, security features, and overall system throughput.</li>
+</ul>
+<p>2.2. Storage</p>
+<ul>
+<li><strong>Netfiles:</strong> P.I.s usually pay a fee to maintain long term storage. Soem storage is included in the faculty package. Trainees and staff are dependent on the PI. Ususally many people can access these files.</li>
+</ul>
+<p>2.3. File systems</p>
+<ul>
+<li><strong>GPFS 1</strong>: Your home directory. Only you can access this.</li>
+<li><strong>GPFS 2</strong>: Your scratch directiry. Only you can access this.</li>
+</ul>
+</li>
+</ol>
+<h2 id="what-can-we-do-in-and-how-we-can-access-into-the-vacc">What can we do in, and how we can access into, the VACC</h2>
+<h2 id="stand-by-flow--checking-files-">Stand-by flow ( checking files )</h2>
+<p><code>[yourusername@vacc-user1 somewhere]$</code></p>
+<pre class=" language-mermaid"><svg id="mermaid-svg-9daD0IcGiuAkdfkG" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="80.234375" style="max-width: 297.734375px;" viewBox="0 0 297.734375 80.234375"><style>#mermaid-svg-9daD0IcGiuAkdfkG{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#000000;}#mermaid-svg-9daD0IcGiuAkdfkG .error-icon{fill:#552222;}#mermaid-svg-9daD0IcGiuAkdfkG .error-text{fill:#552222;stroke:#552222;}#mermaid-svg-9daD0IcGiuAkdfkG .edge-thickness-normal{stroke-width:2px;}#mermaid-svg-9daD0IcGiuAkdfkG .edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg-9daD0IcGiuAkdfkG .edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg-9daD0IcGiuAkdfkG .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg-9daD0IcGiuAkdfkG .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg-9daD0IcGiuAkdfkG .marker{fill:#666;stroke:#666;}#mermaid-svg-9daD0IcGiuAkdfkG .marker.cross{stroke:#666;}#mermaid-svg-9daD0IcGiuAkdfkG svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg-9daD0IcGiuAkdfkG .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#000000;}#mermaid-svg-9daD0IcGiuAkdfkG .cluster-label text{fill:#333;}#mermaid-svg-9daD0IcGiuAkdfkG .cluster-label span{color:#333;}#mermaid-svg-9daD0IcGiuAkdfkG .label text,#mermaid-svg-9daD0IcGiuAkdfkG span{fill:#000000;color:#000000;}#mermaid-svg-9daD0IcGiuAkdfkG .node rect,#mermaid-svg-9daD0IcGiuAkdfkG .node circle,#mermaid-svg-9daD0IcGiuAkdfkG .node ellipse,#mermaid-svg-9daD0IcGiuAkdfkG .node polygon,#mermaid-svg-9daD0IcGiuAkdfkG .node path{fill:#eee;stroke:#999;stroke-width:1px;}#mermaid-svg-9daD0IcGiuAkdfkG .node .label{text-align:center;}#mermaid-svg-9daD0IcGiuAkdfkG .node.clickable{cursor:pointer;}#mermaid-svg-9daD0IcGiuAkdfkG .arrowheadPath{fill:#333333;}#mermaid-svg-9daD0IcGiuAkdfkG .edgePath .path{stroke:#666;stroke-width:1.5px;}#mermaid-svg-9daD0IcGiuAkdfkG .flowchart-link{stroke:#666;fill:none;}#mermaid-svg-9daD0IcGiuAkdfkG .edgeLabel{background-color:white;text-align:center;}#mermaid-svg-9daD0IcGiuAkdfkG .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#mermaid-svg-9daD0IcGiuAkdfkG .cluster rect{fill:hsl(210,66.6666666667%,95%);stroke:#26a;stroke-width:1px;}#mermaid-svg-9daD0IcGiuAkdfkG .cluster text{fill:#333;}#mermaid-svg-9daD0IcGiuAkdfkG .cluster span{color:#333;}#mermaid-svg-9daD0IcGiuAkdfkG div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(-160,0%,93.3333333333%);border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-svg-9daD0IcGiuAkdfkG:root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}#mermaid-svg-9daD0IcGiuAkdfkG flowchart{fill:apa;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-A LE-B" id="L-A-B" style="opacity: 1;"><path class="path" d="M70.84375,40.1171875L148.171875,40.1171875L225.5,40.1171875" marker-end="url(https://stackedit.io/app#arrowhead672)" style="fill:none"></path><defs><marker id="arrowhead672" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(148.171875,40.1171875)" style="opacity: 1;"><g transform="translate(-52.328125,-13.359375)" class="label"><rect rx="0" ry="0" width="104.65625" height="26.71875"></rect><foreignObject width="104.65625" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-A-B" class="edgeLabel L-LS-A' L-LE-B">Welcome node</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-4850" transform="translate(39.421875,40.1171875)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.421875" y="-23.359375" width="62.84375" height="46.71875" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.421875,-13.359375)"><foreignObject width="42.84375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Log in</div></foreignObject></g></g></g><g class="node default" id="flowchart-B-4851" transform="translate(257.6171875,40.1171875)" style="opacity: 1;"><circle x="-32.1171875" y="-23.359375" r="32.1171875" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-22.1171875,-13.359375)"><foreignObject width="44.234375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS1</div></foreignObject></g></g></g></g></g></g></svg></pre>
+<p>Do not run any programs or <em>heavy</em> commands while in a welcome node. Also note that GPFS 1 has a very “low” storage memory. This is not the place to store files</p>
+<h4 id="where-am-i"><em>where am I?</em></h4>
+<p><code>pwd</code></p>
+<h4 id="what-is-in-here"><em>what is in here?</em></h4>
+<p><code>ls</code></p>
+<h2 id="interactive-work-flow--coding-as-you-go-">Interactive work flow ( coding as you go )</h2>
+<p><code>cd scratch</code></p>
+<pre class=" language-mermaid"><svg id="mermaid-svg-CMs5jz8R5hOBOXrv" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="80.234375" style="max-width: 464px;" viewBox="0 0 464 80.234375"><style>#mermaid-svg-CMs5jz8R5hOBOXrv{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#000000;}#mermaid-svg-CMs5jz8R5hOBOXrv .error-icon{fill:#552222;}#mermaid-svg-CMs5jz8R5hOBOXrv .error-text{fill:#552222;stroke:#552222;}#mermaid-svg-CMs5jz8R5hOBOXrv .edge-thickness-normal{stroke-width:2px;}#mermaid-svg-CMs5jz8R5hOBOXrv .edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg-CMs5jz8R5hOBOXrv .edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg-CMs5jz8R5hOBOXrv .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg-CMs5jz8R5hOBOXrv .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg-CMs5jz8R5hOBOXrv .marker{fill:#666;stroke:#666;}#mermaid-svg-CMs5jz8R5hOBOXrv .marker.cross{stroke:#666;}#mermaid-svg-CMs5jz8R5hOBOXrv svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg-CMs5jz8R5hOBOXrv .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#000000;}#mermaid-svg-CMs5jz8R5hOBOXrv .cluster-label text{fill:#333;}#mermaid-svg-CMs5jz8R5hOBOXrv .cluster-label span{color:#333;}#mermaid-svg-CMs5jz8R5hOBOXrv .label text,#mermaid-svg-CMs5jz8R5hOBOXrv span{fill:#000000;color:#000000;}#mermaid-svg-CMs5jz8R5hOBOXrv .node rect,#mermaid-svg-CMs5jz8R5hOBOXrv .node circle,#mermaid-svg-CMs5jz8R5hOBOXrv .node ellipse,#mermaid-svg-CMs5jz8R5hOBOXrv .node polygon,#mermaid-svg-CMs5jz8R5hOBOXrv .node path{fill:#eee;stroke:#999;stroke-width:1px;}#mermaid-svg-CMs5jz8R5hOBOXrv .node .label{text-align:center;}#mermaid-svg-CMs5jz8R5hOBOXrv .node.clickable{cursor:pointer;}#mermaid-svg-CMs5jz8R5hOBOXrv .arrowheadPath{fill:#333333;}#mermaid-svg-CMs5jz8R5hOBOXrv .edgePath .path{stroke:#666;stroke-width:1.5px;}#mermaid-svg-CMs5jz8R5hOBOXrv .flowchart-link{stroke:#666;fill:none;}#mermaid-svg-CMs5jz8R5hOBOXrv .edgeLabel{background-color:white;text-align:center;}#mermaid-svg-CMs5jz8R5hOBOXrv .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#mermaid-svg-CMs5jz8R5hOBOXrv .cluster rect{fill:hsl(210,66.6666666667%,95%);stroke:#26a;stroke-width:1px;}#mermaid-svg-CMs5jz8R5hOBOXrv .cluster text{fill:#333;}#mermaid-svg-CMs5jz8R5hOBOXrv .cluster span{color:#333;}#mermaid-svg-CMs5jz8R5hOBOXrv div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(-160,0%,93.3333333333%);border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-svg-CMs5jz8R5hOBOXrv:root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}#mermaid-svg-CMs5jz8R5hOBOXrv flowchart{fill:apa;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-A LE-B" id="L-A-B" style="opacity: 1;"><path class="path" d="M70.84375,40.1171875L148.171875,40.1171875L225.5,40.1171875" marker-end="url(https://stackedit.io/app#arrowhead673)" style="fill:none"></path><defs><marker id="arrowhead673" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-B LE-C" id="L-B-C" style="opacity: 1;"><path class="path" d="M289.734375,40.1171875L340.75,40.1171875L391.765625,40.1171875" marker-end="url(https://stackedit.io/app#arrowhead674)" style="fill:none"></path><defs><marker id="arrowhead674" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(148.171875,40.1171875)" style="opacity: 1;"><g transform="translate(-52.328125,-13.359375)" class="label"><rect rx="0" ry="0" width="104.65625" height="26.71875"></rect><foreignObject width="104.65625" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-A-B" class="edgeLabel L-LS-A' L-LE-B">Welcome node</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(340.75,40.1171875)" style="opacity: 1;"><g transform="translate(-26.015625,-13.359375)" class="label"><rect rx="0" ry="0" width="52.03125" height="26.71875"></rect><foreignObject width="52.03125" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-B-C" class="edgeLabel L-LS-B' L-LE-C">scratch</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-4855" transform="translate(39.421875,40.1171875)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.421875" y="-23.359375" width="62.84375" height="46.71875" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.421875,-13.359375)"><foreignObject width="42.84375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Log in</div></foreignObject></g></g></g><g class="node default" id="flowchart-B-4856" transform="translate(257.6171875,40.1171875)" style="opacity: 1;"><circle x="-32.1171875" y="-23.359375" r="32.1171875" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-22.1171875,-13.359375)"><foreignObject width="44.234375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS1</div></foreignObject></g></g></g><g class="node default" id="flowchart-C-4857" transform="translate(423.8828125,40.1171875)" style="opacity: 1;"><circle x="-32.1171875" y="-23.359375" r="32.1171875" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-22.1171875,-13.359375)"><foreignObject width="44.234375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS2</div></foreignObject></g></g></g></g></g></g></svg></pre>
+<p>Scratch is the place where we will run most analyses. It is a fast and flexible parition of the supercomputer. Yet, files only exist there for 90 days. Not designed to be used for long term storage!</p>
+<pre><code>srun -N 1 -n 5 --mem=50G -t 3:00:00 --pty bash
+srun: job 12417344 queued and waiting for resources
+[yourusername@node321 somewhere]$
+</code></pre>
+<pre class=" language-mermaid"><svg id="mermaid-svg-In7Osuykz97xomAi" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="214.6640625" style="max-width: 731.53125px;" viewBox="0 0 731.53125 214.6640625"><style>#mermaid-svg-In7Osuykz97xomAi{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#000000;}#mermaid-svg-In7Osuykz97xomAi .error-icon{fill:#552222;}#mermaid-svg-In7Osuykz97xomAi .error-text{fill:#552222;stroke:#552222;}#mermaid-svg-In7Osuykz97xomAi .edge-thickness-normal{stroke-width:2px;}#mermaid-svg-In7Osuykz97xomAi .edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg-In7Osuykz97xomAi .edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg-In7Osuykz97xomAi .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg-In7Osuykz97xomAi .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg-In7Osuykz97xomAi .marker{fill:#666;stroke:#666;}#mermaid-svg-In7Osuykz97xomAi .marker.cross{stroke:#666;}#mermaid-svg-In7Osuykz97xomAi svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg-In7Osuykz97xomAi .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#000000;}#mermaid-svg-In7Osuykz97xomAi .cluster-label text{fill:#333;}#mermaid-svg-In7Osuykz97xomAi .cluster-label span{color:#333;}#mermaid-svg-In7Osuykz97xomAi .label text,#mermaid-svg-In7Osuykz97xomAi span{fill:#000000;color:#000000;}#mermaid-svg-In7Osuykz97xomAi .node rect,#mermaid-svg-In7Osuykz97xomAi .node circle,#mermaid-svg-In7Osuykz97xomAi .node ellipse,#mermaid-svg-In7Osuykz97xomAi .node polygon,#mermaid-svg-In7Osuykz97xomAi .node path{fill:#eee;stroke:#999;stroke-width:1px;}#mermaid-svg-In7Osuykz97xomAi .node .label{text-align:center;}#mermaid-svg-In7Osuykz97xomAi .node.clickable{cursor:pointer;}#mermaid-svg-In7Osuykz97xomAi .arrowheadPath{fill:#333333;}#mermaid-svg-In7Osuykz97xomAi .edgePath .path{stroke:#666;stroke-width:1.5px;}#mermaid-svg-In7Osuykz97xomAi .flowchart-link{stroke:#666;fill:none;}#mermaid-svg-In7Osuykz97xomAi .edgeLabel{background-color:white;text-align:center;}#mermaid-svg-In7Osuykz97xomAi .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#mermaid-svg-In7Osuykz97xomAi .cluster rect{fill:hsl(210,66.6666666667%,95%);stroke:#26a;stroke-width:1px;}#mermaid-svg-In7Osuykz97xomAi .cluster text{fill:#333;}#mermaid-svg-In7Osuykz97xomAi .cluster span{color:#333;}#mermaid-svg-In7Osuykz97xomAi div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(-160,0%,93.3333333333%);border:1px solid #26a;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-svg-In7Osuykz97xomAi:root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}#mermaid-svg-In7Osuykz97xomAi flowchart{fill:apa;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-A LE-B" id="L-A-B" style="opacity: 1;"><path class="path" d="M70.84375,92.85546875L148.171875,92.85546875L225.5,92.85546875" marker-end="url(https://stackedit.io/app#arrowhead675)" style="fill:none"></path><defs><marker id="arrowhead675" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-B LE-C" id="L-B-C" style="opacity: 1;"><path class="path" d="M284.7374895290847,75.65073246136771L340.75,40.1171875L391.765625,40.1171875" marker-end="url(https://stackedit.io/app#arrowhead676)" style="fill:none"></path><defs><marker id="arrowhead676" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-B LE-E" id="L-B-E" style="opacity: 1;"><path class="path" d="M284.7374895290847,110.06020503863229L340.75,145.59375L398.7890625,145.59375" marker-end="url(https://stackedit.io/app#arrowhead677)" style="fill:none"></path><defs><marker id="arrowhead677" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-E LE-F" id="L-E-F" style="opacity: 1;"><path class="path" d="M448.9765625,145.59375L528.6953125,145.59375L601.390625,145.59375" marker-end="url(https://stackedit.io/app#arrowhead678)" style="fill:none"></path><defs><marker id="arrowhead678" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(148.171875,92.85546875)" style="opacity: 1;"><g transform="translate(-52.328125,-13.359375)" class="label"><rect rx="0" ry="0" width="104.65625" height="26.71875"></rect><foreignObject width="104.65625" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-A-B" class="edgeLabel L-LS-A' L-LE-B">Welcome node</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(340.75,40.1171875)" style="opacity: 1;"><g transform="translate(-26.015625,-13.359375)" class="label"><rect rx="0" ry="0" width="52.03125" height="26.71875"></rect><foreignObject width="52.03125" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-B-C" class="edgeLabel L-LS-B' L-LE-C">scratch</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-B-E" class="edgeLabel L-LS-B' L-LE-E"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(528.6953125,145.59375)" style="opacity: 1;"><g transform="translate(-47.6953125,-13.359375)" class="label"><rect rx="0" ry="0" width="95.390625" height="26.71875"></rect><foreignObject width="95.390625" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-E-F" class="edgeLabel L-LS-E' L-LE-F">scratch/node</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-4864" transform="translate(39.421875,92.85546875)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.421875" y="-23.359375" width="62.84375" height="46.71875" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.421875,-13.359375)"><foreignObject width="42.84375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Log in</div></foreignObject></g></g></g><g class="node default" id="flowchart-B-4865" transform="translate(257.6171875,92.85546875)" style="opacity: 1;"><circle x="-32.1171875" y="-23.359375" r="32.1171875" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-22.1171875,-13.359375)"><foreignObject width="44.234375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS1</div></foreignObject></g></g></g><g class="node default" id="flowchart-C-4866" transform="translate(423.8828125,40.1171875)" style="opacity: 1;"><circle x="-32.1171875" y="-23.359375" r="32.1171875" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-22.1171875,-13.359375)"><foreignObject width="44.234375" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS2</div></foreignObject></g></g></g><g class="node default" id="flowchart-E-4868" transform="translate(423.8828125,145.59375)" style="opacity: 1;"><rect rx="0" ry="0" x="-25.09375" y="-23.359375" width="50.1875" height="46.71875" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-15.09375,-13.359375)"><foreignObject width="30.1875" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">srun</div></foreignObject></g></g></g><g class="node default" id="flowchart-F-4869" transform="translate(662.4609375,145.59375)" style="opacity: 1;"><circle x="-61.0703125" y="-23.359375" r="61.0703125" class="label-container"></circle><g class="label" transform="translate(0,0)"><g transform="translate(-51.0703125,-13.359375)"><foreignObject width="102.140625" height="26.71875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GPFS2 in node</div></foreignObject></g></g></g></g></g></g></svg></pre>
+<p>Afert running <code>srun</code> we are no longer in a welcome node and thus we can start running commands without “breaking the rules” of the vacc. Notice that by inhabiting node “321,” or whichever node you got, you are now interacting with an entirely diferent “machine” that has 50G of RAM. You have reserved this machine for 3 hours, after that point the system will kick you out back to the welcome node.</p>
+<h3 id="running-your-first-command"><em>running your first command</em></h3>
+<p><code>echo "hello world"</code></p>
+<p>congratulations you are all coders now… if you were not one before!!</p>
+<h3 id="automation-101"><em>automation 101</em></h3>
+<pre><code>for i in world mars jupiter venus
+do
+echo hello $i
+done
+</code></pre>
+<p>Notice that in this instance the letter <code>i</code> is transforming itself into a variable. the variable is being called in the code using the <code>$</code> simbol! The <code>$</code> symbol is key to distinguish the variable called <code>i</code> and the letter <strong>i</strong>. Very important distcintion!</p>
+<h3 id="numbered-sequences"><em>numbered sequences</em></h3>
+<pre><code>for i in {1..5}
+do
+echo $i
+done
+</code></pre>
+<p>Imagine looping from 1 to 5; easy <code>for i in 1 2 3 4 5</code>… Imagine looping from 1 to 1000000 … less fun! try <code>{a..b}</code> (works in reverse too!).</p>
+<h3 id="creating-arrays-in-memory"><em>creating arrays in memory</em></h3>
+<h4 id="define-an-array-with-three-items">define an array with three items</h4>
+<p><code>myarray=( mars jupiter moon world sun kaiper )</code></p>
+<p>To check the array we need to introduce some first bit of complexity<br>
+<code>echo ${myarray[@]}</code><br>
+Yet, we can now use this to provide all the stuff we want into a loop</p>
+<pre><code>for i in "${myarray[@]}"
+do
+ echo $i
+done
+</code></pre>
 
-* Useful to think of distributions as “predictive” outcomes 
-
-## Example of Deterministic processes 
-
-```mermaid
-graph LR
-A[X] -- process --> B[Y]
-```
-### examples
-
-$$
-a = F/m 
-$$
-> Newton's classic formula of accelation. $a$ is acceleration, $F$ is force, and $m$ is mass.
-> 
-$$
-y =x(1+r/m)^{Ym}
-$$
-> Formula for compound interest. $x$ is the current value, $y$ is future value. $r$ is the interest rate, $m$ is months, $Y$ is years.
-
-## Example of Stochastic processes 
-
-```mermaid
-graph LR
-A[X] -- process --> B[Y1]
-A[X] -- process --> C[Y2]
-A[X] -- process --> D[Y3]
-```
-### examples
-
-$$
-P(X = i) = ...something...
-$$
->Any equation that attempts to predict "states".. for example the weather...
-
-### A Bernoulli process
-$$
-P(Success) = P(X=1) = p
-$$
-
-> Where 1 is "heads"
-
-$$
-P(Failure) = P(X=0) = 1 - p
-$$
-
->Where 0 is "tails"
-
-### A Binomial process (many bernoulli processess)
-
-$$
-P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}
-$$
-
-# How does this connect with Evolution?
-Evolution is the study of how and why biological systems change as a function of time. We may want to think as the possible underlyign drivers of these process as random or deterministic. 
-
-## What are the possible outcomes of evolutionary change?
-
-1. **Directional changes**: the allele frequency or phenotypic state changes over time since underlying processess go in the same direction.
-2. **Equilibrium changes**: the allele frequency or phenotypic state stays the same over time because of opposing forces.
-3. **No Evolution**: a null model? 
-
-## Core evolutionary processess:
-1. **Mutation:** *Random* process that introduces variation.
-2. **Drift:** *Random* process that reduces variation due to finite sampling and may give rise to spatial and temporal population structure.
-3. **Selection:** *Deterministic* process that reduces variation (if directional) or maintans variation (if equilibrium).
-4. **Migration:** *Complex* process that homogenizes variation across space.
-5. **Recombination:** *Complex* process that shuffless variation across genomes.
-
-## The challenge of the class
-How can we predict and characterize these process in the wild?
