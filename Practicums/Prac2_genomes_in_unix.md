@@ -41,7 +41,7 @@ X  |   12345  |  snp_111  | G  |   A   |   29  |  PASS   | NS=3;DP=14;AF=0.5;DB;
 **A haplotype of interest**: A study in the sea star _Pycnopodia_ has identified several genes of  interest. We would like to extract these genes from the genome of pycno for further study. 
 
 I have already downloaded the genome from NCBI and have stored it in our shared VACC repository.
-```
+```bash
 ls /gpfs1/cl/biol6990/prac2/pycno_genome.fasta
 ```
 
@@ -315,7 +315,7 @@ Here we are loading the file to memory, passing it to `awk` and then `awk` is pr
 * ``awk`` _flags_ **modifier** `'{print...}'`
 * `-F` means the divider of the file and `\t` means _tabs_ (this could be `,` or `;` or other dividers)
 * The ``'{print $1}'`` is the core of the command and ``print $1`` means print the first column.
-* **NOTICE-->** inside the `awk` command the `$1` is not a global variable, but rather a parameter inherent to `awk` ... _yes, this is exactly why coding can be conflusing!_
+* **NOTICE-->** inside the `awk` command the `{ $1 }` is not a global variable, but rather a parameter inherent to `awk` ... _yes, this is exactly why coding can be conflusing!_ and needs to be practiced.
 * How may we print the second column, third... fourth...
 
 #### thus... what is this doing?
@@ -326,7 +326,7 @@ Here we are loading the file to memory, passing it to `awk` and then `awk` is pr
 2. remove the header
 3. print the first column
 4. extact row `${i}` ... recall here `${i}` will be supplied by the loop!
-5. hence... when ${i} = 1$ ... `${name}` will be the first name in column 1 of the file!
+5. hence... when $i = 1$ ... `${name}` will be the first name in column 1 of the file!
 
 * lets try that
 ```bash
@@ -347,11 +347,45 @@ ith=$(cat ${master_file} | sed '1d' | wc -l)
 
 for i in $(seq $ith)
  do
-  name1=$(cat $master_file |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
-  name2=$(cat $master_file |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
+  name1=$(cat ${master_file} |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
+  name2=$(cat ${master_file} |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
    echo "im an changing " $name2 " to " $name1 " when i = " $i
   # sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
  done
 ``` 
 
 ### Finally, the renaming step
+Its made of a modified `sed` command
+```bash
+sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
+```
+1. We are implementing the flag `-i` ... that tells `sed` to overwite the file given as an input.
+2. Notice that here we are not using the `cat` method because we dont just want to load the data in memory, we want the _actual_ file to be changed.
+3. This is also why we created a copy of genome!
+4. Lastly the flag `-E` is used to activate _special_ characters called **regular expressions**
+* Regular expressions are general symbols that can capture multiple types of characters
+
+| expression | meaning |
+| -- | -- |
+|^ | Start of string, or start of line in multi-line pattern|
+|\A | Start of string|
+|$ | End of string, or end of line in multi-line pattern|
+|\Z | End of string|
+|\b | Word boundary|
+|\B | Not word boundary|
+|.|Any character except new line (\n)|
+|(a\|b)|a or b|
+|+| this is a modifer that means "1 or more"|
+
+```bash
+sed -E -i "s/${var1}.+/${var2}/g" file.txt
+```
+vs
+```bash
+sed -E -i "s/${var1}/${var2}/g" file.txt
+```
+recall...
+```bash
+head -n 50 pycno_genome.fasta
+```
+# Are we ready to run? Questions
