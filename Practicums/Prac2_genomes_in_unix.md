@@ -283,11 +283,16 @@ head JASTWB01_contigs.tsv
 
 head JASTWB01_contigs.tsv | sed "s/pycn_heli/SOMETHINGNEW/g"
 ```
-#### Lets circle back to `ith`
+#### d. The `wc` command
+`wc` is a command that can be use to count the number of characters in a file or stream. in this particualr case the option `-l` tells `wc` to count the number of lines in the input file.
+```
+wc -l JASTWB01_contigs.tsv
+```
+### Lets circle back to `ith`
+If we put toghther the different pieces of the puzzle we can infer that: `ith` is a varible whose value is defined by the output of several piped functions. These functions first load a variable called `master_file`, which we know is the chromosome correspondance file, then it removes the first line (i.e., the header), and the it count the number of lines remaining in the correspondance file. Why would we want to do this?
 ```
 ith=$(cat $master_file | sed '1d' | wc -l)
 ```
-
 
 ### Implementing a loop with a replacement command in it!
 ```
