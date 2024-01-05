@@ -388,4 +388,59 @@ recall...
 ```bash
 head -n 50 pycno_genome.fasta
 ```
-# Are we ready to run? Questions
+# Lets run it! Yet...
+Is there a plot twist? -- yes... its **slow**
+
+```bash
+master_file=./JASTWB01_contigs.tsv
+working_file=./pycno_genome.fasta 
+
+cp ${working_file} ./pycno_genome_modnames.fasta
+
+ith=$(cat ${master_file} | sed '1d' | wc -l)
+
+for i in $(seq ${ith} )
+ do
+  name1=$(cat ${master_file} |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
+  name2=$(cat ${master_file} |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
+    echo "im an changing " $name2 " to " $name1 " when i = " $i
+   sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
+ done
+``` 
+
+# The solution 
+
+Lets submit this script as a SLURM job to the VACC!! Start by copying the code below and saving it to a *new file* called `my_renaming_script.sh`
+
+
+```bash
+#!/usr/bin/env bash
+#
+#SBATCH -J rename_scr
+#SBATCH -c 10
+#SBATCH -N 1 # on one node
+#SBATCH -t 6:00:00 
+#SBATCH --mem 10G 
+#SBATCH -o ./slurmOutput/dbgarr.%A_%a.out
+#SBATCH -p bluemoon
+
+
+master_file=./JASTWB01_contigs.tsv
+working_file=./pycno_genome.fasta 
+
+cp ${working_file} ./pycno_genome_modnames.fasta
+
+ith=$(cat ${master_file} | sed '1d' | wc -l)
+
+for i in $(seq ${ith} )
+ do
+  name1=$(cat ${master_file} |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
+  name2=$(cat ${master_file} |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
+    echo "im an changing " $name2 " to " $name1 " when i = " $i
+   sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
+ done
+```
+Make sure that _needed_ files are in the same directory as the script.. otherwise an error will occur. Then, launch the script to be run by the VAA itself using:
+```bash
+sbatch --account=biol6990 my_renaming_script.sh
+```
