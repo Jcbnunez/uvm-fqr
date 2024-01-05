@@ -90,6 +90,15 @@ head -n 10 GeneFeatureFile.gtf
 ```
 Do we observe something strange?  ... What is going on?
 
+### The names appear not to match! how can we check?
+We can use computational tools combined with a basic understanding of the file properties to explore the file's content without any need to open a gigantic genome file.
+
+* For example, we know that, by desing, all the chromosome names in a fasta file are named using the `>` symbol. So we can use a function to _extract_ all the information attached to lines containing `>`. -- **enter `grep`**.
+
+```bash
+grep ">" pycno_genome.fasta
+```
+
 ## Emailing the author...
 
 **You**: Dear author, I am interested in conducting follow up analyses on the genome of *Pycnopodia* that you published in 2018. I am interested in extracting  some loci. Yet, when I download the genome from NCBI, the chromosomes are labebled with the standard NCBI genomic nomenclature (JASTWB0100...) and I cannot cross-validate scaffold "pycn_heli.0008". Do you have any thoughts about how to cross-validate scaffolds?
@@ -130,7 +139,7 @@ for i in $(seq ${ith} )
  do
   name1=$(cat ${master_file} |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
   name2=$(cat ${master_file} |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
-   echo "im an changing " ${name2} " to " ${name1} " as per " ${i}
+    echo "im an changing " $name2 " to " $name1 " when i = " $i
    sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
  done
 ``` 
@@ -288,7 +297,7 @@ for i in $(seq $ith)
  do
   name1=$(cat $master_file |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
   name2=$(cat $master_file |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
-   echo "im an changing " $name2 " to " $name1 " as per " $i
+    echo "im an changing " $name2 " to " $name1 " when i = " $i
    sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
  done
 ``` 
@@ -326,4 +335,23 @@ i=1
 name1=$(cat ${master_file} |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
 echo ${name1}
 ```
-This action... of arbritrarily setting `i = 1` is core to debugging!
+This action... of arbritrarily setting `i = 1` is core to debugging!... 
+
+* **Question -> what is `${name2}`?**
+
+### Lets run a debugging run
+Here we are going to use the `#` to "comment out" or "inactivate" a chunk of code, so that we can test the rest.
+
+```bash
+ith=$(cat ${master_file} | sed '1d' | wc -l)
+
+for i in $(seq $ith)
+ do
+  name1=$(cat $master_file |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
+  name2=$(cat $master_file |  sed '1d' | awk '{print $2}' | sed "${i}q;d" )
+   echo "im an changing " $name2 " to " $name1 " when i = " $i
+  # sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
+ done
+``` 
+
+### Finally, the renaming step
