@@ -1,4 +1,4 @@
-# *Data challenge* my genome file and my annotation file do not match! *mon dieu!*
+# *Data challenge* (-prac 2) my genome file and my annotation file do not match! *mon dieu!*
 
 A problem as old as time (not really, but humor me). As computational biologists we are often interested in investigating DNA sequences not just at the level of nucleotides but their potential funtional consequences. The challenge, however, is that, due to the inherent data complexity of DNA data, sequence data, variation data, and functional data are stored in different format that may not integrate into each other in an intuitive way. For example
 
@@ -294,7 +294,7 @@ If we put toghther the different pieces of the puzzle we can infer that: `ith` i
 ith=$(cat $master_file | sed '1d' | wc -l)
 ```
 
-### Implementing a loop with a replacement command in it!
+## Fianlly, the loop that will replace names!
 ```
 for i in $(seq $ith)
  do
@@ -304,3 +304,6 @@ for i in $(seq $ith)
    sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
  done
 ``` 
+1. We are creating a loop that will go for `$ith` number of iterations.
+2. Inside the loop the two variables will be created 
+	
