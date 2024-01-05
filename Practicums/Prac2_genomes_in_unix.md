@@ -49,42 +49,42 @@ ls /gpfs1/cl/biol6990/prac2/pycno_genome.fasta
 
 1. Move to your scratch directory **(known skill!)**
 2. create a working folder for this challenge
-```
+```bash
 mkdir pycno_challenge
 ```
 3. move into your new folder
-```
+```bash
 cd pycno_challenge
 ```
 4. Check what is inside this new folder
-```
+```bash
 ls -l ./
 ##this is the same as just ls -l
 ```
 5. Copy the genome from the repo to your folder
-```
+```bash
 cp /gpfs1/cl/biol6990/prac2/pycno_genome.fasta ./
 ## cp <from+file> <to>
 ```
 6. Check what is inside this new folder... again.
-```
+```bash
 ls -l ./
 ```
 
 ## Exploring the genome
 Explore the heads and tails command
-```
+```bash
 head -n 50 pycno_genome.fasta
 ## head -n <nlines> <file>
 ```
 
-```
+```bash
 tail -n 50 pycno_genome.fasta
 ## tail -n <nlines> <file>
 ```
 
 ## Adquiring the gene feature file
-```
+```bash
 cp /netfiles/nunezlab/FQR_files/GeneFeatureFile.gtf
 head -n 10 GeneFeatureFile.gtf
 ```
@@ -97,12 +97,12 @@ Do we observe something strange?  ... What is going on?
 ---
 **Author**: Dear X, my appologies that you are experiencing this road block! Our analyses was conducted before the genome was made public using our own chromosome nomenclature. Here is a file with the corresponding association of the "pycn_heli" names with the JASTWB ids.
 
-```
+```bash
 cp /gpfs1/cl/biol6990/prac2/JASTWB01_contigs.tsv ./
 ```
 ---
 ## Exploring the corresponding file
-```
+```bash
 head JASTWB01_contigs.tsv
 ```
 
@@ -118,7 +118,7 @@ What is  the **best use of your time**? ... What is the **best use of *future yo
 ## Breaking down the code (lets take a reverse engineering approach!).
 Lets break down what is going on here .... the _stack overflow_ approach! 
 >**lets talk about stack overflow** for one minute...
-```
+```bash
 master_file=./JASTWB01_contigs.tsv
 working_file=./pycno_genome.fasta 
 
@@ -135,7 +135,7 @@ for i in $(seq $ith)
  done
 ``` 
 ### Annotated code...
-```
+```bash
 ### Variables declared by the user... <more details>
 master_file=./JASTWB01_contigs.tsv
 working_file=./pycno_genome.fasta 
@@ -157,7 +157,7 @@ for i in $(seq $ith)
 ``` 
 ## What are the parts of the code?
 ### Variables declared by the user
-```
+```bash
 master_file=./JASTWB01_contigs.tsv
 working_file=./pycno_genome.fasta 
 ```
@@ -167,7 +167,7 @@ In unix, variables are often declared with the `=` simbol and recalled with the 
 
 ### File generated in situ (to create data redundancy!; _failsafe_)
 Why is the code asking us to do this? The reality is that it is not necessary but it is a failsafe custom. Basically, the way this code works, it constantly overwrites the original file. What about if we get this wrong? An easy solution is to introduce redundancy and safety copies to the process. 
-```
+```bash
 cp $working_file ./pycno_genome_modnames.fasta
 ```
 #### Commands to keep in mind:
@@ -176,7 +176,7 @@ cp $working_file ./pycno_genome_modnames.fasta
 
 ### Create a varible with number of itherations & introduction to loops
 Before we can get at what the the `ith` varaiable means, we first need to take a deep dive into _loops_.
-```
+```bash
 ith=$(cat $master_file | sed '1d' | wc -l)
 ```
 ```mermaid
@@ -190,26 +190,26 @@ C --repeat--> B
 ```
 
 #### A basic loop 1
-```
+```bash
 for i in A B C
 do
 echo $i
 done
 ```
 #### Creating a sequence with `seq`
-```
+```bash
 seq 10
 #seq --help
 ```
 #### A basic loop 2
-```
+```bash
 for i in $(seq 10)
 do
 echo $i
 done
 ```
 Here we are using the power of the `$()` construction to transform the output of the `seq` function into a variable that is, at the same time, the input of the loop itself. This reveals the first path to "scaling up the code" because we can **nest** these variables into each other... `$(seq $a)`.
-```
+```bash
 a=15
 for i in $(seq $a)
 do
@@ -221,7 +221,7 @@ Notice that our loop has two variables.. it has `a`, that is globally set, and i
 
 ### What does _loops_ have to do with `ith`
 At this point we have covered loops. Yet, notice that we have always given the loop... either the actual objects to iterate over (`A B C`) or a number of given iterations `seq 15`. What about if we dont know how many iteration our loop may need?  That is the purpose of defining `ith`
-```
+```bash
 master_file=./JASTWB01_contigs.tsv
 ith=$(cat $master_file | sed '1d' | wc -l)
 ```
@@ -232,16 +232,16 @@ ith=$(cat $master_file | sed '1d' | wc -l)
 
 #### a. Piped workflow
 Its a coding tool that uses the `|` symbol. This symbol "re-routes" the output of a function to another function, instead of reporting it to the user.
-```
+```bash
 seq 15
 ``` 
-```
+```bash
 seq 15 | head -n 3
 seq 15 | tail -n 3
 ```
 #### b. The `cat` command
 Stands for _concatenate_ it is a versatile command with a few uses. Its most basic form is used to load the contents of a file into memory. Yet, a fancier application is to merge two, or more, files into 1. For example:
-```
+```bash
 # assume that file_1.txt and file_2.txt exist
 cat file_1.txt file_2.txt > newfile.txt
 ```
@@ -260,17 +260,17 @@ Can you create a code that takes the first 5 line of the genome and the last 5 l
 3. Search and replace a set of characters in a line(s) of text.
 
 #### c. 1 `sed` to remove rows/lines of text
-```
+```bash
 seq 10
 seq 10 | sed "5d"
 ```
 #### c. 2 `sed` to select rows/lines of text
-```
+```bash
 seq 10 | sed "5q;d"
 ```
 #### c. 3 `sed` to find and replace
 One of the most powerful and widely used utilities of the program
-```
+```bash
 echo "groovy UV cool cats"
 echo "groovy UV cool cats" | sed "s/cats/mooses/g"
 ```
@@ -278,24 +278,24 @@ The general structure is `s/original/replacement/g`. In this particular sintax, 
 
 * Here is one example:
 
-```
+```bash
 head JASTWB01_contigs.tsv
-
 head JASTWB01_contigs.tsv | sed "s/pycn_heli/SOMETHINGNEW/g"
 ```
 #### d. The `wc` command
 `wc` is a command that can be use to count the number of characters in a file or stream. in this particualr case the option `-l` tells `wc` to count the number of lines in the input file.
-```
+```bash
 wc -l JASTWB01_contigs.tsv
 ```
 ### Lets circle back to `ith`
 If we put toghther the different pieces of the puzzle we can infer that: `ith` is a varible whose value is defined by the output of several piped functions. These functions first load a variable called `master_file`, which we know is the chromosome correspondance file, then it removes the first line (i.e., the header), and the it count the number of lines remaining in the correspondance file. Why would we want to do this?
-```
+```bash
 ith=$(cat $master_file | sed '1d' | wc -l)
 ```
 
-## Fianlly, the loop that will replace names!
-```
+## Finally, the loop that will replace names!
+We are creating a loop that will go for `$ith` number of iterations.
+```bash
 for i in $(seq $ith)
  do
   name1=$(cat $master_file |  sed '1d' | awk '{print $1}' | sed "${i}q;d" )
@@ -304,6 +304,12 @@ for i in $(seq $ith)
    sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
  done
 ``` 
-1. We are creating a loop that will go for `$ith` number of iterations.
-2. Inside the loop the two variables will be created 
-	
+Inside the loop, two variables will be created `name1` and `name2`. These variables will have a value equal to many piped functions. We know `cat` and `sed`... what about `awk`?
+
+### `awk` -- a data driven scripting langage!
+Similar to `sed`, an entire class could be devoted to `awk`. This language is extremely versatile and can be use for very efficient data mining in unix. Here we will barely scratch the surface of its capabilities. In this course we will mostly use `awk` as a tool to extract information across entire columns in large and complex **files**... such as genomes, feature files, and other genomic datasets.
+
+```bash
+head $master_file
+awk -F  '\t' '{print $1}'
+```
