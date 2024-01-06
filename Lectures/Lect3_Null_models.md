@@ -76,20 +76,44 @@ Lets say, we pose the same question as we did above, yet we now add an element o
 
 #### Probability of observing a homozygous $AA$
 
+Assuming that the probability of sampling any $A$ is $p$ (using classical nomemclature, we could also call this $p_A$), then:
+
 $$
-Pr(AA) = 
+Pr(Ho_{AA}) = f_{AA} = p\ x\ p = p^2
 $$
+
+it is the multiplication of two independent events. That is sampling an $A$ once ($p_A$) and then a second time.. i.e., another $p_a$
 
 #### Probability of observing a homozygous $aa$
+Assuming that the probability of sampling any $a$ is $q$ (using classical nomemclature, we could also call this $p_a$), then:
 
 $$
-
+Pr(Ho_{aa}) = f_{aa} = q\ x\ q = q^2
 $$
 
 #### Probability of observing a heterozygous of _any kind_
+Now here we are dealing with two dependent probability staments. That is the probability of sampling and $A$ and then and $a$ ... or ... sampling and $a$ and then and $A$.
+
+* Probability of sampling and $A$ and then and $a$
 
 $$
-
+Pr(A\ and\ a) = p\ x\ q = pq
 $$
 
+* Probability of sampling and $a$ and then and $A$
 
+$$
+Pr(a\ and\ A) = q\ x\ p = qp = pq
+$$
+
+* Thus, the total probability is the sum of the two mutually exclusive events or:
+
+$$
+Pr(He) = f(Aa\ and\ aA ) = pq + pq = 2pq
+$$
+
+### Recall because these are the only genotypes that exist, then it must be true that (i.e., _the "universe" must add up to 1_):
+
+$$
+p^2 + 2pq + q^2 = 1
+$$
