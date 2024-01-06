@@ -324,8 +324,7 @@ upper_shells_sample=rnorm(n=N, mean = 10.2, sd = 3.8)
 lower_shells_sample=rnorm(n=N, mean = 11.5, sd = 5.3)
 # run the test
 test_result=t.test(upper_shells_sample,lower_shells_sample)
-#has the null hypothesis been rejected? 
-#(we know that these are true positives in reality)
+#has the null hypothesis been rejected? it should be!
 true_positive=test_result$p.value < 0.05
 #create an output data frame
 output =
