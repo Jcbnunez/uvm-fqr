@@ -60,8 +60,8 @@ $$
 
 ### :crystal_ball: Thus, our null, higly idealized, model would predict no change in allele frequencies ever in the population.
 
-## Case 2: Diploidy
-Lets say, we pose the same question as we did above, yet we now add an element of complexity. We add the diploid condition. This now means that each individual in the population now carries 2 copies of gene $\alpha$... and the complexity is that these genes many carry any allele. As such individuals may now be found carrying either $AA$, $aa$, $Aa$ or $aA$ combination of alleles! We often call these combination of alleles, "a genotype".
+## Case 2: (di)Ploidy
+Lets say, we pose the same question as we did above, yet we now add an element of complexity. We add the **diploid** condition (i.e., $2N$). This now means that each individual in the population now carries 2 copies of gene $\alpha$... and the complexity is that these genes many carry any allele. As such individuals may now be found carrying either $AA$, $aa$, $Aa$ or $aA$ combination of alleles! We often call these combination of alleles, "a genotype".
 
 #### Opening the can of worms :bug: ....Now we must be able to predict, not just the allele frequency, but also the genotype frequency over time. Lets do it!
 
