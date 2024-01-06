@@ -256,7 +256,7 @@ data.frame(trial=i, mean=xbar)
 ```
 ##### Why is there noise around the mean ... when these are simulated Virtual  :robot: Snails :shell:? (hint -- sample means are strongly affected by the sample size and the variance $\sigma$ of the population )
 
-### The impact of sample size in $\bar{x}$
+### The impact of sample size on $\bar{x}$
 ```r
 mean_explorer=
 foreach(i = 1:500, 
@@ -280,4 +280,91 @@ ggsave(myplot, file = "myplot.pdf", w = 6, h = 4)
 1. an exploration of the variance `sd` parameter. Plot it using the `color` option in ggplot. Explore at least 4 other `sd` parameters. 
 2. Also include small reflection on "what evolutionary force may reduce variance in a phenotype?"
 
+---
 
+### Lets now compare the upper and lower intertidal populations
+```r
+#simulate high tide
+upper_samps =
+data.frame(
+shell=rnorm(n=25, mean = 10.2, sd = 3.8),
+habitat="upper"
+)
+
+#simulate low tide
+lower_samps =
+data.frame(
+shell=rnorm(n=25, mean = 11.5, sd = 5.3),
+habitat="lower"
+)
+
+both_samps = rbind(upper_samps, lower_samps)
+```
+### Visualization with box plots
+```r
+both_samps %>%
+ggplot(aes(
+x=habitat,
+y=shell,
+)) +
+geom_boxplot()-> myplot
+
+ggsave(myplot, file = "myplot.pdf", w = 6, h = 4)
+```
+# Simulation based power analysis
+With all the pieces in place in place, we can finally dive into the power analysis proper. There are many ways to do a power analysis, some are off-the-shelf methods that use paramteric assumotions. Those are fine. I prefer to use simulations (as we have been doing it) to assess power across my tests. 
+
+```r
+power_analysis=
+foreach(N = seq(from=10, to=1000, by=10), .combine = "rbind")%do%{
+foreach(k=1:100, .combine = "rbind")%do%{
+#simulate high tide
+upper_shells_sample=rnorm(n=N, mean = 10.2, sd = 3.8)
+#simulate low tide
+lower_shells_sample=rnorm(n=N, mean = 11.5, sd = 5.3)
+# run the test
+test_result=t.test(upper_shells_sample,lower_shells_sample)
+#has the null hypothesis been rejected? 
+#(we know that these are true positives in reality)
+true_positive=test_result$p.value < 0.05
+#create an output data frame
+output =
+data.frame(
+sample_size=N,
+simulation_id=k,
+true_positive=true_positive
+)
+#explicitly tell the loop to return the "output" into memory
+message(paste("just finished", k, "of", N, sep = " "))
+return(output)
+} # close k
+} # close N
+```
+
+### Now let's summarize the output
+```r
+power_analysis %>%
+group_by(sample_size, true_positive) %>%
+summarize(observations=n()) -> true_false_table
+```
+### Graph
+```r
+true_false_table %>%
+ggplot(aes(
+x=sample_size,
+y=observations/100,
+color=true_positive
+)) + geom_line() +
+ggtitle("Simulated power of alpha 5% at sample size:")-> myplot
+
+ggsave(myplot, file = "myplot.pdf", w = 6, h = 4)
+```
+### So the sample size is...?
+```r
+true_false_table %>%
+filter(true_positive == TRUE) %>%
+filter(observations > 95) %>%
+arrange() %>%
+head(1)
+```
+~huzza for simulated Virtual  :robot: Snails :shell:!
