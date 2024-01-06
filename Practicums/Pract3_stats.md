@@ -214,6 +214,7 @@ One of the most foundational questions of quantitative analysis is whether or no
 |--|--|--|
 |$H_0\ rejected$|$\alpha$|$1-\beta$|
 |$H_0\ not\ rejected$|$1-\alpha$|$\beta$|
+
 or
 
 ||$H_0\ true$|$H_0\ false$|
