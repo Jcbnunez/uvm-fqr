@@ -17,10 +17,10 @@ The question then is, if we agree that the proportion of organisms with allele $
 Tacking this question requires establishing some basic notation. First we need a summary statistic... the thing we actually want to measure. For example
 
 $$
-p_a =  \frac{a}{N}
+p_a =  \frac{n_i}{N}
 $$
 
-where $N$ is the number of individuals in the population. In other words, $p_a$ is simply the frequency of " $a$ " in the population (i.e., the sum of all $A$ and $a$). Now, **becuase in our idealized population** only $A$ and $a$ exist, hence it must be true that:
+where $N$ is the number of individuals in the population, and $n_i$ is the number of times an allele is observed. In this context the alleles are either $a$ or $A$. In other words, $p_a$ is simply the frequency of " $a$ " in the population (i.e., the sum of all $A$ and $a$). Now, **becuase in our idealized population** only $A$ and $a$ exist, hence it must be true that:
 
 $$
 p_a =1-p_A  
@@ -122,13 +122,13 @@ $$
 ### But what about allele frequnecies? We can deribe this from the genotype frequencies 
 
 $$
-p = f(Ho_{AA}) + ½f(Het)
+p = 2f(Ho_{AA}) + f(Het)
 $$
 
 and
 
 $$
-q = f(Ho_{aa}) + ½f(Het)
+q = 2f(Ho_{aa}) + f(Het)
 $$
 
 ## :mega: Notably, while the math has (somewhat) increased in complexity, the overall pattern remains the same
