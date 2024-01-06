@@ -174,4 +174,10 @@ Note that these function structure `dpois` or `ppois` also exist for all sorts o
 
 ## Data challenge 2. Is this apples to oranges, apples to apples, or underpowered? (but it is _sea snails_ :shell:).
 
-In a certain species of marine snail :shell: 
+A certain species of marine snail :shell: lives in an intertidal ecosystem. A 30 year study  has shown that the diameter of shell phenotypes vary across the intertidal, and that the phenotypic variation follows a _normal_ (or _Gaussian_) distrbution with different parameters across the low and high intertidal microhabitats.
+
+$$
+f(x) = (\sigma\sqrt {2\pi})^{-1}   e^{-\frac{1}{2} (\frac{x-\mu}{\sigma})^2 }
+$$
+
+With core parameters being $\mu$ (mean) and $\sigma$ (standard deviation).
