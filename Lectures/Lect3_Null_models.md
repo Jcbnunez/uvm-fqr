@@ -131,7 +131,7 @@ $$
 q = f(Ho_{aa}) + ½f(Het)
 $$
 
-## Notably, while the math has (somewhat) increased in complexity, the overall pattern remains the same
+## :mega: Notably, while the math has (somewhat) increased in complexity, the overall pattern remains the same
 
 |param|t|t+1|t+n|
 |--|--|--|--|
