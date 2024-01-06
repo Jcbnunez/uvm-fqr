@@ -8,15 +8,20 @@ Given that evolution is the study of _change_, as a function of time or space in
 4. Every individual has equal chance of mating with any other individual (random mating)
 5. All phenotypes (and genotypes) are effectively neutral (no selection)
 
+## Case 1: a simple idealized haploid
+ 
 Now, lets imagine that the genomes of the organisms in this population have only one gene, lets call it "gene $\alpha$", and that the gene has two _alleles_ called $A$ and $a$ (sounds familiar?).
 
-The question then is, if we agree that the proportion of organisms with allele $A$ or $a$, say the allele frequency ($AF$), is a good measurement of evolution, then if I where to measure  $AF$ today, tomorrow, and in 100 years in this population... what should we expect?  
+The question then is, if we agree that the proportion of organisms with allele $A$ or $a$, say the allele frequency, is a good measurement of evolution, then if I where to measure  allele frequency, today, tomorrow, and in 100 years in this population... what should we expect?  
 
 Tacking this question requires establishing some basic notation. First we need a summary statistic... the thing we actually want to measure. For example
+
 $$
 p_a = \frac{\#a}{\#A+\#a}
 $$
+
 In other words, $p_a$ is simply the frequency of "$a$" in the population (i.e., the sum of all $A$ and $a$). Now, **becuase in our idealize population** only $A$ and $a$ exist, hence it must be true that:
+
 $$
 p_a =1-p_A  
 $$
@@ -27,10 +32,21 @@ $$
 p_A + p_a = 1
 $$
 
-This is just a logical necessity since the two frequencies all *must* add up to 1, or **the totality of the universe**... (so to speak). 
+This is just a logical necessity since the two frequencies all *must* add up to 1, or **the totality of the universe**... (so to speak).  Also note that, in population genetics, it is customary to call these complementary frequencies $p$ and $q$ such that
+
+$$
+p_a  = q\ \ and\ \ p_A = p
+$$
+
+and
+
+$$
+p + q = 1
+$$
+
 
 ### So what will be the frequencies of these alleles over times
-Becuase in our ideallized _nothing_ changes, then:
+Becuase in our ideallized population _nothing_ changes, then:
 
 $$
 p_{a,\ t+1} =   p_{a,\ t}
@@ -41,3 +57,32 @@ Furthermore, becuase in our ideallized population _nothing_ **ever** changes, th
 $$
 p_{a,\ t+n} =   p_{a,\ t}
 $$
+
+### :crystal_ball: Thus, our null, higly idealized, model would predict no change in allele frequencies ever in the population.
+
+## Case 2: Diploidy
+Lets say, we pose the same question as we did above, yet we now add an element of complexity. We add the diploid condition. This now means that each individual in the population now carries 2 copies of gene $\alpha$... and the complexity is that these genes many carry any allele. As such individuals may now be found carrying either $AA$, $aa$, $Aa$ or $aA$ combination of alleles! We often call these combination of alleles, "a genotype".
+
+#### Opening the can of worms :bug: ....Now we must be able to predict, not just the allele frequency, but also the genotype frequency over time. Lets do it!
+
+* Lets simplify our math a bit by modeling the probability of observing an individual that has two identical states, either $AA$ or $aa$ (we call these homozygous states), as well as different by allelic state ($Aa$, $aA$; regarding of order) these we call heterozygous states. 
+
+#### Probability of observing a homozygous $AA$
+
+$$
+Pr(AA) = 
+$$
+
+#### Probability of observing a homozygous $aa$
+
+$$
+
+$$
+
+#### Probability of observing a heterozygous of _any kind_
+
+$$
+
+$$
+
+
