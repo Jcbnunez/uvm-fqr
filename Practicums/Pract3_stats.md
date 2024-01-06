@@ -245,14 +245,39 @@ rnorm(n=1, mean = 10.2, sd = 3.8)
 rnorm(n=15, mean = 10.2, sd = 3.8)
 #function (n, mean = 0, sd = 1)
 ```
-### Population mean vs. sample mean
+### Population mean ($\mu$) vs. sample mean ($\bar{x}$)
 While we know that the upper tidal snails have :shell: $\sim \mathscr N(10.2,3.8)$, and thus the. **true** mean of the population should be $12.2$ what would happen if we calculate the mean of our sample `rnorm(n=15, mean = 10.2, sd = 3.8)`.
 
 ```r
 foreach(i = 1:10, .combine = "rbind")%do%{
-rnorm(n=15, mean = 10.2, sd = 3.8) %>% mean 
+rnorm(n=15, mean = 10.2, sd = 3.8) %>% mean -> xbar
+data.frame(trial=i, mean=xbar) 
 }
 ```
-##### Why is there noise around the mean ... when these are simulated Virtual  :robot: Snails :shell:?
+##### Why is there noise around the mean ... when these are simulated Virtual  :robot: Snails :shell:? (hint -- sample means are strongly affected by the sample size and the variance $\sigma$ of the population )
+
+### The impact of sample size in $\bar{x}$
+```r
+mean_explorer=
+foreach(i = 1:500, 
+.combine = "rbind")%do%{
+rnorm(n=i, mean = 10.2, sd = 3.8) %>% mean -> xbar
+data.frame(samplesize=i, mean=xbar)
+}
+
+mean_explorer %>%
+ggplot(aes(
+x=samplesize,
+y=mean
+)) +
+geom_line() +
+geom_hline(yintercept = 10.2) -> myplot
+
+ggsave(myplot, file = "myplot.pdf", w = 6, h = 4)
+```
+
+# :mortar_board:HOMEWORK:mortar_board: : please include in your next reflection:
+1. an exploration of the variance `sd` parameter. Plot it using the `color` option in ggplot. Explore at least 4 other `sd` parameters. 
+2. Also include small reflection on "what evolutionary force may reduce variance in a phenotype?"
 
 
