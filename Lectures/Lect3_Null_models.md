@@ -137,8 +137,8 @@ $$
 |--|--|--|--|
 |$p$|$p_t$|$p_t$|$p_t$|
 |$q$|$q_t$|$q_t$|$q_t$|
-|$f_{AA_t}$|$p_t^2$|$p_t^2$|$p_t^2$|
-|$f_{Aa_t}$|$2pq_t$|$2pq_t$|$2pq_t$|
-|$f_{aa_t}$|$q_t^2$|$q_t^2$|$q_t^2$|
+|$f_{AA}$|$p_t^2$|$p_t^2$|$p_t^2$|
+|$f_{Aa}$|$2pq_t$|$2pq_t$|$2pq_t$|
+|$f_{aa}$|$q_t^2$|$q_t^2$|$q_t^2$|
 
 #### A model of "no evolution," indeed. Lets work on some code!
