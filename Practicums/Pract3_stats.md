@@ -31,7 +31,7 @@ library(tidyverse)
 
 ## Data challenge 1. Is "this" a good use of my time?
 
-Imagine an orchard off Mount Mansfield. The orchard spand from the base of the mountain to high elevation (as high as it can support crops). In this orchard you have discovered a very rare new species of insect that **appears** to be polyphenic at different altitudes. Studying this insect could be great for your career! One minor problem... this insect is extremely rare you only have a very small window of time to do your sampling. Is it worth even trying? 
+Imagine an orchard off Mount Mansfield. In this orchard you have discovered a very rare new species of insect that **appears** to be polyphenic at different altitudes. Studying this insect could be great for your career! One minor problem... this insect is extremely rare you only have a very small window of time to do your sampling. Is it worth even trying? 
 
 * Local farmers report seeing 1 insect every week.
 * You only have 1 hour every week to do field-work
@@ -155,12 +155,15 @@ data.frame(lambda = l, iparam = i, Prob = out)
 Lets map $\lambda$  to color
 ```r
 mydf_double %>% 
-ggplot(aes(x=iparam,
+ggplot(aes(
+x=iparam,
 y=Prob,
-color = as.character(lambda) )) + 
+color = as.character(lambda) 
+)) + 
 geom_line() -> myplot
 ggsave(myplot, file = "myplot.pdf", w = 4, h = 4)
-# These spacing patterns are tolerated by R (not other languages like python).
+# These spacing patterns are tolerated by R ...
+# (not other languages like python).
 ```
 ##### Why I am plotting $\lambda$ `as.character`? What would happen if I allow it to be a number?
 ##### Also, should I conduct my study in a universe where $\lambda=0.05$ vs $\lambda=10$...?
@@ -169,4 +172,5 @@ ggsave(myplot, file = "myplot.pdf", w = 4, h = 4)
 Note that these function structure `dpois` or `ppois` also exist for all sorts of fucntions ... such as `binom` (binomial), `norm` (normal) ... This will come in handy in later lectures.
 
 
-## Data challenge 2. Is this apples to oranges, apples to apples, or underpowered?
+## Data challenge 2. Is this apples to oranges, apples to apples, or underpowered? (but with sea urchins)
+
