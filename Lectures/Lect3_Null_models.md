@@ -17,17 +17,10 @@ The question then is, if we agree that the proportion of organisms with allele $
 Tacking this question requires establishing some basic notation. First we need a summary statistic... the thing we actually want to measure. For example
 
 $$
-p_a =  \frac{a_i}{\sum_{i} {A_i} +a_i}
+p_a =  \frac{a}{N}
 $$
 
-more simplistically...
-
-$$
-p_a = \frac{a}{A+a}
-$$
-
-
-In other words, $p_a$ is simply the frequency of "$a$" in the population (i.e., the sum of all $A$ and $a$). Now, **becuase in our idealize population** only $A$ and $a$ exist, hence it must be true that:
+where $N$ is the number of individuals in the population. In other words, $p_a$ is simply the frequency of "$a$" in the population (i.e., the sum of all $A$ and $a$). Now, **becuase in our idealized population** only $A$ and $a$ exist, hence it must be true that:
 
 $$
 p_a =1-p_A  
@@ -122,8 +115,30 @@ $$
 
 |Class|Expected frequency|
 |--|--|--|
-|$AA$|$p^2$|
-|$aa$|$q^2$|
-|$Aa\ and\ aA$|$2pq$|
+|$f(Ho_{AA})$|$p^2$|
+|$f(Ho_{aa})$|$q^2$|
+|$f(Het)$|$2pq$|
 
 ### But what about allele frequnecies? We can deribe this from the genotype frequencies 
+
+$$
+p = f(Ho_{AA}) + ½f(Het)
+$$
+
+and
+
+$$
+q = f(Ho_{aa}) + ½f(Het)
+$$
+
+## Notably, while the math has (somewhat) increased in complexity, the overall pattern remains the same
+
+|param|t|t+1|t+n|
+|--|--|--|--|
+|$p$|$p_t$|$p_t$|$p_t$|
+|$q$|$q_t$|$q_t$|$q_t$|
+|$f_{AA_t}$|$p_t^2$|$p_t^2$|$p_t^2$|
+|$f_{Aa_t}$|$2pq_t$|$2pq_t$|$2pq_t$|
+|$f_{aa_t}$|$q_t^2$|$q_t^2$|$q_t^2$|
+
+#### A model of "no evolution," indeed. Lets work on some code!
