@@ -20,7 +20,7 @@ $$
 p_a =  \frac{a}{N}
 $$
 
-where $N$ is the number of individuals in the population. In other words, $p_a$ is simply the frequency of "$a$" in the population (i.e., the sum of all $A$ and $a$). Now, **becuase in our idealized population** only $A$ and $a$ exist, hence it must be true that:
+where $N$ is the number of individuals in the population. In other words, $p_a$ is simply the frequency of " $a$ " in the population (i.e., the sum of all $A$ and $a$). Now, **becuase in our idealized population** only $A$ and $a$ exist, hence it must be true that:
 
 $$
 p_a =1-p_A  
