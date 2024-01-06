@@ -194,10 +194,10 @@ The 30 year study indicate that, in the upper tide, :shell: diameters can be des
 
 | tidal habitat | :shell:  function |
 | -- | -- |
-|Upper Tide|$I_u \sim \mathscr N(1.2,0.8)$|
-|Lower Tide|$I_l \sim \mathscr N(1.5,1.3)$|
+|Upper Tide|$I_u \sim \mathscr N(10.2,3.8)$|
+|Lower Tide|$I_l \sim \mathscr N(11.5,5.3)$|
 
-* Note that $I_u \sim \mathscr N(1.2,0.8)$ ... **is just mathematical notation for "follow a _Gaussian_/_Normal_ dristibution with mean 1.2 and standard deviation 0.8"** (in the upper tidal zone, anyways). 
+* Note that $I_u \sim \mathscr N(10.2,3.8)$ ... **is just mathematical notation for "follow a _Gaussian_/_Normal_ dristibution with mean 1.2 and standard deviation 0.8"** (in the upper tidal zone, anyways). 
 
 The challenge is simple, based on these known statistical properties of the populations, **how many individuals** should I sample across both microhabitats in order to show that the diameters of :shell: across these habitats is different... at a significance level of 5% (i.e. two-tailed $\alpha = 0.05$)?
 
@@ -229,4 +229,30 @@ power = 1- \beta = Pr(reject\ H_0 | H_1\ is\ true)
 $$
 
 * Intuitively this may be interpreted as... if we have power = 95%.. then... if I repeat my experiment 100 times, 95 times I should correctly reject the null (i.e., get a "true positive"). Yet, logically this suggests that 5 times I will get a **"false negative"**... but I can live with that.
-* _P_-value **thresholds** (e.g., 5% significance) are called $\alpha$ and corresponds to the "tolerance" for **"false positives"**.
+* _P_-value **thresholds** (e.g., 5% significance) are called $\alpha$ and corresponds to the "tolerance" for **"false positives"** that we as investigators are willing to accept.
+
+---
+
+### Ok... lets get to simulating Virtual  :robot: Snails :shell:
+Whereas the functions `pnorm` and `dnorm`  (recall `ppois` and `dpois`) are desgined to describe probabilties, we can do the reverse by using `rnorm`. In this context, what the function seeks to do is to **sample** or simulates samples from a distribution of known parameters.
+```r
+# Simulate an individual (upper tide)
+rnorm(n=1, mean = 10.2, sd = 3.8)
+#function (n, mean = 0, sd = 1)
+```
+```r
+# Simulate a population (upper tide)
+rnorm(n=15, mean = 10.2, sd = 3.8)
+#function (n, mean = 0, sd = 1)
+```
+### Population mean vs. sample mean
+While we know that the upper tidal snails have :shell: $\sim \mathscr N(10.2,3.8)$, and thus the. **true** mean of the population should be $12.2$ what would happen if we calculate the mean of our sample `rnorm(n=15, mean = 10.2, sd = 3.8)`.
+
+```r
+foreach(i = 1:10, .combine = "rbind")%do%{
+rnorm(n=15, mean = 10.2, sd = 3.8) %>% mean 
+}
+```
+##### Why is there noise around the mean ... when these are simulated Virtual  :robot: Snails :shell:?
+
+
