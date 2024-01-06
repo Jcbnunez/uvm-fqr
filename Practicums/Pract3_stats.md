@@ -31,12 +31,12 @@ library(tidyverse)
 
 ## Data challenge 1. Is "this" a good use of my time?
 
-Imagine an orchard off Mount Mansfield. In this orchard you have discovered a very rare new species of insect that **appears** to be polyphenic at different altitudes. Studying this insect could be great for your career! One minor problem... this insect is extremely rare you only have a very small window of time to do your sampling. Is it worth even trying? 
+Imagine an orchard off Mount Mansfield. In this orchard you have discovered a very rare new species of insect :beetle: that **appears** to be polyphenic at different altitudes. Studying this insect could be great for your career! One minor problem... this insect is extremely rare you only have a very small window of time to do your sampling. Is it worth even trying? 
 
 * Local farmers report seeing 1 insect every week.
 * You only have 1 hour every week to do field-work
 * You need at least 30 individuals for your study. 
-* What is the probability that we will get 30 insects, or more, i.e., $Pr(X >= 30)$ during visit?
+* What is the probability that we will get 30 insects :beetle:, or more, i.e., $Pr(X >= 30)$ during visit?
 * What is the probability that we will get exactly 30 insects $Pr(X = 30)$ during your visit? (interestingly, these are two different questions). 
 
 ### This is a Poission distribution issue! (yay!)
@@ -51,21 +51,21 @@ The function describes probability of an event happening a certain number of tim
 1. Farmers see it every week
 2. A week has 168 hours
 3. Thus, $\lambda = 1/168 = 0.00595$  
-4. Note that this means $0.00595$ how many insect you may see in an hour.
+4. Note that this means $0.00595$ how many insects you may see in an hour.
 
 #### The probability of observing "_exactly_ 30 insects" vs. "30 insects _or more_"... this is the crux of the difference between the `dpois` and `ppois` functions (notice that `pois` is the poisson fucntion in `R`).
  
 ![enter image description here](https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/etc/Figures/prac3/Poiss.differences.ipd.png)
 
 ---
-### _exactly_ 30 insects
+### _exactly_ 30 insects :beetle:
 
 $$
 Pr(X=i) = f(i, \lambda) =  \frac{\lambda^ie^{-\lambda}}{i!}
 $$
 
 This is the probability that the function falls in a determined range of probability space
-### 30 insects _or more_
+### 30 insects _or more_ :beetle:
 
 $$
 Pr(X\ge i) =   1 - Pr(X=i-1) 
@@ -166,11 +166,12 @@ ggsave(myplot, file = "myplot.pdf", w = 4, h = 4)
 # (not other languages like python).
 ```
 ##### Why I am plotting $\lambda$ `as.character`? What would happen if I allow it to be a number?
-##### Also, should I conduct my study in a universe where $\lambda=0.05$ vs $\lambda=10$...?
+##### Also, should you conduct your study in a universe where $\lambda=0.05$ vs $\lambda=10$...?
 
 ### Generalizing some things
-Note that these function structure `dpois` or `ppois` also exist for all sorts of fucntions ... such as `binom` (binomial), `norm` (normal) ... This will come in handy in later lectures.
+Note that these function structure `dpois` or `ppois` also exist for all sorts of fucntions ... such as `binom` (binomial), `norm` (normal) ... This will come in handy in later parts of the class.
 
 
-## Data challenge 2. Is this apples to oranges, apples to apples, or underpowered? (but with sea urchins)
+## Data challenge 2. Is this apples to oranges, apples to apples, or underpowered? (but it is _sea snails_ :shell:).
 
+In a certain species of marine snail :shell: 
