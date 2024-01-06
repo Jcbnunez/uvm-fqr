@@ -73,13 +73,13 @@ $$
 
 This is the sum probabilities to the right of the value of interest. Note however that the entire probability distribution must add up to one. So substracting one to the value  of the function a $i-1$ solves the question!
 
-### `dpois` -> _exactly_ 30 insects
+### `dpois` -> _exactly_ 30 insects :beetle:
 ```r
 dpois(30,lambda=0.00595)
 ```
 Here `dpois` solves the equation $Pr(X=i)$ for us.
 
-### `ppois` -> 30 insects _or more_ 
+### `ppois` -> 30 insects _or more_ :beetle: :beetle: :beetle: ...
 ```r
 1-ppois(29,lambda=0.00595)
 ```
@@ -174,7 +174,7 @@ Note that these function structure `dpois` or `ppois` also exist for all sorts o
 
 ## Data challenge 2. Is this apples to oranges, apples to apples, or underpowered? (but it is _sea snails_ :shell:).
 
-A certain species of marine snail :shell: lives in an intertidal ecosystem. A 30 year study  has shown that the diameter of shell phenotypes vary across the intertidal, and that the phenotypic variation follows a _normal_ (or _Gaussian_) distrbution with different parameters across the low and high intertidal microhabitats.
+A certain species of marine snail :shell: lives in an intertidal ecosystem. A 30 year study  has shown that the diameter of shell phenotypes vary across the intertidal, and that the phenotypic variation follows a "_normal_" (or _Gaussian_) distrbution with different parameters across the low and high intertidal microhabitats.
 
 > The formula for _Gaussian_ distribution is
 > 
@@ -190,3 +190,13 @@ $$
 f(i | 0,1) =  \frac{e^{\frac{-i^2}{2}}}{\sqrt{2\pi}}
 $$
 
+The 30 year study indicate that, in the upper tide, :shell: diameters can be described as random variables $I$ that behave as described below
+
+| tidal habitat | :shell:  function |
+| -- | -- |
+|Upper Tide|$I \sim \mathscr N(1.2,0.8)$|
+|Lower Tide|$I \sim \mathscr N(1.5,1.3)$|
+
+* Note that $I \sim \mathscr N(1.2,0.8)$ ... **is just mathematical notation for "follow a _Gaussian_/_Normal_ dristibution with mean 1.2 and standard deviation 0.8"** (in the upper tidal zone, anyways). 
+
+The challenge is simple, based on these statistical properties of the populations, how many individuals should I samples across both microhabitats in order 
