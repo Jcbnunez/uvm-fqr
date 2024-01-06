@@ -24,12 +24,12 @@ module load rstudio
 rstudio
 ```
 ## Loading packages needed inside R
-Note that `module load Rtidyverse` already comes with a lot of packages preinstalled.
+Note that `module load Rtidyverse` already comes with a lot of packages preinstalled. Lets load them
 ```r
-library()
+library(tidyverse)
 ```
 
-## Data challenge 2. Is this apples to oranges, apples to apples, _or_ is my experiment underpowered?
+## Data challenge 1. Is "this" a good use of my time?
 
 Imagine an orchard off Mount Mansfield. The orchard spand from the base of the mountain to high elevation (as high as it can support crops). In this orchard you have discovered a very rare new species of insect that **appears** to be polyphenic at different altitudes. Studying this insect could be great for your career! One minor problem... this insect is extremely rare you only have a very small window of time to do your sampling. Is it worth even trying? 
 
@@ -85,6 +85,8 @@ Here `dpois` solves the equation $Pr(X=i)$ for us.
 ```
 Here `ppois` calculates the cummulative probability up to $i-1$ and we substract $1$ (the totality of the probability space) to obtain our desired probability. We can always think of `ppois` as the probability of 29 _or less_.
 
+##### Why are we observing these low numbers? What is going on?
+
 ### Let's investigate what is going on here ...
 ```r
 for(i in 0:40){
@@ -101,14 +103,70 @@ print(paste("when i=", i, "Pr =", out, sep = " ") )
 }
 ```
 ### Let's visualize it
-We are going to create a data frame object in order to store the output of our loop. This will allow us to plot our results
-
-
-
-
-
-### Let's visualize the probability with `rpois`
-Whereas `ppois` and `rpois` return respectively, the probility of $Pr(X=i)$ as well as 
+We are going to create a data frame object in order to store the output of our loop. This will allow us to plot our results.
 ```
-
+library(foreach, lib.loc = "/gpfs1/cl/biol6990/R_shared")
 ```
+To do this we are going to use **enhanced loops** from the `foreach` package in `R`. I basically never use basic loops anymore, since these `foreach` loops are so powerful!
+```r
+foreach(i = 0:40, .combine = "rbind")%do%{
+
+out = dpois(i,lambda=0.00595)
+
+data.frame(iparam = i, Prob = out)
+}
+```
+### save it to an object
+
+```r
+mydf = foreach(i = 0:40, .combine = "rbind")%do%{
+out = dpois(i,lambda=0.00595)
+data.frame(iparam = i, Prob = out)
+}
+```
+Where `mydf` is an object with colums `mydf$iparam`, `mydf$Prob`,
+
+### Now lets use ggplot to visualize the curve.
+here we are going to use the `%>%` symbol to pipe data in R. This is similar to `|` in unix. We are going to pipe the data to the `ggplot` function, a powerful visualization tool! 
+```r
+mydf %>% 
+ggplot(aes(x=iparam ,y=Prob)) + geom_line() -> myplot
+ggsave(myplot, file = "myplot.pdf", w = 4, h = 4)
+```
+### lets modify $\lambda$ to 10
+```r
+foreach(i = 0:40, .combine = "rbind")%do%{
+out = dpois(i,lambda=10)
+data.frame(iparam = i, Prob = out)} %>%
+ggplot(aes(x=iparam ,y=Prob)) + geom_line() -> myplot
+ggsave(myplot, file = "myplot.pdf", w = 4, h = 4)
+```
+### Lets plot a sample of  many $\lambda$ parameters
+To this end we are going to use a nested foreach loop
+```r
+mydf_double = 
+foreach(l = 0:10, .combine = "rbind")%do%{
+foreach(i = 0:40, .combine = "rbind")%do%{
+out = dpois(i,lambda=l)
+data.frame(lambda = l, iparam = i, Prob = out)
+} # i loop
+} # l loop
+```
+Lets map $\lambda$  to color
+```r
+mydf_double %>% 
+ggplot(aes(x=iparam,
+y=Prob,
+color = as.character(lambda) )) + 
+geom_line() -> myplot
+ggsave(myplot, file = "myplot.pdf", w = 4, h = 4)
+# These spacing patterns are tolerated by R (not other languages like python).
+```
+##### Why I am plotting $\lambda$ `as.character`? What would happen if I allow it to be a number?
+##### Also, should I conduct my study in a universe where $\lambda=0.05$ vs $\lambda=10$...?
+
+### Generalizing some things
+Note that these function structure `dpois` or `ppois` also exist for all sorts of fucntions ... such as `binom` (binomial), `norm` (normal) ... This will come in handy in later lectures.
+
+
+## Data challenge 2. Is this apples to oranges, apples to apples, or underpowered?
