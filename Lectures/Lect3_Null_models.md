@@ -114,7 +114,7 @@ $$
 #### Thus, in an idealized population, the expected frequencies of genotypes are:
 
 |Class|Expected frequency|
-|--|--|--|
+|--|--|
 | $f(Ho_{AA})$ | $p^2$ |
 | $f(Ho_{aa})$ | $q^2$ |
 | $f(Het)$ | $2pq$ |
