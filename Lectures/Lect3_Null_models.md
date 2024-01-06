@@ -17,7 +17,7 @@ The question then is, if we agree that the proportion of organisms with allele $
 Tacking this question requires establishing some basic notation. First we need a summary statistic... the thing we actually want to measure. For example
 
 $$
-p_a = \cfrac{\sum_{i=0}^{n} a_i}{\sum_{i=0}^{n} A_i+\sum_{i=0}^{n} a_i}
+p_a = \cfrac{\sum_{i=0}^{n} {a_i} }{\sum_{i=0}^{n} {A_i} +\sum_{i=0}^{n} {a_i} }
 $$
 
 In other words, $p_a$ is simply the frequency of "$a$" in the population (i.e., the sum of all $A$ and $a$). Now, **becuase in our idealize population** only $A$ and $a$ exist, hence it must be true that:
