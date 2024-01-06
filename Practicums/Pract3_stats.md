@@ -172,7 +172,7 @@ ggsave(myplot, file = "myplot.pdf", w = 4, h = 4)
 Note that these function structure `dpois` or `ppois` also exist for all sorts of fucntions ... such as `binom` (binomial), `norm` (normal) ... This will come in handy in later parts of the class.
 
 
-## Data challenge 2. Is this apples to oranges, apples to apples, or underpowered? (but it is _sea snails_ :shell:!).
+## Data challenge 2. Is this apples to oranges, apples to apples, or underpowered? (but it is :ocean: _sea snails_ :shell:!).
 
 A certain species of marine snail :shell: lives in an intertidal ecosystem. A 30 year study  has shown that the diameter of shell phenotypes vary across the intertidal, and that the phenotypic variation follows a "_normal_" (or _Gaussian_) distrbution with different parameters across the low and high intertidal microhabitats.
 
@@ -192,7 +192,7 @@ $$
 
 The 30 year study indicate that, in the upper tide, :shell: diameters can be described as random variables $I$ that behave as described below
 
-| tidal habitat | :shell:  function |
+| tidal habitat | :ocean::shell:  function |
 | -- | -- |
 |Upper Tide|$I_u \sim \mathscr N(10.2,3.8)$|
 |Lower Tide|$I_l \sim \mathscr N(11.5,5.3)$|
@@ -233,7 +233,7 @@ $$
 
 ---
 
-### Ok... lets get to simulating Virtual  :robot: Snails :shell:
+### Ok... lets get to simulating Virtual  :robot: :ocean: Snails :shell:
 Whereas the functions `pnorm` and `dnorm`  (recall `ppois` and `dpois`) are desgined to describe probabilties, we can do the reverse by using `rnorm`. In this context, what the function seeks to do is to **sample** or simulates samples from a distribution of known parameters.
 ```r
 # Simulate an individual (upper tide)
@@ -246,7 +246,7 @@ rnorm(n=15, mean = 10.2, sd = 3.8)
 #function (n, mean = 0, sd = 1)
 ```
 ### Population mean ($\mu$) vs. sample mean ($\bar{x}$)
-While we know that the upper tidal snails have :shell: $\sim \mathscr N(10.2,3.8)$, and thus the. **true** mean of the population should be $12.2$ what would happen if we calculate the mean of our sample `rnorm(n=15, mean = 10.2, sd = 3.8)`.
+While we know that the upper tidal snails have :ocean::shell: $\sim \mathscr N(10.2,3.8)$, and thus the. **true** mean of the population should be $12.2$ what would happen if we calculate the mean of our sample `rnorm(n=15, mean = 10.2, sd = 3.8)`.
 
 ```r
 foreach(i = 1:10, .combine = "rbind")%do%{
@@ -366,4 +366,4 @@ filter(observations > 95) %>%
 arrange() %>%
 head(1)
 ```
-~huzza for simulated Virtual  :robot: Snails :shell:!
+~huzza for simulated Virtual  :robot: :ocean: Snails :shell:!
