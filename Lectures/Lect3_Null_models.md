@@ -17,7 +17,7 @@ The question then is, if we agree that the proportion of organisms with allele $
 Tacking this question requires establishing some basic notation. First we need a summary statistic... the thing we actually want to measure. For example
 
 $$
-p_a = {\sum_{i=0}^{n} {a_i} }\ / (\sum_{i=0}^{n} {A_i} +\sum_{i=0}^{n} a_i)
+p_a =  \frac{a_i}{\sum_{i} {A_i} +a_i}
 $$
 
 more simplistically...
@@ -117,3 +117,13 @@ $$
 $$
 p^2 + 2pq + q^2 = 1
 $$
+
+#### Thus, in an idealized population, the expected frequencies of genotypes are:
+
+|Class|Expected frequency|
+|--|--|--|
+|$AA$|$p^2$|
+|$aa$|$q^2$|
+|$Aa\ and\ aA$|$2pq$|
+
+### But what about allele frequnecies? We can deribe this from the genotype frequencies 
