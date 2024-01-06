@@ -72,7 +72,7 @@ Lets say, we pose the same question as we did above, yet we now add an element o
 Assuming that the probability of sampling any $A$ is $p$ (using classical nomemclature, we could also call this $p_A$), then:
 
 $$
-Pr(Ho_{AA}) = f_{AA} = p\ x\ p = p^2
+Pr(Ho_{AA}) = p\ x\ p = p^2
 $$
 
 it is the multiplication of two independent events. That is sampling an $A$ once ($p_A$) and then a second time.. i.e., another $p_a$
@@ -81,7 +81,7 @@ it is the multiplication of two independent events. That is sampling an $A$ once
 Assuming that the probability of sampling any $a$ is $q$ (using classical nomemclature, we could also call this $p_a$), then:
 
 $$
-Pr(Ho_{aa}) = f_{aa} = q\ x\ q = q^2
+Pr(Ho_{aa}) = q\ x\ q = q^2
 $$
 
 #### Probability of observing a heterozygous of _any kind_
