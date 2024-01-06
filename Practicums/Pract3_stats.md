@@ -44,6 +44,7 @@ Imagine an orchard off Mount Mansfield. The orchard spand from the base of the m
 $$
 Pr(X=i) =  \frac{\lambda^ie^{-\lambda}}{i!}
 $$
+
 The function describes probability of an event happening a certain number of times, $i$, within a given interval of time or space (e.g., 1 hour, _etc._). Contingent on the fact that this event occurs at rate $\lambda$.
 
 ### Lets find the $\lambda$ _per hour_ parameter for our insect
@@ -58,14 +59,18 @@ The function describes probability of an event happening a certain number of tim
 
 ---
 ### _exactly_ 30 insects
+
 $$
 Pr(X=i) = f(i, \lambda) =  \frac{\lambda^ie^{-\lambda}}{i!}
 $$
+
 This is the probability that the function falls in a determined range of probability space
 ### 30 insects _or more_
+
 $$
 Pr(X\ge i) =   1 - Pr(X=i-1) 
 $$
+
 This is the sum probabilities to the right of the value of interest. Note however that the entire probability distribution must add up to one. So substracting one to the value  of the function a $i-1$ solves the question!
 
 ### `dpois` -> _exactly_ 30 insects
