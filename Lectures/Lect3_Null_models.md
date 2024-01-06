@@ -1,14 +1,14 @@
 # Topic 3: Null models in Evolution
 
-Given that evolution is the study of _change_, as a function of time or space in biological systems, **lack of change** is an intuitive **null model.** What does that even mean? In this context,  we often imagine an **idealized population** such that it:
+Given that evolution is the study of _change_, as a function of time or space in biological systems, **lack of change** is an intuitive **null model**, proposed by [Hardy & Weinberg](https://www.nature.com/scitable/definition/hardy-weinberg-equilibrium-122/ ).  In this context,  we often imagine an **idealized population** such that it:
 
 1. Is composed of a very large amount of individuals (effectively infinite)
 2. Genetic replication is 100% perfect (there is no mutation to introduce new variation)
 3. No other population is around, so there is no chance of gene-flow
-4. Every individual has equal chance of mating with any other individual (random mating)
+4. If sexial repriduction occurs, every individual has equal chance of mating with any other individual (random mating)
 5. All phenotypes (and genotypes) are effectively neutral (no selection)
 
-## Case 1: a simple idealized haploid
+## Case 1: a simple idealized haploid 
  
 Now, lets imagine that the genomes of the organisms in this population have only one gene, lets call it "gene $\alpha$", and that the gene has two _alleles_ called $A$ and $a$ (sounds familiar?).
 
@@ -60,8 +60,8 @@ $$
 
 ### :crystal_ball: Thus, our null, higly idealized, model would predict no change in allele frequencies ever in the population.
 
-## Case 2: (di)Ploidy
-Lets say, we pose the same question as we did above, yet we now add an element of complexity. We add the **diploid** condition (i.e., $2N$). This means that each individual in the population now carries 2 copies of gene $\alpha$... and the complexity is that these genes may carry any allele. As such individuals may now be found carrying either $AA$, $aa$, $Aa$ or $aA$ combination of alleles! We often call these combination of alleles, "a genotype".
+## Case 2: Diploidy + sexual reproduction
+Lets say, we pose the same question as we did above, yet we now add an element of complexity. We add the **diploid** condition (i.e., $2N$) that emanates from sexual reproduction. This means that each individual in the population now carries 2 copies of gene $\alpha$... and the complexity is that these genes may carry any allele. As such individuals may now be found carrying either $AA$, $aa$, $Aa$ or $aA$ combination of alleles! We often call these combination of alleles, "a genotype".
 
 #### Opening the can of worms :bug: ....Now we must be able to predict, not just the allele frequency, but also the genotype frequency over time. Lets do it!
 
@@ -105,7 +105,7 @@ $$
 Pr(He) = f(Aa\ and\ aA ) = pq + pq = 2pq
 $$
 
-### Recall because these are the only genotypes that exist, then it must be true that (i.e., _the "universe" must add up to 1_):
+### Recall because these are the only genotypes that exist, then it must be true that (i.e., _the "universe" must add up to 1_). This is the most commonly recognized statement of the Hardy-Weinberg principle.
 
 $$
 p^2 + 2pq + q^2 = 1
@@ -119,7 +119,7 @@ $$
 | $f(Ho_{aa})$ | $q^2$ |
 | $f(Het)$ | $2pq$ |
 
-### But what about allele frequnecies? We can deribe this from the genotype frequencies 
+### But what about allele frequencies? We can describe this from the genotype frequencies 
 
 $$
 p = 2f(Ho_{AA}) + f(Het)
