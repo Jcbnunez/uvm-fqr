@@ -49,13 +49,13 @@ $$
 Becuase in our ideallized population _nothing_ changes, then:
 
 $$
-p_{a,\ t+1} =   p_{a,\ t}
+p_{t+1} =   p_{t}
 $$
 
 Furthermore, becuase in our ideallized population _nothing_ **ever** changes, then:
 
 $$
-p_{a,\ t+n} =   p_{a,\ t}
+p_{t+n} =   p_{t}
 $$
 
 ### :crystal_ball: Thus, our null, higly idealized, model would predict no change in allele frequencies ever in the population.
