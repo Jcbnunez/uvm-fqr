@@ -115,9 +115,9 @@ $$
 
 |Class|Expected frequency|
 |--|--|--|
-|$f(Ho_{AA})$|$p^2$|
-|$f(Ho_{aa})$|$q^2$|
-|$f(Het)$|$2pq$|
+| $f(Ho_{AA})$ | $p^2$ |
+| $f(Ho_{aa})$ | $q^2$ |
+| $f(Het)$ | $2pq$ |
 
 ### But what about allele frequnecies? We can deribe this from the genotype frequencies 
 
