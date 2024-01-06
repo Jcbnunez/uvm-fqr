@@ -312,7 +312,7 @@ geom_boxplot()-> myplot
 ggsave(myplot, file = "myplot.pdf", w = 6, h = 4)
 ```
 # Simulation based power analysis
-With all the pieces in place in place, we can finally dive into the power analysis proper. There are many ways to do a power analysis, some are off-the-shelf methods that use paramteric assumotions. Those are fine. I prefer to use simulations (as we have been doing it) to assess power across my tests. 
+With all the pieces in place in place, we can finally dive into the power analysis proper. There are many ways to do a power analysis, some are off-the-shelf methods that use paramteric assumotions. Those are fine. Though, lets explore using simulations (as we have been doing it) to assess power across our tests. 
 
 ```r
 power_analysis=
