@@ -40,6 +40,7 @@ Imagine an orchard off Mount Mansfield. The orchard spand from the base of the m
 * What is the probability that we will get exactly 30 insects $Pr(X = 30)$ during your visit? (interestingly, these are two different questions). 
 
 ### This is a Poission distribution issue! (yay!)
+
 $$
 Pr(X=i) =  \frac{\lambda^ie^{-\lambda}}{i!}
 $$
