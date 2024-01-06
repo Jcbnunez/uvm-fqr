@@ -228,5 +228,5 @@ $$
 power = 1- \beta = Pr(reject\ H_0 | H_1\ is\ true)
 $$
 
-* Intuitively this may interepreted as... is we have power = 95%.. then... if I were to repeat my experiment 100 times, 95 times I should correctly reject the null ("true positive"). Logically this suggests that 5 times I will get a **"false negative"**... but I can live with that.
-* _P_-value **thresholds** (e.g., 5% significance) are called $\alpha$ and corresponds to the torelance for **"false positives"**.
+* Intuitively this may be interpreted as... if we have power = 95%.. then... if I repeat my experiment 100 times, 95 times I should correctly reject the null (i.e., get a "true positive"). Yet, logically this suggests that 5 times I will get a **"false negative"**... but I can live with that.
+* _P_-value **thresholds** (e.g., 5% significance) are called $\alpha$ and corresponds to the "tolerance" for **"false positives"**.
