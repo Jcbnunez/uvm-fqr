@@ -137,11 +137,70 @@ HW.fit(10,180,810, "ex.2")
 
 # Processing large simulations (or user inputs) using arrays (Data challenge 2)
 
-Lets say that you wanted to conduct a simulation experiment trying to determine the number of Hardy & Weinberg **false positives** that you observe as a function of _sample size_,  allele frequency_, as well as a function of statistical stringency, i.e,. $\alpha$ across 1000 simulated loci. 
+Lets say that you wanted to conduct a simulation experiment trying to determine the number of Hardy & Weinberg **false positives** that you observe as a function of _sample size_,  _allele frequency_, as well as a function of statistical stringency, i.e,. $\alpha$ across 1000 simulated loci. 
 
 This is sort of tricky because we have to simulate 1000 mutations (each with 3 genotypes), across various levels of base $p$,  with several sample sizes $N$, and evaluate them at various levels of $\alpha$ ... like so
 
 |param.set|$p$|$N$|$\alpha$|
 |--|--|--|--|
-
+|1|0.1|50|0.1|
+|2|0.4|50|0.1|
+|3|0.6|50|0.1|
+|4|0.8|50|0.1|
+|5|0.9|50|0.1|
+|6|0.1|100|0.1|
+|7|0.4|100|0.1|
+|8|0.6|100|0.1|
+|9|0.8|100|0.1|
+|10|0.9|100|0.1|
+|11|0.1|500|0.1|
+|12|0.4|500|0.1|
+|13|0.6|500|0.1|
+|14|0.8|500|0.1|
+|15|0.9|500|0.1|
+|16|0.1|1000|0.1|
+|17|0.4|1000|0.1|
+|18|0.6|1000|0.1|
+|19|0.8|1000|0.1|
+|20|0.9|1000|0.1|
+|21|0.1|50|0.05|
+|22|0.4|50|0.05|
+|23|0.6|50|0.05|
+|24|0.8|50|0.05|
+|25|0.9|50|0.05|
+|26|0.1|100|0.05|
+|27|0.4|100|0.05|
+|28|0.6|100|0.05|
+|29|0.8|100|0.05|
+|30|0.9|100|0.05|
+|31|0.1|500|0.05|
+|32|0.4|500|0.05|
+|33|0.6|500|0.05|
+|34|0.8|500|0.05|
+|35|0.9|500|0.05|
+|36|0.1|1000|0.05|
+|37|0.4|1000|0.05|
+|38|0.6|1000|0.05|
+|39|0.8|1000|0.05|
+|40|0.9|1000|0.05|
+|41|0.1|50|0.01|
+|42|0.4|50|0.01|
+|43|0.6|50|0.01|
+|44|0.8|50|0.01|
+|45|0.9|50|0.01|
+|46|0.1|100|0.01|
+|47|0.4|100|0.01|
+|48|0.6|100|0.01|
+|49|0.8|100|0.01|
+|50|0.9|100|0.01|
+|51|0.1|500|0.01|
+|52|0.4|500|0.01|
+|53|0.6|500|0.01|
+|54|0.8|500|0.01|
+|55|0.9|500|0.01|
+|56|0.1|1000|0.01|
+|57|0.4|1000|0.01|
+|58|0.6|1000|0.01|
+|59|0.8|1000|0.01|
+|60|0.9|1000|0.01|
 
