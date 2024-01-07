@@ -8,9 +8,9 @@ Given that evolution is the study of _change_, as a function of time or space in
 4. If sexial repriduction occurs, every individual has equal chance of mating with any other individual (random mating)
 5. All phenotypes (and genotypes) are effectively neutral (no selection)
 
-## Case 1: a simple idealized haploid 
+## Estimating allele frequencies
  
-Now, lets imagine that the genomes of the organisms in this population have only one gene, lets call it "gene $\alpha$", and that the gene has two _alleles_ called $A$ and $a$ (sounds familiar?).
+Lets ignore sexual reproduction for one second, and imagine that the genomes of the organisms in this population have only one gene, lets call it "gene $\alpha$", and that the gene has two _alleles_ called $A$ and $a$ (sounds familiar?).
 
 The question then is, if we agree that the proportion of organisms with allele $A$ or $a$, say the allele frequency, is a good measurement of evolution, then if I where to measure  allele frequency, today, tomorrow, and in 100 years in this population... what should we expect?  
 
@@ -58,12 +58,12 @@ $$
 p_{t+n} =   p_{t}
 $$
 
-### :crystal_ball: Thus, our null, higly idealized, model would predict no change in allele frequencies ever in the population.
+### :crystal_ball: Thus, our null, higly idealized, model would predict no change in allele frequencies over time in the population.
 
-## Case 2: Diploidy + sexual reproduction
-Lets say, we pose the same question as we did above, yet we now add an element of complexity. We add the **diploid** condition (i.e., $2N$) that emanates from sexual reproduction. This means that each individual in the population now carries 2 copies of gene $\alpha$... and the complexity is that these genes may carry any allele. As such individuals may now be found carrying either $AA$, $aa$, $Aa$ or $aA$ combination of alleles! We often call these combination of alleles, "a genotype".
+## Case 2: Adding diploidy and sexual reproduction
+Lets say, we pose the same question as we did above, yet we now consider that individuals are **diploids** (i.e., $2N$) and that sexual reproduction occurs (random mating). This means that each individual in the population now carries 2 copies of gene $\alpha$ and individuals may carry any allele combination of alleles. As such individuals may now be found carrying either $AA$, $aa$, $Aa$ or $aA$ combination of alleles! We often call these combination of alleles, "a genotype".
 
-#### Opening the can of worms :bug: ....Now we must be able to predict, not just the allele frequency, but also the genotype frequency over time. Lets do it!
+#### Now we must be able to predict, not just the allele frequency, but also the genotype frequency over time. Lets do it!
 
 * Lets simplify our math a bit by modeling the probability of observing an individual that has two identical states, either $AA$ or $aa$ (we call these homozygous states), as well as different by allelic state ($Aa$, $aA$; regarding of order) these we call heterozygous states. 
 
