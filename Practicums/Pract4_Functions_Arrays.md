@@ -137,6 +137,11 @@ HW.fit(10,180,810, "ex.2")
 
 # Processing large simulations (or user inputs) using arrays (Data challenge 2)
 
-Lets say that you wanted to conduct a simulation experiment trying to determine the number of Hardy & Weinberg **false positives** that you observe as a function of sample size as well as a function of statistical stringency, i.e,. $\alpha$ across 1000 simulated loci. 
+Lets say that you wanted to conduct a simulation experiment trying to determine the number of Hardy & Weinberg **false positives** that you observe as a function of _sample size_,  allele frequency_, as well as a function of statistical stringency, i.e,. $\alpha$ across 1000 simulated loci. 
 
-To do this 
+This is sort of tricky because we have to simulate 1000 mutations (each with 3 genotypes), across various levels of base $p$,  with several sample sizes $N$, and evaluate them at various levels of $\alpha$ ... like so
+
+|param.set|$p$|$N$|$\alpha$|
+|--|--|--|--|
+
+
