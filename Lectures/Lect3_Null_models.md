@@ -5,7 +5,7 @@ Given that evolution is the study of _change_, as a function of time or space in
 1. Is composed of a very large amount of individuals (effectively infinite)
 2. Genetic replication is 100% perfect (there is no mutation to introduce new variation)
 3. No other population is around, so there is no chance of gene-flow
-4. If sexial repriduction occurs, every individual has equal chance of mating with any other individual (random mating)
+4. If sexual repriduction occurs, every individual has equal chance of mating with any other individual (random mating)
 5. All phenotypes (and genotypes) are effectively neutral (no selection)
 
 ## Estimating allele frequencies
