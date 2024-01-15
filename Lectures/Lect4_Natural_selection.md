@@ -156,4 +156,10 @@ $$
 1 = \frac{0.95}{0.95} = 1
 $$ 
 
-But this is a bit too esoteric... lets actually look at the genotype frequencies:  
+But this is a bit too esoteric... lets actually look at the genotype frequencies (for the simplest case):  
+
+|param|No evolution|selection|
+|--|--|--|
+|$f_{AA}$|$p^2$|$\frac{p^2\omega_{AA}}{1-q^2s_{aa}}$|
+|$f_{Aa}$|$2pq$|$\frac{2pq}{1-q^2s_{aa}}$|
+|$f_{aa}$|$q^2$|$\frac{q^2}{1-q^2s_{aa}}$|
