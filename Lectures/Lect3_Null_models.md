@@ -1,5 +1,8 @@
 # Topic 3: Null models in Evolution
 
+## Goals
+* Review null models of evolution 
+
 Given that evolution is the study of _change_, as a function of time or space in biological systems, **lack of change** is an intuitive **null model**, proposed by [Hardy & Weinberg](https://www.nature.com/scitable/definition/hardy-weinberg-equilibrium-122/ ).  In this context,  we often imagine an **idealized population** such that it:
 
 1. Is composed of a very large amount of individuals (effectively infinite)
