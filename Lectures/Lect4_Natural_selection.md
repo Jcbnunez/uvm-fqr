@@ -40,7 +40,7 @@ $$
 * $a$ is a lower yield allele
 
 ### The simplest possible case --> one "null" allele
-One that produces "nothing", or no product in relationship to the other allele. In this case, having two copies of $a$ would imply a null genotype. Yet, any genotype with at least one copy of $A$ will have suffient gene dossage regardless of the number of copies: $AA$ or $Aa$. For example:
+One that produces "nothing", or no product in relationship to the other allele. In this case, having two copies of $a$ would imply a null genotype. Yet, any genotype with at least one copy of $A$ will have suffient gene dossage regardless of the number of copies: $AA$ or $Aa$. We call this a case where $a$ is recessive. For example:
 
 |parameter|$AA$|$Aa$|$aa$|
 |--|--|--|--| 
@@ -99,7 +99,11 @@ $$
 $$ 
 
 ### Why does this occur?
-For the "universe" to add up to 1, some individuals must be selected againt and some must be selected for. That is the individuals who fail to reproduce open up space for more offspring of individuals that don't have the $aa$ genotype. To fix this we must standarize our equation. This is done by dividing by the "mean fitness" of the population.
+For the "universe" to add up to 1, some individuals must be selected againt and some must be selected for. That is the individuals who fail to reproduce open up space for more offspring of individuals that don't have the $aa$ genotype. To fix this we must standarize our equation. This is done by dividing by the "mean fitness" of the population, or:
+
+$$
+1 = \frac{p^2\omega_{AA} +2pq\omega_{Aa}+q^2\omega_{aa}}{\bar{\omega}}
+$$
 
 ### Population mean fitness
 This is a parameter that takes into account the sum of the expected selection coefficients of all genotypes in the population, contingent on their frequency. Sound complicated... but it is simply:
@@ -119,7 +123,30 @@ reorganize
 $$
 \bar{\omega} = p^2+ 2pq+q^2-p^2s_{AA} - 2pqs_{Aa} -q^2s_{aa}
 $$
-
+replace the Hardy-Weinberg expectation
 $$
 \bar{\omega} = 1-p^2s_{AA} - 2pqs_{Aa} -q^2s_{aa}
 $$
+
+### For the simplest case of recessive $a$
+
+We know that $s_{AA}  = s_{Aa} = 0$, then:
+
+$$
+\bar{\omega} = 1-p^2(0) - 2pq(0)-q^2s_{aa}
+$$
+Solving for the special case:
+$$
+\bar{\omega}_{recessive\ a} = 1-q^2s_{aa}
+$$
+Lets revisit the original case:
+$$
+1 = \frac{0.5^2 + 2(0.5)(0.5)+0.5^2(0.8)}{1-q^2s_{aa}}
+$$ 
+$$
+1 = \frac{0.5^2 + 2(0.5)(0.5)+0.5^2(0.8)}{1-(0.5)^2(0.2)}
+$$ 
+$$
+1 = \frac{0.95}{0.95} = 1
+$$ 
+But this is a bit too esoteric... lets actually look at the genotype frequencies:  
