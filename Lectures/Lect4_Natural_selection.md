@@ -135,18 +135,25 @@ We know that $s_{AA}  = s_{Aa} = 0$, then:
 $$
 \bar{\omega} = 1-p^2(0) - 2pq(0)-q^2s_{aa}
 $$
+
 Solving for the special case:
+
 $$
 \bar{\omega}_{recessive\ a} = 1-q^2s_{aa}
 $$
+
 Lets revisit the original case:
+
 $$
 1 = \frac{0.5^2 + 2(0.5)(0.5)+0.5^2(0.8)}{1-q^2s_{aa}}
-$$ 
+$$
+
 $$
 1 = \frac{0.5^2 + 2(0.5)(0.5)+0.5^2(0.8)}{1-(0.5)^2(0.2)}
 $$ 
+
 $$
 1 = \frac{0.95}{0.95} = 1
 $$ 
+
 But this is a bit too esoteric... lets actually look at the genotype frequencies:  
