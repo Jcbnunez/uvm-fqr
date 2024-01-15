@@ -97,3 +97,29 @@ $$
 $$
 1 \neq 0.95
 $$ 
+
+### Why does this occur?
+For the "universe" to add up to 1, some individuals must be selected againt and some must be selected for. That is the individuals who fail to reproduce open up space for more offspring of individuals that don't have the $aa$ genotype. To fix this we must standarize our equation. This is done by dividing by the "mean fitness" of the population.
+
+### Population mean fitness
+This is a parameter that takes into account the sum of the expected selection coefficients of all genotypes in the population, contingent on their frequency. Sound complicated... but it is simply:
+
+$$
+\bar{\omega} = p^2\omega_{AA} +2pq\omega_{Aa}+q^2\omega_{aa}
+$$
+
+$$
+\bar{\omega} = p^2(1-s_{AA}) +2pq(1-s_{Aa})+q^2(1-s_{aa})
+$$
+fold out parentheses
+$$
+\bar{\omega} = p^2-p^2s_{AA} + 2pq- 2pqs_{Aa} +q^2-q^2s_{aa}
+$$
+reorganize
+$$
+\bar{\omega} = p^2+ 2pq+q^2-p^2s_{AA} - 2pqs_{Aa} -q^2s_{aa}
+$$
+
+$$
+\bar{\omega} = 1-p^2s_{AA} - 2pqs_{Aa} -q^2s_{aa}
+$$
