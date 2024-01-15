@@ -25,7 +25,11 @@
 
 ```mermaid
 graph LR
-A[X] -- process --> B[Y]
+a[X]
+b[Y]
+c(process)
+
+a --> c --> b
 ```
 ### examples
 
@@ -43,9 +47,16 @@ $$
 
 ```mermaid
 graph LR
-A[X] -- process --> B[Y1]
-A[X] -- process --> C[Y2]
-A[X] -- process --> D[Y3]
+A[X]
+B[process]
+C[Y1]
+D[Y2]
+E[Y3]
+
+A --> B --> C
+B --> D
+B --> E
+
 ```
 ### examples
 
