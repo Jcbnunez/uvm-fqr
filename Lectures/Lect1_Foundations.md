@@ -84,6 +84,8 @@ $$
 P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}
 $$
 
+where $k$ is the number of successes and $n$ is the number of trials.
+
 # How does this connect with Evolution?
 Evolution is the study of how and why biological systems change as a function of time. We may want to think as the possible underlyign drivers of these process as random or deterministic. 
 
