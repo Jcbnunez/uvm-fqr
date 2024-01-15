@@ -75,5 +75,25 @@ $$
 becomes
 
 $$
-1 = p^2 +2pq+1^2
+1 = p^2\omega_{AA} +2pq\omega_{Aa}+q^2\omega_{aa}
+$$ 
+
+Recall...
+
+|parameter|$AA$|$Aa$|$aa$|
+|--|--|--|--| 
+|Rel. Fitness ($\omega$) |1|1|0.8| 
+
+For a simple numerical solution... assume $p=0.5$ and $q=0.5$
+
+$$
+1 = 0.5^2 + 2(0.5)(0.5)+0.5^2(0.8)
+$$ 
+
+$$
+1 \neq 0.25 + 0.5 + 0.2 \ (problem!)
+$$ 
+
+$$
+1 \neq 0.95
 $$ 
