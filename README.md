@@ -15,4 +15,17 @@ In order to access the supercomputer you will need to access **[UVM-OOD's site](
 
 check the link here: https://www.uvm.edu/it/kb/article/sslvpn2/
 
+## Course specific modules
 
+### R modules
+```bash
+module load Rtidyverse
+module load rstudio
+```
+
+### SliM
+
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTMyNTYzMDU0NF19
+-->
