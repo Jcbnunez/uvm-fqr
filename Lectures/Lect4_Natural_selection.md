@@ -163,3 +163,27 @@ But this is a bit too esoteric... lets actually look at the genotype frequencies
 |$f_{AA}$|$p^2$|$\frac{p^2\omega_{AA}}{1-q^2s_{aa}}$|
 |$f_{Aa}$|$2pq$|$\frac{2pq\omega_{Aa}}{1-q^2s_{aa}}$|
 |$f_{aa}$|$q^2$|$\frac{q^2\omega_{aa}}{1-q^2s_{aa}}$|
+
+### What happens to $aa$
+
+$$f_{aa}=\frac{q^2\omega_{aa}}{1-q^2s_{aa}}$$
+
+$$f_{aa}=\frac{0.5^2(0.8)}{1-(0.5)^2(0.2)} = \frac{0.2}{0.95} = 0.21 $$
+
+recall in the HW model, the expected $q^2$ is $0.5^2 = 0.25$
+
+### What happens to $AA$ and $Aa$ since they have the same fitness
+
+$$
+f_{AA}=\frac{p^2\omega_{aa}}{1-q^2s_{aa}}\ ;\ f_{Aa}=\frac{2pq\omega_{Aa}}{1-q^2s_{aa}}
+$$
+
+$$
+f_{AA}=\frac{0.5^2}{1-(0.5)^2(0.2)} = \frac{0.25}{0.95} = 0.263 
+$$
+
+recall in the HW model, the expected $p^2$ is $0.5^2 = 0.25$
+
+$$
+f_{Aa}=\frac{2x0.5x0.5}{1-(0.5)^2(0.2)} = \frac{0.50}{0.95} = 0.263 
+$$
