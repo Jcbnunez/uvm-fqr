@@ -28,13 +28,24 @@ module load rstudio
 
 ```bash
 module load slim
+# in VM use "slimgui"
+```
+
+### Python (3.11) environments
+
+```bash
+
+```
+
+### Python (3.11)  jupyter 
+
+```bash
+
 ```
 
 
 
 
-
-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTU1NTc2NTZdfQ==
+eyJoaXN0b3J5IjpbMTUzMjQ0NDUzOV19
 -->
