@@ -21,11 +21,20 @@ check the link here: https://www.uvm.edu/it/kb/article/sslvpn2/
 ```bash
 module load Rtidyverse
 module load rstudio
+# in VM use "rstudio"
 ```
 
-### SliM
+### SliM modules (GUI)
+
+```bash
+module load slim
+```
+
+
+
+
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyNTYzMDU0NF19
+eyJoaXN0b3J5IjpbLTEzOTU1NTc2NTZdfQ==
 -->
