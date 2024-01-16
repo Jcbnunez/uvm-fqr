@@ -113,6 +113,8 @@ $$
 \bar{\omega} = p^2\omega_{AA} +2pq\omega_{Aa}+q^2\omega_{aa}
 $$
 
+Transform $\omega$ to the selection coeffient
+
 $$
 \bar{\omega} = p^2(1-s_{AA}) +2pq(1-s_{Aa})+q^2(1-s_{aa})
 $$
@@ -149,9 +151,13 @@ $$
 1 = \frac{0.5^2 + 2(0.5)(0.5)+0.5^2(0.8)}{1-q^2s_{aa}}
 $$
 
+Plug in the denominator
+
 $$
 1 = \frac{0.5^2 + 2(0.5)(0.5)+0.5^2(0.8)}{1-(0.5)^2(0.2)}
 $$ 
+
+finally, the world makes sense again!
 
 $$
 1 = \frac{0.95}{0.95} = 1
@@ -197,30 +203,31 @@ recall in the HW model, the expected $2pq$ is $2x0.5x0.5 = 0.50$
 |$f_{Aa}$| 0.50 | 0.526 (+)|
 |$f_{aa}$| 0.25 | 0.210 (-)|
 
-### That is selection in a nutshell! how can we derive allele frequencies
+### That is selection in a nutshell! how can we derive allele after one generation of natural selection:
+
 recall that, in general
 
 $$
-p = f(Ho_{AA}) + \frac{f(Het)}{2} 
+p_{t+1} = f(Ho_{AA}) + \frac{f(Het)}{2} 
 $$
 
 under selection
 
 $$
-p = \frac{p^2\omega_{AA}}{\bar{\omega}}  + \frac{pq\omega_{Aa}}{\bar{\omega}}
+p_{t+1} = \frac{p^2\omega_{AA}}{\bar{\omega}}  + \frac{pq\omega_{Aa}}{\bar{\omega}}
 $$
 
 simplifying to
 
 $$
-p = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}}
+p_{t+1} = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}}
 $$
 
 and in the simpest case (selection againt recessive $a$):
 
 
 $$
-p = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{1-q^2s_{aa}}
+p_{t+1} = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{1-q^2s_{aa}}
 $$
 
 ## A more complex scenario... What if the allele is not null?
@@ -255,7 +262,7 @@ where $h$ is the coefficient of dominance, and $h$ will denote the "dominance" r
 Since we often want to predict allele frequencies, we will pay attention to the $\bar{\omega}$ function. This becomes visible if we transform everything into selection coefficients:
 
 $$
-p = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}}
+p_{t+1} = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}}
 $$
 
 ### Numerator
@@ -289,7 +296,7 @@ $$
 ### Then it becomes: 
 
 $$
-p = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}} = \frac{p^2(1-s_{AA}) + pq (1-hs_{Aa})}{1-p^2s_{AA} - 2pqhs_{Aa} -q^2s_{aa}}
+p_{t+1} = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}} = \frac{p^2(1-s_{AA}) + pq (1-hs_{Aa})}{1-p^2s_{AA} - 2pqhs_{Aa} -q^2s_{aa}}
 $$
 
 ---
@@ -297,7 +304,8 @@ $$
 ### In the special case when $s_{AA} = 0$
 
 $$
-p = \frac{p^2 + pq (1-hs_{Aa})}{1- 2pqhs_{Aa} -q^2s_{aa}}
+p_{t+1} = \frac{p^2 + pq (1-hs_{Aa})}{1- 2pqhs_{Aa} -q^2s_{aa}}
 $$
 
 ---
+This is convoluted no doubt. Lets write some code that help us break this down into more intuitive simulations~!
