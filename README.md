@@ -39,6 +39,8 @@ conda deactivate
 
 ## Load most up to date version 
 module load python3.11-anaconda/2023.09-0
+## create 
+source ${ANACONDA_ROOT}/etc/profile.d/conda.sh
 
 
 ```
@@ -53,5 +55,5 @@ module load python3.11-anaconda/2023.09-0
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDk2MjczNjcxXX0=
+eyJoaXN0b3J5IjpbMTMzNTgzMzYzNl19
 -->
