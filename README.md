@@ -58,10 +58,11 @@ conda activate /gpfs1/cl/biol6990/envs/popgensims
 
 python -m ipykernel install --user --name=popgensims
 ```
+Launch the jupyter notebook via OOP "interactive apps"
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwMTI1MTUyOV19
+eyJoaXN0b3J5IjpbLTQ0NzAzNTkzMywxMDAxMjUxNTI5XX0=
 -->
