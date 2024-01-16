@@ -139,7 +139,7 @@ $$
 Solving for the special case:
 
 $$
-\bar{\omega}_{recessive\ a} = 1-q^2s_{aa}
+\bar{\omega} = 1-q^2s_{aa}
 $$
 
 Lets revisit the original case:
