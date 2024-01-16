@@ -185,5 +185,13 @@ $$
 recall in the HW model, the expected $p^2$ is $0.5^2 = 0.25$
 
 $$
-f_{Aa}=\frac{2x0.5x0.5}{1-(0.5)^2(0.2)} = \frac{0.50}{0.95} = 0.263 
+f_{Aa}=\frac{2x0.5x0.5}{1-(0.5)^2(0.2)} = \frac{0.50}{0.95} = 0.526 
 $$
+
+recall in the HW model, the expected $2pq$ is $2x0.5x0.5 = 0.50$
+
+|param|No evolution|selection|
+|--|--|--|
+|$f_{AA}$| 0.25 | 0.263 (up)|
+|$f_{Aa}$| 0.50 | 0.526 (up)|
+|$f_{aa}$| 0.25 | 0.210 (down)|
