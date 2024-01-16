@@ -1,5 +1,5 @@
 # Topic 1 (-pract): Intro to the VACC
-Program in Biological Data Science and QuEST
+
 
 ## Understanding the VACC
 An overly simplistic, yet intuitive introduction to our supercomputer.
