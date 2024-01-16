@@ -200,7 +200,7 @@ recall in the HW model, the expected $2pq$ is $2x0.5x0.5 = 0.50$
 recall that, in general
 
 $$
-p = f(Ho_{AA}) + f(Het)
+p = f(Ho_{AA}) + \frac{f(Het)}{2} 
 $$
 
 under selection
@@ -224,4 +224,4 @@ $$
 
 ## A more complex scenario... What if the allele is not null?
 
-Lets entrain a different scenrario. Instead of assuming that $a$ is a "null" allele of some sort. Let's imagine that the phenotype is sensitive to the allele dosage.  
+Lets entrain a different scenrario. Instead of assuming that $a$ is a "null" allele of some sort. Let's imagine that the phenotype is sensitive to the allele dosage.  In this cases $AA$ will have a phenotype, $Aa$ a different phenotype, and $aa$ yet a diferent phenotype.
