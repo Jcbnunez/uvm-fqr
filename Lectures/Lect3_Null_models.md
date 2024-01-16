@@ -125,13 +125,13 @@ $$
 ### But what about allele frequencies? We can describe this from the genotype frequencies 
 
 $$
-p = 2f(Ho_{AA}) + f(Het)
+p = f(Ho_{AA}) + f(Het)
 $$
 
 and
 
 $$
-q = 2f(Ho_{aa}) + f(Het)
+q = f(Ho_{aa}) + f(Het)
 $$
 
 ## :mega: Notably, while the math has (somewhat) increased in complexity, the overall pattern remains the same
