@@ -226,3 +226,30 @@ $$
 ## A more complex scenario... What if the allele is not null?
 
 Lets entrain a different scenrario. Instead of assuming that $a$ is a "null" allele of some sort. Let's imagine that the phenotype is sensitive to the allele dosage.  In this cases $AA$ will have a phenotype, $Aa$ a different phenotype, and $aa$ yet a diferent phenotype.
+
+### Coefficient of dominance accounts for different phenotypes (due to allele contribution)
+
+
+|parameter|$AA$|$Aa$|$aa$|
+|--|--|--|--| 
+|Abs. Fitness ($W$)|100|90|80| 
+|Max. Fitness ($W_{max}$)|100|100|100| 
+|Rel. Fitness ($\omega$) |1|0.9|0.8| 
+
+### The selection coefficient for hereozygous can be expressed as: 
+
+$$
+ hs = 1- (\omega)
+$$ 
+
+where $h$ is the coefficient of dominance, and $h$ will denote the "dominance" relationship between $A$ and $a$. Such that the fitness of a heterozygous is $1-hs$. In the most common cases when $h=0$ it means that $A$ is dominant over $a$.  Else, if $h=1$ it means that $a$ is dominant over $A$.  If $h=0.5$ the heterozygote is exactly intermediate. Notably, If $h < 0$ the heterozygote will have higher fitness than either homozygote (i.e., true overdominance).
+
+
+|parameter|$AA$|$Aa$|$aa$|
+|--|--|--|--| 
+|General case |$1-s_{AA}$|$1-hs_{Aa}$|$1-s_{aa}$| 
+
+
+## How do we incorporate this into our math?
+
+
