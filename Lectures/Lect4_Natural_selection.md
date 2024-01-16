@@ -35,8 +35,8 @@ $$
 
 ### What is the functional relationship between $A$ and $a$ (examples)
 
-* $a$ is a null allele, yet $A$ fully compensates
-* $a$ is a null allele, yet $A$ **cannot** fully compensate
+* $a$ is a null allele, yet $A$ fully compensates (dominant, recessive)
+* $a$ is a null allele, yet $A$ **cannot** fully compensate (incomplete dominance or co-dominance)
 
 
 ### The simplest possible case --> one "null" allele
@@ -224,4 +224,4 @@ $$
 
 ## A more complex scenario... What if the allele is not null?
 
-Lets entrain a different scenrario. Instead of assuming that $a$ is a "null" allele of some sort. Let's imagine that the phenotype 
+Lets entrain a different scenrario. Instead of assuming that $a$ is a "null" allele of some sort. Let's imagine that the phenotype is sensitive to the allele dosage.  
