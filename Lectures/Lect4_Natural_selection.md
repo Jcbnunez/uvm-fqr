@@ -252,4 +252,52 @@ where $h$ is the coefficient of dominance, and $h$ will denote the "dominance" r
 
 ## How do we incorporate this into our math?
 
+Since we often want to predict allele frequencies, we will pay attention to the $\bar{\omega}$ function. This becomes visible if we transform everything into selection coefficients:
 
+$$
+p = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}}
+$$
+
+### Numerator
+
+$$
+p^2\omega_{AA} + pq\omega_{Aa}  = p^2(1-s_{AA}) + pq (1-hs_{Aa})
+$$
+
+### Denominator
+
+$$
+\bar{\omega} = p^2\omega_{AA} +2pq\omega_{Aa}+q^2\omega_{aa}
+$$
+
+$$
+\bar{\omega} = p^2(1-s_{AA}) +2pq(1-hs_{Aa})+q^2(1-s_{aa})
+$$
+
+fold out parentheses
+
+$$
+\bar{\omega} = p^2-p^2s_{AA} + 2pq- 2pqhs_{Aa} +q^2-q^2s_{aa}
+$$
+
+reorganize
+
+$$
+\bar{\omega} = 1-p^2s_{AA} - 2pqhs_{Aa} -q^2s_{aa}
+$$
+
+### Then it becomes: 
+
+$$
+p = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}} = \frac{p^2(1-s_{AA}) + pq (1-hs_{Aa})}{1-p^2s_{AA} - 2pqhs_{Aa} -q^2s_{aa}}
+$$
+
+---
+
+### In the special case when $s_{AA} = 0$
+
+$$
+p = \frac{p^2 + pq (1-hs_{Aa})}{1- 2pqhs_{Aa} -q^2s_{aa}}
+$$
+
+---
