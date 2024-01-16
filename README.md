@@ -34,7 +34,12 @@ module load slim
 ### Python (3.11) environments for class
 
 ```bash
+## if an envriont is open do
+conda deactivate
+
+## Load most up to date version 
 module load python3.11-anaconda/2023.09-0
+
 
 ```
 
@@ -48,5 +53,5 @@ module load python3.11-anaconda/2023.09-0
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzczNDI5NzIzXX0=
+eyJoaXN0b3J5IjpbNDk2MjczNjcxXX0=
 -->
