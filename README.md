@@ -11,10 +11,8 @@ This course will take place mostly within the UVM's supercomputer at the Vermont
 
 In order to access the supercomputer you will need to access **[UVM-OOD's site](https://vacc-ondemand.uvm.edu/)**. After providing your credentials  
 
-## Off campus access requires using the UVM Cisco VPM
+## Off campus access requires using the UVM Cisco VPN
 
-check the link here:
-https://www.uvm.edu/it/kb/article/sslvpn2/
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQxNzQ0MjI4OF19
--->
+check the link here: https://www.uvm.edu/it/kb/article/sslvpn2/
+
+
