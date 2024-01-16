@@ -136,7 +136,7 @@ $$
 \bar{\omega} = 1-p^2(0) - 2pq(0)-q^2s_{aa}
 $$
 
-Solving for the special case:
+Solving for the special case **(for an allele $a$ that is recessive)**:
 
 $$
 \bar{\omega} = 1-q^2s_{aa}
@@ -190,8 +190,36 @@ $$
 
 recall in the HW model, the expected $2pq$ is $2x0.5x0.5 = 0.50$
 
-|param|No evolution|selection|
+|param|No evolution|selection ($\Delta$)|
 |--|--|--|
-|$f_{AA}$| 0.25 | 0.263 (up)|
-|$f_{Aa}$| 0.50 | 0.526 (up)|
-|$f_{aa}$| 0.25 | 0.210 (down)|
+|$f_{AA}$| 0.25 | 0.263 (+)|
+|$f_{Aa}$| 0.50 | 0.526 (+)|
+|$f_{aa}$| 0.25 | 0.210 (-)|
+
+### That is selection in a nutshell! how can we derive allele frequencies
+recall that, in general
+
+$$
+p = f(Ho_{AA}) + f(Het)
+$$
+
+under selection
+
+$$
+p = \frac{p^2\omega_{AA}}{\bar{\omega}}  + \frac{pq\omega_{Aa}}{\bar{\omega}}
+$$
+
+simplifying to
+
+$$
+p = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}}
+$$
+
+and in the simpest case (selection againt recessive $a$):
+
+
+$$
+p = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{1-q^2s_{aa}}
+$$
+
+
