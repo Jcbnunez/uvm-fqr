@@ -31,9 +31,10 @@ module load slim
 # in VM use "slimgui"
 ```
 
-### Python (3.11) environments
+### Python (3.11) environments for class
 
 ```bash
+module load python3.11-anaconda/2023.09-0
 
 ```
 
@@ -47,5 +48,5 @@ module load slim
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzMjQ0NDUzOV19
+eyJoaXN0b3J5IjpbNzczNDI5NzIzXX0=
 -->
