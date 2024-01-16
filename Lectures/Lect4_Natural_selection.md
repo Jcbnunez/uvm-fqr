@@ -38,6 +38,7 @@ $$
 * $a$ is a null allele, yet $A$ fully compensates (dominant, recessive)
 * $a$ is a null allele, yet $A$ **cannot** fully compensate (incomplete dominance or co-dominance)
 
+![enter image description here](https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/etc/Figures/prac4/dosages.png)
 
 ### The simplest possible case --> one "null" allele
 One that produces "nothing", or no product in relationship to the other allele. In this case, having two copies of $a$ would imply a null genotype. Yet, any genotype with at least one copy of $A$ will have suffient gene dossage regardless of the number of copies: $AA$ or $Aa$. We call this a case where $a$ is recessive. For example:
