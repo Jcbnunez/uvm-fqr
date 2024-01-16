@@ -35,9 +35,9 @@ $$
 
 ### What is the functional relationship between $A$ and $a$ (examples)
 
-* $a$ is a null allele (when $A$ by itself if suffient)
-* $a$ is a complementary allele
-* $a$ is a lower yield allele
+* $a$ is a null allele, yet $A$ fully compensates
+* $a$ is a null allele, yet $A$ **cannot** fully compensate
+
 
 ### The simplest possible case --> one "null" allele
 One that produces "nothing", or no product in relationship to the other allele. In this case, having two copies of $a$ would imply a null genotype. Yet, any genotype with at least one copy of $A$ will have suffient gene dossage regardless of the number of copies: $AA$ or $Aa$. We call this a case where $a$ is recessive. For example:
@@ -222,4 +222,6 @@ $$
 p = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{1-q^2s_{aa}}
 $$
 
+## A more complex scenario... What if the allele is not null?
 
+Lets entrain a different scenrario. Instead of assuming that $a$ is a "null" allele of some sort. Let's imagine that the phenotype 
