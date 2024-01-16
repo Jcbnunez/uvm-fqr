@@ -45,18 +45,23 @@ source ${ANACONDA_ROOT}/etc/profile.d/conda.sh
 
 ### load conda environmemts
 conda activate /gpfs1/cl/biol6990/envs/popgensims
-
+## This contains "pandas" "numpy" "pySlim" "scikit-allel" "msprime"
 ```
 
 ### Python (3.11)  jupyter 
-
+Run just once
 ```bash
+# Load environment
+module load python3.11-anaconda/2023.09-0
+source ${ANACONDA_ROOT}/etc/profile.d/conda.sh
+conda activate /gpfs1/cl/biol6990/envs/popgensims
 
+python -m ipykernel install --user --name=popgensims
 ```
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjQzMzkzMDNdfQ==
+eyJoaXN0b3J5IjpbMTAwMTI1MTUyOV19
 -->
