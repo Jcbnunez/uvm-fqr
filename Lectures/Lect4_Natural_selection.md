@@ -277,6 +277,8 @@ $$
 \bar{\omega} = p^2\omega_{AA} +2pq\omega_{Aa}+q^2\omega_{aa}
 $$
 
+Transforming $\omega$ to $s$:
+
 $$
 \bar{\omega} = p^2(1-s_{AA}) +2pq(1-hs_{Aa})+q^2(1-s_{aa})
 $$
