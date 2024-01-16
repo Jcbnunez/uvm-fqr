@@ -44,7 +44,7 @@ module list
 source ${ANACONDA_ROOT}/etc/profile.d/conda.sh
 
 ### load conda environmemts
-conda activate 
+conda activate /gpfs1/cl/biol6990/envs/popgensims
 
 ```
 
@@ -58,5 +58,5 @@ conda activate
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDk1OTM3NDVdfQ==
+eyJoaXN0b3J5IjpbLTE3NjQzMzkzMDNdfQ==
 -->
