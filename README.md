@@ -58,11 +58,10 @@ conda activate /gpfs1/cl/biol6990/envs/popgensims
 
 python -m ipykernel install --user --name=popgensims
 ```
-Launch the jupyter notebook via **[UVM-OOD's site](https://vacc-ondemand.uvm.edu/)** "interactive apps"
+Launch the jupyter notebook via **[UVM-OOD's site](https://vacc-ondemand.uvm.edu/)** "interactive apps".
+
+More info: https://www.uvm.edu/vacc/kb/knowledge-base/virtual-environments-in-jupyter-notebook/
 
 
 
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQwMjAyOTA0XX0=
--->
