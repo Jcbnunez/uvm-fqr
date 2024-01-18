@@ -161,9 +161,17 @@ y=p
 geom_line() 
 
 ```
+### What is going on?
+
+---
+
+# Let's explore parameter space a bit ...
 
 
-## Challenge 2:
+
+---
+
+## Challenge 1:
 how would you report the "dominance" coefficient from the genotype counts? Use this code snippet:
 ```r
 ## can you calculate dominance?
