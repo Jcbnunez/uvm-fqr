@@ -85,7 +85,8 @@ tail -n 50 pycno_genome.fasta
 
 ## Adquiring the gene feature file
 ```bash
-cp /netfiles/nunezlab/FQR_files/GeneFeatureFile.gtf
+cp /gpfs1/cl/biol6990/prac2/GeneFeatureFile.gtf
+
 head -n 10 GeneFeatureFile.gtf
 ```
 Do we observe something strange?  ... What is going on?
@@ -421,7 +422,7 @@ Lets submit this script as a SLURM job to the VACC!! Start by copying the code b
 #SBATCH -N 1 # on one node
 #SBATCH -t 6:00:00 
 #SBATCH --mem 10G 
-#SBATCH -o ./slurmOutput/dbgarr.%A_%a.out
+#SBATCH -o ./slurmOutput/rename_scr.%A_%a.out
 #SBATCH -p bluemoon
 
 
@@ -440,7 +441,7 @@ for i in $(seq ${ith} )
    sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
  done
 ```
-Make sure that _needed_ files are in the same directory as the script.. otherwise an error will occur. Then, launch the script to be run by the VAA itself using:
+Make sure that _needed_ files are in the same directory as the script.. otherwise an error will occur. Then, launch the script to be run by the VACC itself using:
 ```bash
 sbatch --account=biol6990 my_renaming_script.sh
 ```
