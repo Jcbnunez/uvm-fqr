@@ -85,7 +85,7 @@ tail -n 50 pycno_genome.fqr.fasta
 
 ## Adquiring the gene feature file
 ```bash
-cp /gpfs1/cl/biol6990/prac2/GeneFeatureFile.gtf
+cp /gpfs1/cl/biol6990/prac2/GeneFeatureFile.gtf ./
 
 head -n 10 GeneFeatureFile.gtf
 ```
