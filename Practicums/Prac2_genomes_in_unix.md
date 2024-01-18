@@ -63,7 +63,7 @@ ls -l ./
 ```
 5. Copy the genome from the repo to your folder
 ```bash
-cp /gpfs1/cl/biol6990/prac2/pycno_genome.fasta ./
+cp /gpfs1/cl/biol6990/prac2/pycno_genome.fqr.fasta ./
 ## cp <from+file> <to>
 ```
 6. Check what is inside this new folder... again.
@@ -74,12 +74,12 @@ ls -l ./
 ## Exploring the genome
 Explore the heads and tails command
 ```bash
-head -n 50 pycno_genome.fasta
+head -n 50 pycno_genome.fqr.fasta
 ## head -n <nlines> <file>
 ```
 
 ```bash
-tail -n 50 pycno_genome.fasta
+tail -n 50 pycno_genome.fqr.fasta
 ## tail -n <nlines> <file>
 ```
 
@@ -97,7 +97,7 @@ We can use computational tools combined with a basic understanding of the file p
 * For example, we know that, by desing, all the chromosome names in a fasta file are named using the `>` symbol. So we can use a function to _extract_ all the information attached to lines containing `>`. -- **enter `grep`**.
 
 ```bash
-grep ">" pycno_genome.fasta
+grep ">" pycno_genome.fqr.fasta
 ```
 
 ## Emailing the author...
