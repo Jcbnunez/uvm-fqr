@@ -42,7 +42,7 @@ After a generation of selection, the farmer puts out a trap in two sites, one wi
 
 |Red|Purple|Blue|
 |--|--|--|
-|1745|3510|4489|
+|3300|3510|4489|
 
 ### How can we infer selection with this data? 
 
@@ -89,5 +89,94 @@ return(output)
 #### Fit our HW function!
 ```R
 HW.fit(2489,4985,2541)
-HW.fit(1745,3510,4489)
+HW.fit(3300, 3510, 4489)
+```
+
+## the USDA wants to know: how "fast" (how many generations) will the "toxic" allele be eliminated under this strong selection?
+
+```r
+#step 1 find fitnesses of each genotype
+AA=3300; Aa=3510; aa=4489
+max_w = max(AA, Aa, aa)
+
+#step 2: calculate relative fitness
+wAA = AA/max_w
+wAa = Aa/max_w
+waa = aa/max_w
+
+message( paste("AA w is", round(wAA, 3), "Aa w is", round(wAa, 3), "aa w is", round(waa, 3), sep = " "  ) )
+
+#step 3 calculate allele frequency
+N=AA+Aa+aa
+p=(2*AA+Aa)/(2*N)
+q=(1-p)
+
+#step 4
+calc_p_t1 = function( p, q, wAA, wAa, waa  ){
+num=p^2*wAA + p*q*wAa
+dem=p^2*wAA + 2*p*q*wAa + q^2*waa
+p_t1 = num/dem
+return(p_t1)
+} 
+
+calc_p_t1(p, q, wAA, wAa, waa)
+```
+
+$$
+p_{t+1} = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}} 
+$$
+
+### Yet, this is just a prediction after one generation. How can we get we simulate multiple generations?
+
+```r
+calc_p_t1 = function( p, q, wAA, wAa, waa  ){
+num=p^2*wAA + p*q*wAa
+dem=p^2*wAA + 2*p*q*wAa + q^2*waa
+p_t1 = num/dem
+return(p_t1)
+} 
+
+library(foreach, lib.loc = "/gpfs1/cl/biol6990/R_shared")
+#lets carry over p, wAA, wAa, waa from above
+message(paste(p, wAA, wAa, waa, sep = " ") )
+
+# create an empty variable for "recursive" use
+p_recur=c()
+#lets simulate 100 generations
+
+simulating.selection=
+foreach(g=1:100, .combine = "rbind")%do%{
+if(g==1){p_recur[g]=p}
+p_recur[g+1] = calc_p_t1(p_recur[g], 
+						(1-p_recur[g]),
+						wAA, wAa, waa)
+data.frame(gen=g, p=p_recur[g+1])
+}
+
+simulating.selection %>%
+ggplot(aes(
+x=gen,
+y=p
+)) +
+geom_line() 
+
+```
+
+
+## Challenge 2:
+how would you report the "dominance" coefficient from the genotype counts? Use this code snippet:
+```r
+## can you calculate dominance?
+if(wAA == wAa){
+message("A is dominant")
+} else if(waa == wAa){
+message("a is dominant")
+} else if(wAA != wAa | waa != wAa){
+if(wAA == 1){
+message("?")
+} else if(waa == 1){
+}
+message("?")
+}
+} ## close elseif
 ```
