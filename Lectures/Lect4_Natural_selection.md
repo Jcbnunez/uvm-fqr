@@ -254,7 +254,7 @@ where $h$ is the coefficient of dominance, and $h$ will denote the "dominance" r
 
 |parameter|$AA$|$Aa$|$aa$|
 |--|--|--|--| 
-|General case |$1-s_{AA}$|$1-hs_{Aa}$|$1-s_{aa}$| 
+|General case |$1-s_{AA}$|$1-hs_{aa}$|$1-s_{aa}$| 
 
 
 ## How do we incorporate this into our math?
