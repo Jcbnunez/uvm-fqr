@@ -35,7 +35,7 @@ observed = c(AA, Aa, aa)
 test = chisq.test(observed, p = expected_freq)
 
 #output
-output = data.frame(testid = testid, p.value = test$p.value)
+output = data.frame( p.value = test$p.value)
 return(output)
 
 }## end function HW.fit
