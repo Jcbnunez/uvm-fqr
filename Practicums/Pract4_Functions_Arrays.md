@@ -332,7 +332,10 @@ Save to your folder using OOD's capabilties as `launch.myfile.sh`
 ```bash
 sbatch --account=biol6990 launch.myfile.sh
 ```
-Lets check on the status of the job.. they should run pretty quickly.
+Lets check on the status of the job.. they should run pretty quickly.... also Lets look at job statisitcs
+```
+my_job_statistics <id>
+```
 
 # Data challenge 3: Processing multiple array outputs into a final analysis
 
