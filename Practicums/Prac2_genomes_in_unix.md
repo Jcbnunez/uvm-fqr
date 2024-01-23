@@ -42,7 +42,7 @@ X  |   12345  |  snp_111  | G  |   A   |   29  |  PASS   | NS=3;DP=14;AF=0.5;DB;
 
 I have already downloaded the genome from NCBI and have stored it in our shared VACC repository.
 ```bash
-ls /gpfs1/cl/biol6990/prac2/pycno_genome.fasta
+ls /gpfs1/cl/biol6990/prac2/pycno_genome.fqr.fasta
 ```
 
 ## Adquiring the genome
