@@ -443,7 +443,7 @@ Lets submit this script as a SLURM job to the VACC!! Start by copying the code b
 
 
 master_file=./JASTWB01_contigs.tsv
-working_file=./pycno_genome.fasta 
+working_file=./pycno_genome.fqr.fasta
 
 cp ${working_file} ./pycno_genome_modnames.fasta
 
