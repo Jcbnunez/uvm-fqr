@@ -125,6 +125,22 @@ A[DATA] -- Global relabeling of the genome --> C(All genome is renamed)
 ```
 What is  the **best use of your time**? ... What is the **best use of *future you's* time**? For example what about if later on you want to look at many other loci.. or if you had multiple loci to extract to begin with. I submit to you that a global solution that re-labels the genome is the overall most efficient solution, despite having a larger initial investment (i.e., having to code the relabeling pipeline) it will be an overall more efficient use of research resources.
   
+### Lets recap what we have so far...
+```bash
+# we made a new folder
+mkdir pycno_challenge
+cd pycno_challenge
+
+# We moved the sea start genome to it
+cp /gpfs1/cl/biol6990/prac2/pycno_genome.fqr.fasta ./
+
+# we moved the GFF file to the folder
+cp /gpfs1/cl/biol6990/prac2/GeneFeatureFile.gtf ./
+
+# we obtained a master file from the "author"
+cp /gpfs1/cl/biol6990/prac2/JASTWB01_contigs.tsv ./
+```
+
 ## Breaking down the code (lets take a reverse engineering approach!).
 Lets break down what is going on here .... the _stack overflow_ approach! 
 >**lets talk about stack overflow** for one minute...
