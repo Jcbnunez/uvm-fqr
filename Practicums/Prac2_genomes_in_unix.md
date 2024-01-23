@@ -146,7 +146,7 @@ Lets break down what is going on here .... the _stack overflow_ approach!
 >**lets talk about stack overflow** for one minute...
 ```bash
 master_file=./JASTWB01_contigs.tsv
-working_file=./pycno_genome.fasta 
+working_file=./pycno_genome.fqr.fasta
 
 cp ${working_file} ./pycno_genome_modnames.fasta
 
@@ -165,7 +165,7 @@ for i in $(seq ${ith} )
 ### Variables declared by the user
 ```bash
 master_file=./JASTWB01_contigs.tsv
-working_file=./pycno_genome.fasta 
+working_file=./pycno_genome.fqr.fasta
 ```
 here we are declaring environmental variables. This is a convient way to pass information to our script, code, multiple times while having user provided imput just once. Imagine how cumbersone it would to have to change one small paramter 30 times across a script.. vs. declaring a global parameter once ... and changing just that!
 
@@ -410,7 +410,7 @@ Is there a plot twist? -- yes... its **slow**
 
 ```bash
 master_file=./JASTWB01_contigs.tsv
-working_file=./pycno_genome.fasta 
+working_file=./pycno_genome.fqr.fasta
 
 cp ${working_file} ./pycno_genome_modnames.fasta
 
