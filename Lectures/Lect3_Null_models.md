@@ -23,7 +23,7 @@ $$
 p_a =  \frac{n_a}{N}
 $$
 
-where $N$ is the number of individuals in the population, and $n_a$ is the number of times allele "$a$" is observed. In this context the alleles can either be $a$ or $A$ (since we are only envisioning a biallelic site). In other words, $p_a$ is simply the frequency of " $a$ " in the population (i.e., the sum of all $A$ and $a$). Now, **becuase in our idealized population** only $A$ and $a$ exist, hence it must be true that:
+where $N$ is the number of individuals in the population, and $n_{a}$ is the number of times allele "$a$" is observed. In this context the alleles can either be $a$ or $A$ (since we are only envisioning a biallelic site). In other words, $p_a$ is simply the frequency of " $a$ " in the population (i.e., the sum of all $A$ and $a$). Now, **becuase in our idealized population** only $A$ and $a$ exist, hence it must be true that:
 
 $$
 p_a =1-p_A  
