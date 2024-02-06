@@ -125,8 +125,8 @@ return(output)
 |ex.2|10|180|810|
 
 ```r
-HW.fit(720,160,120, "ex.1")
-HW.fit(10,180,810, "ex.2")
+HW.fit(720,160,120)
+HW.fit(10,180,810)
 ```
 
 # Data challenge 2: Producing large simulations using arrays 
