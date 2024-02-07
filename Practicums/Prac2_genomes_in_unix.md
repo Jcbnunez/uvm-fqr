@@ -434,7 +434,7 @@ Lets submit this script as a SLURM job to the VACC!! Start by copying the code b
 #!/usr/bin/env bash
 #
 #SBATCH -J rename_scr
-#SBATCH -c 10
+#SBATCH -c 1
 #SBATCH -N 1 # on one node
 #SBATCH -t 6:00:00 
 #SBATCH --mem 10G 
