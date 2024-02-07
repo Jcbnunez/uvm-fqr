@@ -195,7 +195,7 @@ save as `launch_sel_sim.sh`
 #!/usr/bin/env bash
 #
 #SBATCH -J run_array
-#SBATCH -c 10
+#SBATCH -c 1
 #SBATCH -N 1 # on one node
 #SBATCH -t 6:00:00 
 #SBATCH --mem 10G 
