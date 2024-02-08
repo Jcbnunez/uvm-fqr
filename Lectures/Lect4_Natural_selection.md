@@ -328,4 +328,112 @@ p_{t+1} = \frac{p^2 + pq (1-hs_{aa})}{1- 2pqhs_{aa} -q^2s_{aa}}
 $$
 
 ---
-This is convoluted no doubt. Lets write some code that help us break this down into more intuitive simulations~!
+This is convoluted no doubt. But we will explore some code that may make this math more intuitive via simulations~!
+
+## Finding the slope of the line (i.e., change due to selection)
+
+Lets begin where we last left off (this time we are going to derive the slope as a function of fitness not selection):
+
+$$
+p_{t+1} = \frac{p^2 w_{AA} + pqw_{Aa}}{\bar{\omega}}
+$$
+
+Since the starting condition before selection is $p$, we can derive the line for the change due to selection in one generation by calculating the difference in $p$ in one step:
+
+$$
+\Delta p = p_{t+1}  - p
+$$
+
+or
+
+$$
+\Delta p =\frac{p^2 w_{AA} + pqw_{Aa}}{\bar{\omega}}  - p
+$$
+
+From this we can derive a useful expression for the change in allele frequency due to selection
+
+$$
+\Delta p =\frac{p^2 w_{AA} + pqw_{Aa}  - p\bar{\omega}}{\bar{\omega}}
+$$
+
+now fold out the mean fitness
+
+$$
+\Delta p =\frac{p^2 w_{AA} + pqw_{Aa}  - p(p^2w_{AA} + 2pq w_{Aa} + q^2w_{aa})}{\bar{\omega}}
+$$
+
+Note: please resist the urge to create a cubic polynomial! (i.e., Do not multiply $p$ by $p^2$). Instead notice that we can factor out $p$ entirely as:
+
+$$
+\Delta p =\frac{p(p w_{AA} + qw_{Aa})  - p(p^2w_{AA} + 2pqw_{Aa}+ q^2w_{aa})}{\bar{\omega}}
+$$
+
+Then, the equation becomes (Nortice that we had to multiply the whole thing by -1 since the number did not go away):
+
+$$
+\Delta p =\frac{p[p w_{AA} + qw_{Aa}  - p^2w_{AA} - 2pqw_{Aa} - q^2w_{aa}]}{\bar{\omega}}
+$$
+
+Now, for some tricky math... lets collect all of our $w$ terms 
+
+$$
+\Delta p =\frac{p[p w_{AA} - p^2w_{AA} + qw_{Aa}  - 2pqw_{Aa} - q^2w_{aa}]}{\bar{\omega}}
+$$
+
+Now lets factor out the $w$
+
+$$
+\Delta p =\frac{p[(p  - p^2) w_{AA} + (q  - 2pq) w_{Aa} - q^2w_{aa}]}{\bar{\omega}}
+$$
+
+Some extra factorization
+
+$$
+\Delta p =\frac{p[p(1  - p) w_{AA} + q(1  - 2p) w_{Aa} - q^2w_{aa}]}{\bar{\omega}}
+$$
+
+Now recall that $p(1  - p) = pq$ ... then
+
+$$
+\Delta p =\frac{p[pqw_{AA} + q(1  - 2p) w_{Aa} - q^2w_{aa}]}{\bar{\omega}}
+$$
+
+Notice now that $q$ is a common term accross the equation ( collect it! ):
+
+$$
+\Delta p =\frac{pq[pw_{AA} + (1  - 2p) w_{Aa} - qw_{aa}]}{\bar{\omega}}
+$$
+
+Now lets do some basic artihmetic.. remeber our axiom = $1=p+q$:
+
+$$
+\Delta p =\frac{pq[pw_{AA} + (p + q  - p - p) w_{Aa} + qw_{aa}]}{\bar{\omega}}
+$$
+
+Then:
+
+$$
+\Delta p =\frac{pq[pw_{AA} + (q  - p) w_{Aa} + qw_{aa}]}{\bar{\omega}}
+$$
+
+Now lets fold out the fitness of $w_Aa$ for:
+
+$$
+\Delta p =\frac{pq[pw_{AA} + qw_{Aa}  - pw_{Aa}  + qw_{aa}]}{\bar{\omega}}
+$$
+
+Rearrange and collect terms:
+
+$$
+\Delta p =\frac{pq[pw_{AA} - pw_{Aa} + qw_{Aa}   + qw_{aa}]}{\bar{\omega}}
+$$
+
+Factor out $p$ and $q$:
+
+$$
+\Delta p =\frac{pq[p(w_{AA} - w_{Aa}) + q(w_{Aa}   + w_{aa})]}{\bar{\omega}}
+$$
+
+### Et Voilà, the theorem of natural selection emerges!
+
+We will also explore this using some code and simulations!
