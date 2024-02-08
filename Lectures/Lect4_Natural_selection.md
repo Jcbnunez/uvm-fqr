@@ -18,7 +18,7 @@ In our simplest possible model, called the Hardy-Weingberg model, the population
 |No Drift|There is no stoichastic sampling of gametes due to large pop size|
 |No assortative mating|All individuals are equally likely to contribute to the gene pool|
 
-Furthermore, the model has one intuitive axion: **all allele** and **all genotype** frequency must add up to $1$. Thus
+Furthermore, the model has one intuitive axion: **all allele** and **all genotype** frequencies must add up to $1$. Thus
 
 $p + q =1$
 
