@@ -6,9 +6,27 @@
 One of the core assumtions of the null model we have reviewed so far makes the assumtion that there are no fitness consequences to certain mutations or allelic states. Fitness, in this context, is the ability of an individual to survive and reproduce, compared to other individuals. A phenomenon that, over time, leads to evolutionary change in the population.
 
 ## The base model
-Imagine our classical system of one gene, lets call it "gene $\alpha$" that the gene has two _alleles_ called $A$ and $a$. Diploid individuals that can be born in a popualtio with this properities are" $AA$, $Aa$, or $aa$. This is otherwise a Hardy-Weingberg population: 
+Imagine our classical one locus model. Let the one gene be called "gene $\alpha$" and that the gene has two _alleles_ called $A$ and $a$. Diploid individuals that can be born in a popualtion with this properities are" $AA$, $Aa$, or $aa$. 
 
-In a condition where $A$ and $a$ are "neutral" the changes in allele frequency over time is:
+In our simplest possible model, called the Hardy-Weingberg model, the population is governed by the following rules:
+
+ |rule|meaning|
+|--|--|
+|No Selection|Mutations dont alter fitness|
+|No migration|There is no influx of alleles from other populations|
+|No mutation|New genetic variation cannot be created|
+|No Drift|There is no stoichastic sampling of gametes due to large pop size|
+|No assortative mating|All individuals are equally likely to contribute to the gene pool|
+
+Furthermore, the model has one intuitive axion: **all allele** and **all genotype** frequency must add up to $1$. Thus
+
+$p + q =1$
+
+and
+
+$p^2 + 2pq + q^2 = 1$
+
+Under these conditions the changes in allele frequency over time is:
 
 |param|t|t+1|t+n|
 |--|--|--|--|
