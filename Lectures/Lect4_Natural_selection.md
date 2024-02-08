@@ -404,7 +404,7 @@ $$
 \Delta p =\frac{pq[pw_{AA} + (1  - 2p) w_{Aa} - qw_{aa}]}{\bar{\omega}}
 $$
 
-Now lets do some basic artihmetic.. remeber our axiom = $1=p+q$:
+Now lets do some basic artihmetic.. remember our axiom = $1=p+q$:
 
 $$
 \Delta p =\frac{pq[pw_{AA} + (p + q  - p - p) w_{Aa} + qw_{aa}]}{\bar{\omega}}
