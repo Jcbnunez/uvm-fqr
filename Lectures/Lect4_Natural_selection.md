@@ -298,25 +298,25 @@ $$
 Transforming $\omega$ to $s$:
 
 $$
-\bar{\omega} = p^2(1-s_{AA}) +2pq(1-hs_{Aa})+q^2(1-s_{aa})
+\bar{\omega} = p^2(1-s_{AA}) +2pq(1-hs_{aa})+q^2(1-s_{aa})
 $$
 
 fold out parentheses
 
 $$
-\bar{\omega} = p^2-p^2s_{AA} + 2pq- 2pqhs_{Aa} +q^2-q^2s_{aa}
+\bar{\omega} = p^2-p^2s_{AA} + 2pq- 2pqhs_{aa} +q^2-q^2s_{aa}
 $$
 
 reorganize
 
 $$
-\bar{\omega} = 1-p^2s_{AA} - 2pqhs_{Aa} -q^2s_{aa}
+\bar{\omega} = 1-p^2s_{AA} - 2pqhs_{aa} -q^2s_{aa}
 $$
 
 ### Then it becomes: 
 
 $$
-p_{t+1} = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}} = \frac{p^2(1-s_{AA}) + pq (1-hs_{Aa})}{1-p^2s_{AA} - 2pqhs_{Aa} -q^2s_{aa}}
+p_{t+1} = \frac{p^2\omega_{AA} + pq\omega_{Aa} }{\bar{\omega}} = \frac{p^2(1-s_{AA}) + pq (1-hs_{aa})}{1-p^2s_{AA} - 2pqhs_{aa} -q^2s_{aa}}
 $$
 
 ---
@@ -324,7 +324,7 @@ $$
 ### In the special case when $s_{AA} = 0$
 
 $$
-p_{t+1} = \frac{p^2 + pq (1-hs_{Aa})}{1- 2pqhs_{Aa} -q^2s_{aa}}
+p_{t+1} = \frac{p^2 + pq (1-hs_{aa})}{1- 2pqhs_{aa} -q^2s_{aa}}
 $$
 
 ---
