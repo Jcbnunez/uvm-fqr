@@ -286,7 +286,7 @@ $$
 ### Numerator
 
 $$
-p^2\omega_{AA} + pq\omega_{Aa}  = p^2(1-s_{AA}) + pq (1-hs_{Aa})
+p^2\omega_{AA} + pq\omega_{Aa}  = p^2(1-s_{AA}) + pq (1-hs_{aa})
 $$
 
 ### Denominator
