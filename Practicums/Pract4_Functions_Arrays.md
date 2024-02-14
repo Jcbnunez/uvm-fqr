@@ -138,7 +138,6 @@ This is sort of tricky because we have to simulate 1000 mutations (each with 3 g
 |param.set|$p$|$N$|$\alpha$|
 |--|--|--|--|
 |1|0.1|10|0.1|
-|1|0.1|10|0.1|
 |2|0.4|10|0.1|
 |3|0.6|10|0.1|
 |4|0.8|10|0.1|
