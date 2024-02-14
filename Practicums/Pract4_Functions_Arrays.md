@@ -114,7 +114,7 @@ To be prescise here, our null hypothesis is that the observed values are derived
 Finally we are creating an output, a data frame, that will save the $P-value$ and some information provided by the user, a `testid`. Notice, that we are telling the function to `return` the `output` object... this is key for functions, otherwise nothing will be saved to memory.
 ```r
 #output
-output = data.frame(testid = testid, p.value = test$p.value)
+output = data.frame(p.value = test$p.value)
 return(output)
 ```
 ## Some values to try it out
