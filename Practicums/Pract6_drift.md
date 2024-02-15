@@ -87,6 +87,8 @@ data.frame(p=p_out, gens = 1:t, size = n )
 
 }
  
+
+### Let plot it: 
  
 time_series %>% 
 ggplot(aes(
@@ -106,15 +108,19 @@ ggsave(my_time_plot, file = "my_time_plot.pdf", w = 4, h = 4)
 
 While in class, create, deploy, and graph the outcome of a simulaiton to answer the question: What is the probability of extinction of a **brand new** allele that appears in a population of size (i.e., $n$ ) = 10, 50, 100, 1000... simulate 100 instances of evolution for each parameter for at least 100 generations.
 
-To tackle this. challenge realize that the frequency of a new allele in a diploid population at the moment of introduction is:
+#### Some hints:
+
+* To tackle this. challenge realize that the frequency of a new allele in a diploid population at the moment of introduction is:
 
 $$
 p_{init} = \frac{1}{2N} = \frac{1}{n}
 $$ 
 
-Also take full advantange of array jobs!
+* Note that 
+
+*  Take full advantange of array jobs!
 
 ## Homework code challenge (EC)! 
 
-How would the above simulation look like if we were to include selection in the mix? Assume that the fitness of the $x_{ii}$ genotype is 1.1 (i.e., produces 10% more offspring) and that the same is true for the $x_{ij}$ genotypes.
+How would the above simulation look like if we were to include selection in the mix? Assume that the fitness of the $x_{ii}$ genotype is 1.1 (i.e., produces 10% more offspring) and that the same is true for the $x_{ij}$ genotypes. The fitness of $x_{jj}$ is 1.0
 
