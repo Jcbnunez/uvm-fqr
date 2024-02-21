@@ -40,13 +40,13 @@ After a generation of selection, the farmer puts out a trap in two sites,  obser
 
 * Control site
 
-|Red|Purple|Blue|
+|Blue|Purple|Red|
 |--|--|--|
 |2500|2500|2500|
 
 * Pesticide site
 
-|Red|Purple|Blue|
+|Blue|Purple|Red|
 |--|--|--|
 |2500|2500|2100|
 
