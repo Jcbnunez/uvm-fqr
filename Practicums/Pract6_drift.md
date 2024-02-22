@@ -108,14 +108,9 @@ ggsave(my_time_plot, file = "my_time_plot.pdf", w = 4, h = 4)
 
 While in class, create, deploy, and graph the outcome of a simulaiton to answer the question: What is the allele trajectory of a mutations with initial frequency 0.5 in a population of size (i.e., $n$ ) = 10, 50, 100, 1000, 10000... simulate 100 instances of evolution for each parameter for at least 100 generations.
 
-#### Some hints:
+#### Important:
 
-* To tackle this. challenge realize that the frequency of a new allele in a diploid population at the moment of introduction is:
-
-$$
-p_{init} = \frac{1}{2N} = \frac{1}{n}
-$$ 
-*  Take full advantange of array jobs!
+*  You must take full advantange of array jobs!
 
 ## Homework code challenge (EC)! 
 
