@@ -115,11 +115,7 @@ While in class, create, deploy, and graph the outcome of a simulaiton to answer 
 $$
 p_{init} = \frac{1}{2N} = \frac{1}{n}
 $$ 
-
-* Note that 
-
 *  Take full advantange of array jobs!
-* 
 
 ## Homework code challenge (EC)! 
 
