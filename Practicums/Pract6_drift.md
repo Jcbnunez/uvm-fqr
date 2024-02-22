@@ -106,7 +106,7 @@ ggsave(my_time_plot, file = "my_time_plot.pdf", w = 4, h = 4)
 
 ## In-class code challenge! -- form groups
 
-While in class, create, deploy, and graph the outcome of a simulaiton to answer the question: What is the probability of extinction of a **brand new** allele that appears in a population of size (i.e., $n$ ) = 10, 50, 100, 1000, 10000... simulate 100 instances of evolution for each parameter for at least 100 generations.
+While in class, create, deploy, and graph the outcome of a simulaiton to answer the question: What is the allele trajectory of a mutations with initial frequency 0.5 in a population of size (i.e., $n$ ) = 10, 50, 100, 1000, 10000... simulate 100 instances of evolution for each parameter for at least 100 generations.
 
 #### Some hints:
 
@@ -119,6 +119,7 @@ $$
 * Note that 
 
 *  Take full advantange of array jobs!
+* 
 
 ## Homework code challenge (EC)! 
 
