@@ -73,6 +73,7 @@ drift_func(100,0.5,20*2)
 
 ```R
 library(tidyverse)
+library(foreach, lib.loc = "/gpfs1/cl/biol6990/R_shared")
 
 t=100
 p0=0.5
