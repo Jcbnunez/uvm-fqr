@@ -78,6 +78,21 @@ Unlike its coalescent counterpart, FiT simulators seek to simulate explicity evo
 
 ```mermaid
 graph LR
-a[ancestral pop] --> b[explicit events] --> c[new generation] --> e{criteria fullfilled} --yes--> f[end]
+a[ancestral pop] --> b[explicit events] --> c[new generation] --> e{criteria fullfilled?} --yes--> f[end]
+e --no--> b
+```
+
+### Examples
+
+* Drift simulator
+```mermaid
+graph LR
+a[ancestral pop] --> b[drift only] --> c[reproduction] --> e{100 generation passed?} --yes--> f[measure genetic variation]
+e --no--> b
+```
+* Selection simulator
+```mermaid
+graph LR
+a[ancestral pop] --> b[selection only] --> c[reproduction] --> e{allele fixed?} --yes--> f[report time to fixation]
 e --no--> b
 ```
