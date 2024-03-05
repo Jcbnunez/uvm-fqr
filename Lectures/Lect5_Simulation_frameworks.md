@@ -77,5 +77,7 @@ Different simulators have more or less additional features, but at its core all 
 Unlike its coalescent counterpart, FiT simulators seek to simulate explicity evolutionary events occuring in a population evolging in real time. These simulators are usually very powerful (since they are **explicit**) yet very computatioanlly expensive (as they have to control for multiple **explicit** elemtents).  These simulators often start their runtime with an "ancestral" populations with known properties, they then evolve this populations under given conditions until a set number of generations have been run, or another condition has been met:
 
 ```mermaid
-
+graph LR
+a[ancestral pop] --> b[explicit events] --> c[new generation] --> e{criteria fullfilled} --yes--> f[end]
+e --no--> b
 ```
