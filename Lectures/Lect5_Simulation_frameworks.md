@@ -111,7 +111,7 @@ Forward genetic simulators can usually model the explicit contributions of multi
 
 ```mermaid
 graph LR
-a[parental allele freqs] --produce offspring--> b[p' = drift] --mutation--> c[p'+mut] --selection --> d[selection on p'+mut]
+a[parental allel freqs] --make offspring--> b[p' = drift] --mutation--> c[p'+ mut] --fitness --> d[selection on p'+mut]
 ```
 
 
