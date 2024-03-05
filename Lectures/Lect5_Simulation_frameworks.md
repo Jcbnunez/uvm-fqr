@@ -24,7 +24,7 @@ $$
 
 Also note that the parameter $N$ can be expressed in terms of $N_e$ the effective population size of a species. Nevertheless, this formula gives rise to the coalescent structure of the simulation.
 
-### The standard binomial process
+### The standard binomial process (how variation is sampled over time)
 
 Most coalescent simulators use the assumptions of the Wright-Fisher model. In this scenario, we assume that we have a population of $N$ diploid individuals. We also assume that there are $i$ copies of alleles of gene $\alpha$ and that those alleles are called $A$ and $a$. Since this is a bi-allelic locus (i.e., $k=2$), it must be the case that there are $i$ copies of allele $a$ and $2N-i$ copies of $A$. As we have covered in the past, the probability of getting $n$ copies of allele $a$ in the generation $t_{+1}$ by randomly sampling is defined as a binomial process:
 
@@ -48,4 +48,24 @@ $$
 Pr(H) = \prod_{{t=1}}^{T} Pr(i_{t-1}|i_t)
 $$
  
- ### Recombination in the coalescent 
+ ### Recombination in the coalescent process
+
+Mathematical adavcements to the Kingman coalescent have allowed for the introduction of more nunace elements to the coalescent. For example Hudson 2002 developed a model for recombination simulation (https://academic.oup.com/bioinformatics/article/18/2/337/225783). The model is simple and elegant and assumes that a limited number of recombination events can occur in a population $\rho$ as a function of the populations effective size $N_e$ and the genomic rate of chromosomal recombination $r$, or:
+
+$$
+\rho = 4N_er
+$$
+
+ ### Mutation in the coalescent process
+
+Similar to recombination, the coalescent process also makes a distinction bewtween the process of "genomic mutation", $\mu$ (the rate at which mutations appear in the genome; i.e., a Poisson process), and the levels at which mutations appear, and move through, populations. The **population-scaled mutation rate** is defined as:
+
+$$
+\theta = 4N_e\mu
+$$
+
+Notably, the rate of mutations that is expected to occur in a given "branch" of the genealogy tree is directly proportioal to the lenght of the branch (which in time is a a function of time):
+
+$$
+E(M) = \theta t_i
+$$
