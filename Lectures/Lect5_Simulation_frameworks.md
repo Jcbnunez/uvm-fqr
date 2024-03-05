@@ -1,10 +1,10 @@
 # Topic 5: Population Genetic simulators
 
-Simulation is the backbone of data-driven evolutionary biology. In general there are three types of simualtion frameworks:
+Simulation is the backbone of data-driven evolutionary biology. In general there are two main types of simualtion frameworks:
 
 * Coalescent
 * Forward
-* Resampling 
+
 
 ## Coalescent, backwards-in-time (BiT), simulators
 
@@ -103,7 +103,7 @@ Forward genetic simulators can usually model the explicit contributions of multi
 
 ```mermaid
 graph LR
-a[parental allel freqs] --make offspring--> b[p' = drift] --mutation--> c[p'+ mut] --fitness --> d[selection on p'+mut]
+a[parental allel freqs] --make offspring--> b[p' = drift] --mutation--> c[p'+ mut] --fitness --> d[selection on p'+mut] --new genertion-->a
 ```
 
 ###  Step 1: Drift and reproduction
