@@ -96,3 +96,23 @@ graph LR
 a[ancestral pop] --> b[selection only] --> b1[fitness effects] --> c[new generation] --> e{allele fixed?} --"yes"--> f[report time to fixation]
 e --"no"--> b
 ```
+
+### Selection
+
+For example, a case of selection would implement a familar formula:
+
+$$
+p_{t+1} = \frac{p^2 + pq (1-hs)}{1- 2pqhs -q^2s}
+$$
+
+### Implementing multiple forces
+
+Forward genetic simulators can usually model the explicit contributions of multiple forcess by incorporatig them into an explicit chain of events in the simulation
+
+```mermaid
+graph LR
+a[parental allele freqs] --produce offspring--> b[p' = drift] --mutation--> c[p'+mut] --selection --> d[selection on p'+mut]
+```
+
+
+
