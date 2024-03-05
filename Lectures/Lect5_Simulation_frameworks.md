@@ -42,4 +42,10 @@ $$
 P(n|i) = \binom{2N_{t-1}}{n_{t-1}}(\frac{i_t}{2N_t})^{n_{t-1}}(1-\frac{i}{2N_t})^{2N_{t-1}-n_{t-1}}
 $$
 
-This process proceeds backswards in time until the alleles 
+This process proceeds backswards in time until the alleles coalesce.. or "disapear." A important property of this process is that each coalescent event is independent of each other so that the coealescent trajectory (i.e., $H$)of any given individual (or allele) is described as a product from the initial time $t$, backwards in time to time $T$:
+
+$$
+Pr(H) = \prod_{{t=1}}^{T} Pr(i_{t-1}|i_t)
+$$
+ 
+ ### Recombination in the coalescent 
