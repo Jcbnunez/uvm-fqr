@@ -97,14 +97,6 @@ a[ancestral pop] --> b[selection only] --> b1[fitness effects] --> c[new generat
 e --"no"--> b
 ```
 
-### Selection
-
-For example, a case of selection would implement a familar formula:
-
-$$
-p_{t+1} = \frac{p^2 + pq (1-hs)}{1- 2pqhs -q^2s}
-$$
-
 ### Implementing multiple forces
 
 Forward genetic simulators can usually model the explicit contributions of multiple forcess by incorporatig them into an explicit chain of events in the simulation
@@ -114,5 +106,24 @@ graph LR
 a[parental allel freqs] --make offspring--> b[p' = drift] --mutation--> c[p'+ mut] --fitness --> d[selection on p'+mut]
 ```
 
+###  Step 1: Drift and reproduction
+
+$$
+p'' =  \frac{\binom{2N}{k}p^k(1-p)^{2N-k}}{2N}
+$$
 
 
+###  Step 2: mutation (+ others, i.e., define genomes of the offspring)
+Here we allow of the mutation rate to operate  equally for both forward mutation and backward events.
+
+$$
+p''' =  p'' + \mu(1- 2p'')
+$$
+
+###  Step 3: Selection
+
+For example, a case of selection would implement a familar formula:
+
+$$
+p'''= \frac{p''^2 + p''(1-p'') (1-hs)}{1- 2p(1-p'')hs -(1-p'')^2s}
+$$
