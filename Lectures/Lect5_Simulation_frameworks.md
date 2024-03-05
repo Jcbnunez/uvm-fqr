@@ -6,11 +6,11 @@ Simulation is the backbone of data-driven evolutionary biology. In general there
 * Forward
 * Resampling 
 
-## Coalescent simulators
+## Coalescent, backwards-in-time (BiT), simulators
 
 ### The coalescent process
 
-It is a backwards in time simuations that seeks to reconstruct the genealogy of a sample based on the basics of the Kingsman coalescent (https://academic.oup.com/genetics/article/156/4/1461/6048436). The model depends first and foremost on the **"Coalescent Process"** a theoretical tools that describes the process by which individuals (evolving in tiem) represent samples from a genealogy that eventually coalesces back in time to a single common ancestor. Notably, this genealogical process is independent of the mutation process.  Under the Kingsman' $N$ coalescent process the rate at which alleles are expected to coalescence is the rate $\lambda_G$ of $k$ alleles (where $G$ stands for genealogy):
+It is a backwards-in-time simuations that seeks to reconstruct the genealogy of a sample based on the basics of the Kingsman coalescent (https://academic.oup.com/genetics/article/156/4/1461/6048436). The model depends first and foremost on the **"Coalescent Process"** a theoretical tools that describes the process by which individuals (evolving in tiem) represent samples from a genealogy that eventually coalesces back in time to a single common ancestor. Notably, this genealogical process is independent of the mutation process.  Under the Kingsman' $N$ coalescent process the rate at which alleles are expected to coalescence is the rate $\lambda_G$ of $k$ alleles (where $G$ stands for genealogy):
 
 $$ 
 \lambda_{G|k} = \frac{k(k-1)}{4N}  
@@ -69,3 +69,13 @@ Notably, the rate of mutations that is expected to occur in a given "branch" of 
 $$
 E(M) = \theta t_i
 $$
+
+Different simulators have more or less additional features, but at its core all "off-the-shelf" simulators use these basic parameters.
+
+## Forward-in-time (FiT) simulators
+
+Unlike its coalescent counterpart, FiT simulators seek to simulate explicity evolutionary events occuring in a population evolging in real time. These simulators are usually very powerful (since they are **explicit**) yet very computatioanlly expensive (as they have to control for multiple **explicit** elemtents).  These simulators often start their runtime with an "ancestral" populations with known properties, they then evolve this populations under given conditions until a set number of generations have been run, or another condition has been met:
+
+```mermaid
+
+```
