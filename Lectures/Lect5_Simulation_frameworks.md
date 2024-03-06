@@ -3,7 +3,7 @@
 * Array homework due today!
 * Peer Feedback (due 3/19/24)
 * Schedule Albecker Array (due 3/21/24)
-* Schedule Selection simulator + Array (last homework; due 4/4/24 )
+* Schedule Selection simulator + Array (last homework; due 4/9/24)
 
 # Topic 5: Population Genetic Simulators
 
