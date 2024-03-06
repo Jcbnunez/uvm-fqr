@@ -88,6 +88,16 @@ print("negative space of " + element + " is " + element*-1);
 // one interesting peculiarity of Eidos is that the ";" symbol is not needed when closing loops or curly brackets in general, just at the end of the line of actual commands
 ```
 
+## objects
+**note from the Eidos manual:** "In Eidos you cannot define your own object classes; you work only with the predefined object classes supplied by SLiM or whatever other Context you might be using Eidos within. These predefined object classes generally define Context-dependent objectelements related to the task performed by the Context; in SLiM, the classes are things such as mutations, genomic elements, and mutation types" ... see page 35
+
+## Functions in Eidos
+
+```c
+x=1:10;
+size(x);
+```
+
 ## Creating object properties (very "pythonesque")
 
 ```c
