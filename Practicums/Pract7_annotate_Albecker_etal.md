@@ -1,5 +1,7 @@
 # Annotating the code from Albecker _et al._ 2021
 
+Find original article here: [https://doi.org/10.1098/rspb.2021.2122](https://doi.org/10.1098/rspb.2021.2122)
+
 ### Simulating conditions
 ```r
 
