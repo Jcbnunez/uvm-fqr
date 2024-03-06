@@ -111,5 +111,14 @@ z = array(1:12, c(2,2,3));
 z;
 ```
 
+## User defined functions
+
+```c
+function (integer)sum10(integer x)
+{
+return(x+10);
+}
+```
+
 ## Built in function in Eidos
 starting in page 52 of the manual of Eidos (http://benhaller.com/slim/Eidos_Manual.pdf) all of the pre-built functions are defined. Please take a second to explore them... 
