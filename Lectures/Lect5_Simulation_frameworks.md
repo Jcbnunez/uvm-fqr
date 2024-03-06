@@ -18,7 +18,7 @@ Simulation is the backbone of data-driven evolutionary biology. In general there
 
 ### The coalescent process
 
-It is a backwards-in-time simuations that seeks to reconstruct the genealogy of a sample based on the basics of the Kingsman coalescent (https://academic.oup.com/genetics/article/156/4/1461/6048436). The model depends first and foremost on the **"Coalescent Process"** a theoretical tools that describes the process by which individuals (evolving in tiem) represent samples from a genealogy that eventually coalesces back in time to a single common ancestor. Notably, this genealogical process is independent of the mutation process.  Under the Kingsman' $N$ coalescent process the rate at which alleles are expected to coalescence is the rate $\lambda_G$ of $k$ alleles (where $G$ stands for genealogy):
+It is a backwards-in-time simulation that seeks to reconstruct the genealogy of a sample based on the basics of the Kingsman coalescent (https://academic.oup.com/genetics/article/156/4/1461/6048436). The model depends first and foremost on the **"Coalescent Process"** a theoretical tool that describes the process by which individuals (evolving in time) represent samples from a genealogy that eventually coalesces back in time to a single common ancestor. Notably, this genealogical process is independent of the mutation process.  Under the Kingsman' $N$ coalescent process the rate at which alleles are expected to coalesce is the rate $\lambda_G$ of $k$ alleles (where $G$ stands for genealogy):
 
 $$ 
 \lambda_{G|k} = \frac{k(k-1)}{4N}  
