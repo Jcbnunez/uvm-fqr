@@ -1,4 +1,11 @@
-# Topic 5: Population Genetic simulators
+# Book-keeping issues
+
+* Array homework due today!
+* Peer Feedback (due 3/19/24)
+* Schedule Albecker Array (due 3/21/24)
+* Schedule Selection simulator + Array (last homework; due 4/4/24 )
+
+# Topic 5: Population Genetic Simulators
 
 Simulation is the backbone of data-driven evolutionary biology. In general there are two main types of simualtion frameworks:
 
