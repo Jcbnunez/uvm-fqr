@@ -28,7 +28,7 @@ module load rstudio
 
 ```bash
 module load slim
-# in VM use "slimgui"
+# in VM use "SLiMgui"
 ```
 
 ### Python (3.11) environments for class
