@@ -1,9 +1,9 @@
 # Book-keeping issues
 
-* Array homework due today!
+* Array homework (1) due today!
 * Peer Feedback (due 3/19/24)
-* Schedule Albecker Array (due 3/21/24)
-* Schedule Selection simulator + Array (last homework; due 4/16/24)
+* Homework (2) Albecker Array (due 3/21/24)
+* Homework (3) Selection simulator + Array (last homework; due 4/16/24)
 * No class on April 8 and April 11 -- Use this week to work on your final projects!
 
 # Topic 5: Population Genetic Simulators
