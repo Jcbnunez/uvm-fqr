@@ -98,8 +98,18 @@ x=1:10;
 size(x);
 ```
 
-## Creating object properties (very "pythonesque")
+## Matrices and arrays
 
 ```c
-object.age = 10
+y = matrix(1:6, nrow=2);
+y;
+dim(y);
 ```
+or ...
+```c
+z = array(1:12, c(2,2,3));
+z;
+```
+
+## Built in function in Eidos
+starting in page 52 of the manual of Eidos (http://benhaller.com/slim/Eidos_Manual.pdf) all of the pre-built functions are defined. Please take a second to explore them... 
