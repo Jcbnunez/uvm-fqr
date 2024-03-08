@@ -17,6 +17,7 @@ initialize() {
 	
 	// m1 mutation type: neutral
 	initializeMutationType("m1", 0.5, "f", 0.0);
+	// mut name, dominance, "distribution", "selection coeff"
 	
 	// g1 genomic element type: uses m1 for all mutations
 	initializeGenomicElementType("g1", m1, 1.0);
@@ -148,3 +149,5 @@ run the time machine 10000 "ticks" into the future
 sim.simulationFinished();
 }
 ```
+
+
