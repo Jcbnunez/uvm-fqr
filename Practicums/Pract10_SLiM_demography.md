@@ -1,6 +1,7 @@
 # Demography in SLiM
 
-Genomic information
+The first part of the code in SLiM scripts usually define all important stuff about the genome. These commands are included within the initialize call:
+
 ```c
 initialize() {
 initializeMutationRate(1e-7);
@@ -12,6 +13,9 @@ initializeRecombinationRate(1e-8);
 ```
 
 ## Instantaneous change in size
+
+Now lets looks at demographic changes of our species. We will create a populaion and the change its population size instantaniously:
+
 ```c
 1 early() { sim.addSubpop("p1", 1000); }
 1000 early() { p1.setSubpopulationSize(100); }
@@ -21,6 +25,7 @@ initializeRecombinationRate(1e-8);
 
 
 ### report heterozygocity
+Lets write a little reportted code to tells us about heterozygocity:
 ```c
 late(){
 het = calcHeterozygosity(p1.genomes);
@@ -29,6 +34,7 @@ catn( sim.cycle + "," + het);
 ```
 
 ### report heterozygocity -- reduced reporter
+Lets create some control over the rate at which information is printed: 
 ```c
 late(){
 if (sim.cycle % 1000 == 0 | sim.cycle == 1) {
@@ -39,6 +45,7 @@ catn( sim.cycle + "," + het);
 ```
 
 ## Cyclical Change
+We can incorporate math functions to control behaviors in our simulation
 ```c
 1 early() { sim.addSubpop("p1", 1500); }
 early() {
@@ -48,6 +55,8 @@ p1.setSubpopulationSize(asInteger(newSize));
 ```
 
 ## Migration
+Create many populations and include migration. This takes advantge of loops:
+
 ```c
 1 early() {
 
