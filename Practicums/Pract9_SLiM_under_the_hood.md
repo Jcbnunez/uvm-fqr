@@ -119,11 +119,12 @@ sim.addSubpop("p1", 500);
 ```
 
 ### The wright-fisher model:
-- no selection, 
-- no mutation, 
-- no migration, 
+- no selection
+- no mutation
+- no migration
 - non-overlapping generations 
 - random mating
+- Sample size is $2N$
 
 The probaility of sampling alleles is:
 
@@ -138,4 +139,12 @@ graph LR
 a[first] --> b[early] --> c[offspring] --> d[remove fix muts] --> e[offspring => parents] --> f[late]
 ```
 
-
+## Forward-in-time simulation
+run the time machine 10000 "ticks" into the future
+```c
+// run to tick 10000
+10000 early()
+{
+sim.simulationFinished();
+}
+```
