@@ -6,6 +6,8 @@
 ls();
 ```
 
+## The Genomic Environment
+ 
 Lets start with the basic simulation in SliM, and **run just the first 10 ticks**...
 
 ```c
@@ -76,7 +78,64 @@ m1.propertySignature();
 // => means read only property and is assigned by the simulation
 ```
 
-### for example
+### Mutations
+
+#### Dominance Coefficients are inherent to all the mutations
 ```c
 m1.dominanceCoeff
 ```
+
+#### Selection Coefficients are inherent only to each invidual mutation
+```c
+mut = sim.mutationsOfType(m1);
+mut.propertySignature();
+```
+* Change selection coefficient
+```c
+mut.selectionCoeff
+mut[0:10].setSelectionCoeff(0.1);
+mut.selectionCoeff
+```
+
+### Genomes
+
+```c
+g1.propertySignature();
+g1.mutationTypes(); // --> error
+// since we are only reporting
+g1.mutationTypes;
+g1.mutationFractions;
+```
+
+## The Ecology of the simulation
+
+The ecology of individuals happens in a temporally explicit fashion:
+
+```c
+early()
+{
+sim.addSubpop("p1", 500);
+}
+```
+
+### The wright-fisher model:
+- no selection, 
+- no mutation, 
+- no migration, 
+- non-overlapping generations 
+- random mating
+
+The probaility of sampling alleles is:
+
+$$
+P_{ij} = \binom{2N}{j}(\frac{i}{2N})^j(1-\frac{i}{2N})^{2N-j}
+$$
+
+### order of operations 
+
+```mermaid
+graph LR
+a[first] --> b[early] --> c[offspring] --> d[remove fix muts] --> e[offspring => parents] --> f[late]
+```
+
+
