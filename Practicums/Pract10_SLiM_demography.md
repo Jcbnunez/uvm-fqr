@@ -75,3 +75,73 @@ sim.subpopulations[i-1].setMigrationRates(i+1, 0.05);
 10000 late() { sim.outputFixedMutations(); }
 
 ```
+
+
+## Gravel et al. 2011; Case Study
+
+```c++
+// Model based on Gravel et al. 2011, doi:10.1073/pnas.1019276108 (hereafter "paper")
+
+initialize() {
+initializeMutationRate(2.36e-8); // theta=3813.75
+initializeMutationType("m1", 0.5, "f", 0.0);
+initializeGenomicElementType("g1", m1, 1.0);
+initializeGenomicElement(g1, 0, 9999); // paper uses 4.04e6, 5007837, etc.
+initializeRecombinationRate(1e-8);
+}
+
+  
+
+// INITIALIZE the ancestral African population of size 7310
+1 early() { sim.addSubpop("p1", asInteger(round(7310.370867595234))); } // paper rounds to 7310
+// END BURN-IN period of 10*N=73104 generations (specific to SLiM recipe); EXPAND the African population
+// This occurs (5919.131117 generations)*(25 years)=147978 yr ago; paper rounds to 5920 gens (148000 yr)
+// Thus, simulation should end at generation 1+73104+5919.131117=79024
+73105 early() { p1.setSubpopulationSize(asInteger(round(14474.54608753566))); } // paper rounds to 14474
+
+// SPLIT Eurasians (p2) from Africans (p1) and SET UP MIGRATION between them
+// This occurs 2056.396652 generations (51409.9163 years) ago; paper rounds to 2040 gens (51000 yr)
+// Relative to beginning, this is generation 79024-2056.396652=76968
+
+76968 early() {
+sim.addSubpopSplit("p2", asInteger(round(1861.288190027689)), p1); // paper rounds to 1861
+p1.setMigrationRates(c(p2), c(15.24422112e-5)); // paper rounds to 15e-5
+p2.setMigrationRates(c(p1), c(15.24422112e-5)); // paper rounds to 15e-5
+}
+
+// SPLIT p2 into European (p2) and East Asian (p3) subpopulations; RESIZE; SET UP MIGRATION between them
+// This occurs 939.8072428 generations (23495.18107 years) ago; paper rounds to 920 gens (23000 yr)
+// Relative to beginning, this is generation 79024-939.8072428=78084
+
+78084 early() {
+sim.addSubpopSplit("p3", asInteger(round(553.8181989)), p2); // paper rounds to 554
+p2.setSubpopulationSize(asInteger(round(1032.1046957333444))); // reduce European size; paper rounds to 1032
+// Set migration rates for the rest of the simulation
+p1.setMigrationRates(c(p2, p3), c(2.54332678e-5, 0.7770583877e-5)); // paper rounds to c(2.5e-5, 0.78e-5)
+p2.setMigrationRates(c(p1, p3), c(2.54332678e-5, 3.115817913e-5)); // paper rounds to c(2.5e-5, 3.11e-5)
+p3.setMigrationRates(c(p1, p2), c(0.7770583877e-5, 3.115817913e-5)); // paper rounds to c(0.78e-5, 3.11e-5)
+}
+
+// SET UP EXPONENTIAL GROWTH in Europe (p2) and East Asia (p3)
+// Where N(0) is the base subpopulation size and t = gen - 78084:
+// N(Europe) should be int(round(N(0) * (1 + 0.003784324268)^t)), i.e., growth is r=0.38% per generation
+
+// N(East Asia) should be int(round(N(0) * (1 + 0.004780219543)^t)), i.e., growth is r=0.48% per generation
+
+78084:79024 early() {
+t = sim.cycle - 78084;
+p2_size = round(1032.1046957333444 * (1 + 0.003784324268)^t); // paper rounds to N(0)=1032 and r=0.0038
+p3_size = round(553.8181989 * (1 + 0.004780219543)^t); // paper rounds to N(0)=554 and r=0.0048
+p2.setSubpopulationSize(asInteger(p2_size));
+p3.setSubpopulationSize(asInteger(p3_size));
+}
+
+// OUTPUT AND TERMINATE
+// Generation 79024 is the present, i.e., 1 initialize + 73104 burn-in + 5919 evolution
+
+79024 late() {
+p1.outputSample(216); // YRI phase 3 diploid sample of size 108
+p2.outputSample(198); // CEU phase 3 diploid sample of size 99
+p3.outputSample(206); // CHB phase 3 diploid sample of size 103
+}
+```
