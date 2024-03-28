@@ -155,13 +155,5 @@ catn( "t=" + sim.cycle + ", P1Het=" + het1 + ", P2Het=" + het2 + ", P3Het=" + he
 } 
 //////////////////////.
 
-// OUTPUT AND TERMINATE
-// Generation 79024 is the present, i.e., 1 initialize + 73104 burn-in + 5919 evolution
-
-79024 late() {
-p1.outputSample(216); // YRI phase 3 diploid sample of size 108
-p2.outputSample(198); // CEU phase 3 diploid sample of size 99
-p3.outputSample(206); // CHB phase 3 diploid sample of size 103
-}
 ```
 
