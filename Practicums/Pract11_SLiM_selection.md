@@ -112,9 +112,10 @@ m.setSelectionCoeff(effect_size);
 } 
 }
 
-fitnessEffect() {
-phenotype = sum(individual.genomes.countOfMutationsOfType(m2));
-return 1.5 - (phenotype - 10.0)^2 * 0.005;
+10002:13000 early() {
+inds = sim.subpopulations.individuals;
+genotype_effect = inds.sumOfMutationsOfType(m2);
+survival = -1*((0.5+genotype_effect)^2)+1;
 }
 
 ```
