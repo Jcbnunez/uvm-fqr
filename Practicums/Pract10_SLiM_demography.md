@@ -157,7 +157,7 @@ reporter = "t=" + sim.cycle + ", P1Het=" + het1 + ", P2Het=" + het2 + ", P3Het="
 catn(reporter);
 
 /// Save to file
-MYPATH="/gpfs2/scratch/jcnunez/fqr"
+MYPATH="/gpfs2/scratch/jcnunez/fqr";
 writeFile(paste(c(MYPATH, "/", "Reporter.txt"), sep = ""), reporter, append = T);
 }
 } 
