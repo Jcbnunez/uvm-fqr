@@ -58,64 +58,43 @@ Selection does not act on the genetic variants themselves... it acts on phenotyp
 
 ## Simulaing a trait that has some optimun in a given environment.
 
-Lets imagine that a species has some tolerance to salinity that follows some kind of optima. At that point survival of individuals is 100%, and outside of that optimun... there is a cost to survival.. as follows:
-
-$$
-Phenotype = (\frac{x-\gamma}{\omega})^2 + 1
-$$
-
-Where $x$= is the environment experienced by organisms. $\gamma$= is the optimal environment for a given genotype. And $\omega$= is a width mofidier.
-
-And that:
-
-$$
-fitness =
-\begin{cases}
-Phenotype> 0,  & fitness = Phenotype \\
-Phenotype <= 0, & fitness = 0
-\end{cases}
-$$
-
-### $x$= -2 to 2, $\gamma$=0, $\omega$=1
-![enter image description here](https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/etc/Figures/prac11/function.quadrat.png)
-
-### Now lets allow for $\gamma$ to be genetically controlled
-![enter image description here](https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/etc/Figures/prac11/multiple_gammas.png)
+Lets imagine that a species has some tolerance to salinity that follows some kind of optima. At that point survival of individuals is 100%, and outside of that optimun... there is a cost to survival.
 
 ## Polygenic adaptation using QTNs
 
 ```c+
+// Keywords: quantitative trait
+
+  
+
 initialize() {
 initializeMutationRate(1e-7);
 initializeMutationType("m1", 0.5, "f", 0.0); // neutral
-initializeMutationType("m2", 0.5, "f", 0.0); // QTLs -- also neutral
+initializeMutationType("m2", 0.5, "n", 0.0, 0.15); // QTLs
 m2.convertToSubstitution = F;
-m2.color = "green";
-initializeGenomicElementType("g1", m1, 1);
-initializeGenomicElement(g1, 0, 99000);
-initializeRecombinationRate(1e-7);
+initializeGenomicElementType("g1", c(m1, m2), c(1.0, 0.1));
+initializeGenomicElement(g1, 0, 99999);
+initializeRecombinationRate(1e-8);
 }
 
-1 early() { sim.addSubpop("p1", 1500); }
+mutationEffect(m2) { return 1.0; } // make QTL neutral
+
+1 early() {
+sim.addSubpop("p1", 500);
+cat("Phenotypes: 0");
+
+}
+
+  
 
 1:10000 late() {
-if (sim.cycle % 100 == 0 | sim.cycle == 1) {
-het = calcHeterozygosity(p1.genomes);
-catn( "t=" + sim.cycle + ", Het=" + het);
-}} 
-
-10001 early() {
-res_muts = sample(sim.mutationsOfType(m1), 30);
-for (m in res_muts){
-effect_size = rnorm(1, 0, 0.01);
-m.setSelectionCoeff(effect_size);
-} 
-}
-
-10002:13000 early() {
 inds = sim.subpopulations.individuals;
-genotype_effect = inds.sumOfMutationsOfType(m2);
-survival = -1*((0.5+genotype_effect)^2)+1;
+phenotypes = inds.sumOfMutationsOfType(m2);
+scale = dnorm(5.0, 5.0, 2.0);
+inds.fitnessScaling = 1.0 + dnorm(phenotypes, 5.0, 2.0) / scale;
+
+if (sim.cycle % 10 == 0)
+cat(sim.cycle + ": Mean phenotype == " + mean(phenotypes) + "\n");
 }
 
 ```
