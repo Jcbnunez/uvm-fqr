@@ -93,15 +93,15 @@ m2.convertToSubstitution = F;
 m2.color = "red";
 initializeGenomicElementType("g1", m1, 1);
 initializeGenomicElement(g1, 0, 20000);
-initializeRecombinationRate(1e-8);
+initializeRecombinationRate(1e-7);
 }
 
-1 early() { sim.addSubpop("p1", 500); }
+1 early() { sim.addSubpop("p1", 1500); }
 
-1:3000 late() {
+1:10000 late() {
 if (sim.cycle % 100 == 0 | sim.cycle == 1) {
 het = calcHeterozygosity(p1.genomes);
-catn( "t=" + sim.cycle + ", P1Het=" + het);
+catn( "t=" + sim.cycle + ", Het=" + het);
 }} 
 
 
@@ -110,7 +110,4 @@ phenotype = sum(individual.genomes.countOfMutationsOfType(m2));
 return 1.5 - (phenotype - 10.0)^2 * 0.005;
 }
 
-5000 late() {
-print(sim.mutationFrequencies(NULL, sim.mutationsOfType(m2)));
-}
 ```
