@@ -76,7 +76,11 @@ Phenotype <= 0, & fitness = 0
 \end{cases}
 $$
 
+### $x$= -2 to 2, $\gamma$=0, $\omega$=1
 ![enter image description here](https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/etc/Figures/prac11/function.quadrat.png)
+
+### Now lets allow for $\gamma$ to be genetically controlled
+![enter image description here](https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/etc/Figures/prac11/multiple_gammas.png)
 
 ## Polygenic adaptation using QTNs
 
