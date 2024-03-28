@@ -43,6 +43,7 @@ initializeGenomicElement(g1, 0, 99999);
 initializeRecombinationRate(1e-8);
 }
 
+// follow m2 mutations...
 1 early() { sim.addSubpop("p1", 500); }
 5000:10000 mutationEffect(m2) { return 1.0; } // make mutations neutral again
 10000 early() { sim.simulationFinished(); }
