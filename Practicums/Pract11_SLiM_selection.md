@@ -90,9 +90,9 @@ initializeMutationRate(1e-7);
 initializeMutationType("m1", 0.5, "f", 0.0); // neutral
 initializeMutationType("m2", 0.5, "f", 0.0); // QTLs -- also neutral
 m2.convertToSubstitution = F;
-m2.color = "red";
+m2.color = "green";
 initializeGenomicElementType("g1", m1, 1);
-initializeGenomicElement(g1, 0, 20000);
+initializeGenomicElement(g1, 0, 99000);
 initializeRecombinationRate(1e-7);
 }
 
@@ -104,6 +104,13 @@ het = calcHeterozygosity(p1.genomes);
 catn( "t=" + sim.cycle + ", Het=" + het);
 }} 
 
+10001 early() {
+res_muts = sample(sim.mutationsOfType(m1), 30);
+for (m in res_muts){
+sc = rnorm(1, 0, 1/loc);
+m.setSelectionCoeff(sc);
+} 
+}
 
 fitnessEffect() {
 phenotype = sum(individual.genomes.countOfMutationsOfType(m2));
