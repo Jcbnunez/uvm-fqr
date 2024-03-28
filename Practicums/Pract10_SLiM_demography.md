@@ -94,13 +94,6 @@ initializeRecombinationRate(1e-8);
 // Thus, simulation should end at generation 1+73104+5919.131117=79024
 73105 early() { p1.setSubpopulationSize(asInteger(round(14474.54608753566))); } // paper rounds to 14474
 
-1:73105 late() {
-if (sim.cycle % 1000 == 0 | sim.cycle == 1) {
-het = calcHeterozygosity(p1.genomes);
-catn( "t=" + sim.cycle + ", P1Het=" + het);
-} // every 1000 gens
-} // 1-73k
-
 // SPLIT Eurasians (p2) from Africans (p1) and SET UP MIGRATION between them
 // This occurs 2056.396652 generations (51409.9163 years) ago; paper rounds to 2040 gens (51000 yr)
 // Relative to beginning, this is generation 79024-2056.396652=76968
@@ -110,6 +103,17 @@ sim.addSubpopSplit("p2", asInteger(round(1861.288190027689)), p1); // paper roun
 p1.setMigrationRates(c(p2), c(15.24422112e-5)); // paper rounds to 15e-5
 p2.setMigrationRates(c(p1), c(15.24422112e-5)); // paper rounds to 15e-5
 }
+
+//////////////////////
+// REPORTER 1
+1:76968 late() {
+if (sim.cycle % 1000 == 0 | sim.cycle == 1) {
+het = calcHeterozygosity(p1.genomes);
+catn( "t=" + sim.cycle + ", P1Het=" + het);
+}
+} 
+//////////////////////.
+
 
 // SPLIT p2 into European (p2) and East Asian (p3) subpopulations; RESIZE; SET UP MIGRATION between them
 // This occurs 939.8072428 generations (23495.18107 years) ago; paper rounds to 920 gens (23000 yr)
