@@ -76,6 +76,8 @@ Phenotype <= 0, & fitness = 0
 \end{cases}
 $$
 
+![enter image description here](https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/etc/Figures/prac11/function.quadrat.png)
+
 ## Polygenic adaptation using QTNs
 
 ```c+
