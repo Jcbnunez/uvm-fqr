@@ -107,15 +107,15 @@ p2.setMigrationRates(c(p1), c(15.24422112e-5)); // paper rounds to 15e-5
 }
 
 //////////////////////
+//////////////////////
 // REPORTER 1
 1:76968 late() {
 if (sim.cycle % 1000 == 0 | sim.cycle == 1) {
 het = calcHeterozygosity(p1.genomes);
 catn( "t=" + sim.cycle + ", P1Het=" + het);
-}
-} 
-//////////////////////.
-
+}} 
+//////////////////////
+//////////////////////
 
 // SPLIT p2 into European (p2) and East Asian (p3) subpopulations; RESIZE; SET UP MIGRATION between them
 // This occurs 939.8072428 generations (23495.18107 years) ago; paper rounds to 920 gens (23000 yr)
@@ -146,6 +146,7 @@ p3.setSubpopulationSize(asInteger(p3_size));
 
 
 //////////////////////
+//////////////////////
 // REPORTER 2
 78084:79024 late() {
 if (sim.cycle % 100 == 0 | sim.cycle == 1) {
@@ -155,7 +156,8 @@ het3 = calcHeterozygosity(p3.genomes);
 catn( "t=" + sim.cycle + ", P1Het=" + het1 + ", P2Het=" + het2 + ", P3Het=" + het3);
 }
 } 
-//////////////////////.
+//////////////////////
+//////////////////////
 
 ```
 
