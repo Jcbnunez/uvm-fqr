@@ -146,7 +146,7 @@ p3.setSubpopulationSize(asInteger(p3_size));
 //////////////////////
 // REPORTER 2
 78084:79024 late() {
-if (sim.cycle % 1000 == 0 | sim.cycle == 1) {
+if (sim.cycle % 100 == 0 | sim.cycle == 1) {
 het1 = calcHeterozygosity(p1.genomes);
 het2 = calcHeterozygosity(p2.genomes);
 het3 = calcHeterozygosity(p3.genomes);
