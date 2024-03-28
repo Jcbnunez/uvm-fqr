@@ -2,7 +2,9 @@
 
 The first part of the code in SLiM scripts usually define all important stuff about the genome. These commands are included within the initialize call:
 
-```c
+## Introduce a new adaptive mutation with `addNewDrawnMutation`
+Explore how often mutations fix or go extinct? Why?
+```c++
 initialize() {
 initializeMutationRate(1e-7);
 initializeMutationType("m1", 0.5, "f", 0.0);
@@ -14,10 +16,7 @@ initializeRecombinationRate(1e-8);
 initializeMutationType("m2", 1.0, "f", 0.5); // introduced mutation
 /// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ///
 }
-```
 
-## Introduce a new adaptive mutation with `addNewDrawnMutation`
-```c++
 1 early() { sim.addSubpop("p1", 500); }
 1000 late() {
 target = sample(p1.genomes, 1);
@@ -45,7 +44,7 @@ initializeRecombinationRate(1e-8);
 }
 
 1 early() { sim.addSubpop("p1", 500); }
-2000:3999 mutationEffect(m2) { return 1.0; }
+6000:10000 mutationEffect(m2) { return 1.0; }
 10000 early() { sim.simulationFinished(); }
 ```
 
