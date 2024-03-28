@@ -2,6 +2,8 @@
 
 The first part of the code in SLiM scripts usually define all important stuff about the genome. These commands are included within the initialize call:
 
+# Part 1: Population genetic models
+
 ## Introduce a new adaptive mutation with `addNewDrawnMutation`
 Explore how often mutations fix or go extinct? Why?
 ```c++
@@ -33,6 +35,7 @@ sim.simulationFinished();
 ```
 
 ## Modify an adaptive mutation with `mutationEffect`
+Change the selection coefficient midway
 ```c++
 initialize() {
 initializeMutationRate(1e-7);
