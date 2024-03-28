@@ -74,6 +74,8 @@ p3.outputSample(206); // CHB phase 3 diploid sample of size 103
 
 ## Adding reporters to Gravel et al. 2011 Study ( pt 2 )
 
+Adding two reporters of genetic variation, one before and one after the out of africa migrations
+
 ```c++
 // Model based on Gravel et al. 2011, doi:10.1073/pnas.1019276108 (hereafter "paper")
 
