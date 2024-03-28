@@ -153,7 +153,12 @@ if (sim.cycle % 100 == 0 | sim.cycle == 1) {
 het1 = calcHeterozygosity(p1.genomes);
 het2 = calcHeterozygosity(p2.genomes);
 het3 = calcHeterozygosity(p3.genomes);
-catn( "t=" + sim.cycle + ", P1Het=" + het1 + ", P2Het=" + het2 + ", P3Het=" + het3);
+reporter = "t=" + sim.cycle + ", P1Het=" + het1 + ", P2Het=" + het2 + ", P3Het=" + het3
+catn(reporter);
+
+/// Save to file
+MYPATH="/gpfs2/scratch/jcnunez/fqr"
+writeFile(paste(c(MYPATH, "/", "Reporter.txt"), sep = ""), reporter, append = T);
 }
 } 
 //////////////////////
