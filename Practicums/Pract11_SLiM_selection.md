@@ -52,6 +52,30 @@ initializeRecombinationRate(1e-8);
 10000 early() { sim.simulationFinished(); }
 ```
 
+# Part 2: Polygenic adaptation and Quantitative genetic models
+
+Selection does not act on the genetic variants themselves... it acts on phenotypes encoded by genetic variants. How may we capture this nuance in our models?  -- by allowing population to evolve a continuous trait.
+
+## Simulaing a trait that has some optimun in a given environment.
+
+Lets imagine that a species has some tolerance to salinity that follows some kind of optima. At that point survival of individuals is 100%, and outside of that optimun... there is a cost to survival.. as follows:
+
+$$
+Phenotype = (\frac{x-\gamma}{\omega})^2 + 1
+$$
+
+Where $x$= is the environment experienced by organisms. $\gamma$= is the optimal environment for a given genotype. And $\omega$= is a width mofidier.
+
+And that:
+
+$$
+fitness =
+\begin{cases}
+Phenotype> 0,  & fitness = Phenotype \\
+Phenotype <= 0, & fitness = 0
+\end{cases}
+$$
+
 ## Polygenic adaptation using QTNs
 
 ```c+
