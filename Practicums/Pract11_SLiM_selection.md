@@ -44,7 +44,7 @@ initializeRecombinationRate(1e-8);
 }
 
 1 early() { sim.addSubpop("p1", 500); }
-6000:10000 mutationEffect(m2) { return 1.0; }
+5000:10000 mutationEffect(m2) { return 1.0; } // make mutations neutral again
 10000 early() { sim.simulationFinished(); }
 ```
 
