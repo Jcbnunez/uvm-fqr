@@ -107,8 +107,8 @@ catn( "t=" + sim.cycle + ", Het=" + het);
 10001 early() {
 res_muts = sample(sim.mutationsOfType(m1), 30);
 for (m in res_muts){
-sc = rnorm(1, 0, 1/loc);
-m.setSelectionCoeff(sc);
+effect_size = rnorm(1, 0, 0.01);
+m.setSelectionCoeff(effect_size);
 } 
 }
 
