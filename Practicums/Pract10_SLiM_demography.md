@@ -142,6 +142,19 @@ p2.setSubpopulationSize(asInteger(p2_size));
 p3.setSubpopulationSize(asInteger(p3_size));
 }
 
+
+//////////////////////
+// REPORTER 2
+78084:79024 late() {
+if (sim.cycle % 1000 == 0 | sim.cycle == 1) {
+het1 = calcHeterozygosity(p1.genomes);
+het2 = calcHeterozygosity(p2.genomes);
+het3 = calcHeterozygosity(p3.genomes);
+catn( "t=" + sim.cycle + ", P1Het=" + het1 + ", P2Het=" + het2 + ", P3Het=" + het3);
+}
+} 
+//////////////////////.
+
 // OUTPUT AND TERMINATE
 // Generation 79024 is the present, i.e., 1 initialize + 73104 burn-in + 5919 evolution
 
