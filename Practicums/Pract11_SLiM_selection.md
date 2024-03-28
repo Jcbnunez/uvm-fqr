@@ -64,9 +64,6 @@ Lets imagine that a species has some tolerance to salinity that follows some kin
 
 ```c+
 // Keywords: quantitative trait
-
-  
-
 initialize() {
 initializeMutationRate(1e-7);
 initializeMutationType("m1", 0.5, "f", 0.0); // neutral
