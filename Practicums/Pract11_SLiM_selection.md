@@ -88,18 +88,22 @@ $$
 initialize() {
 initializeMutationRate(1e-7);
 initializeMutationType("m1", 0.5, "f", 0.0); // neutral
-initializeMutationType("m2", 0.5, "f", 0.0); // QTLs
+initializeMutationType("m2", 0.5, "f", 0.0); // QTLs -- also neutral
 m2.convertToSubstitution = F;
 m2.color = "red";
 initializeGenomicElementType("g1", m1, 1);
-initializeGenomicElementType("g2", m2, 1);
 initializeGenomicElement(g1, 0, 20000);
-initializeGenomicElement(g2, 20001, 30000);
-initializeGenomicElement(g1, 30001, 99999);
 initializeRecombinationRate(1e-8);
 }
 
 1 early() { sim.addSubpop("p1", 500); }
+
+1:3000 late() {
+if (sim.cycle % 100 == 0 | sim.cycle == 1) {
+het = calcHeterozygosity(p1.genomes);
+catn( "t=" + sim.cycle + ", P1Het=" + het);
+}} 
+
 
 fitnessEffect() {
 phenotype = sum(individual.genomes.countOfMutationsOfType(m2));
