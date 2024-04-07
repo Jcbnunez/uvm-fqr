@@ -36,11 +36,11 @@ The code performs some basic operations such as:
 $F_{ST}$ is many things..  I recommend that folks should read this review (https://www.nature.com/articles/nrg2611) for a comprehensive undertanding of the statistic. Also notice that more nuaced discussions of these and other statistic fall in the realm of  courses such as Ecological Genomics (BIOL6200) or Populaiton Genetics (BIOL4260).... For a "simple" answer we can contextualuze that $F_{ST}$ is a metric of differentiation between populations. High $F_{ST}$ (near 1) means that populaitons are very "dis-similar", and  Low $F_{ST}$ (near 0) means that populations are highly similar. For a cartoon example, think that two set of populaitons of identical clones should show $F_{ST}  \approx 0$, whereas two populaitons that are greatly diverge and close to speciation should show  $F_{ST} \approx 1$. 
 
 ### $F_{ST}$  and migartion
-There are many reasons why $F_{ST}$ may be high or low... yet in a simulaiton, there are some basic expected behaviours that we should hope to see, following:
+There are many reasons why $F_{ST}$ may be high or low... yet in a simulaiton, there are some basic expected behaviours that we should hope to see, following the equation below ([but see Whitlock and  Mccauley 2001](https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2540.1999.00496.x?casa_token=YsNyu_nNY9gAAAAA:677cmfEg-gTwho_3_UrJ2Knzi2brZKyUAt3fsjUvyl4dJ2usl0y-GY6UWTdANI25qqOra5QwRVPn4_b3)):
 
 $F_{ST}\approx \frac{1}{4N_{e}m_+1}$  
 
-For example, migration is a "homogenizing" force and thus we would expect that higher migration rates should result in lower $F_{ST}$... and we can test that using SLiM and user derived inputs.
+where $m$ is the migrstion rate, and we should be familiar with all other terms... For example, migration is a "homogenizing" force and thus we would expect that higher migration rates should result in lower $F_{ST}$... and we can test that using SLiM and user derived inputs.
 
 ### Create a ".slim" file
 First start by taking the code we develop up top and save it to a new file called `mig.slim`.  However, we could make a modification to the file as follows:
