@@ -78,6 +78,8 @@ slim -d "mig=0.001" mig.slim
 
 Notice that here we are using `-d "mig=0.001"` in the code in order to tell SLiM that we want the migration rate to be 0.001 inds/generation. 
 
+* **Note that arguments must be passed within parentehses exactly as you would whitin SLiM**
+
 ### Scaling up -- first with a loop
 We can capitalize on this capability in a variety of ways, for example using a loop to explore a variety of migration rates
 
