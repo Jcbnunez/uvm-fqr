@@ -33,7 +33,7 @@ The code performs some basic operations such as:
 * Calculates and outputs the $F_{ST}$ for these populations
 
 ### What is  $F_{ST}$ ?
-This is one of those questions that have two kinds of answers. A nunanced answer that will emanage from courses such as Ecological Genomics or Populaiton Genetics.... And a "simple" answer... that being that $F_{ST}$ is a metric of differentiation between populations. High $F_{ST}$ (near 1) means that populaitons are very "dis-similar", and  Low $F_{ST}$ (near 0) means that populations are highly similar. For a cartoon example, think that two set of populaitons of identical clones should show $F_{ST}  = 0$, whereas two populaitons that are greatly diverge and close to speciation should show  $F_{ST} = 1$. 
+This is one of those questions that have two kinds of answers. A nunanced answer that will emanage from courses such as Ecological Genomics or Populaiton Genetics.... And a "simple" answer... that being that $F_{ST}$ is a metric of differentiation between populations. High $F_{ST}$ (near 1) means that populaitons are very "dis-similar", and  Low $F_{ST}$ (near 0) means that populations are highly similar. For a cartoon example, think that two set of populaitons of identical clones should show $F_{ST}  \approx 0$, whereas two populaitons that are greatly diverge and close to speciation should show  $F_{ST} \approx 1$. 
 
 ### $F_{ST}$  and migartion
 There are many reasons why $F_{ST}$ may be high or low... yet in a simulaiton, there are some basic expected behaviours that we should hope to see, following:
