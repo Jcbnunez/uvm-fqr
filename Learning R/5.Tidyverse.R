@@ -37,11 +37,10 @@ iris %>%
                      TRUE ~ "big")
            )
 
-
-
-
-
-
-  
-
-
+iris %>%
+  mutate(classifier = 
+           case_when(Petal.Width < 1.1 ~ "small", 
+                     TRUE ~ "big")
+  ) %>%
+  group_by(Species, classifier) %>%
+  summarise(classi_sp = n())
