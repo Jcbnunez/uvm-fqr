@@ -36,23 +36,3 @@ b[c(2,5)]
 # non existent elements will be appear as "NA" (i.e., missing data)
 b[c(2,5,15)]
 
-###########################
-##Part 3. Data types
-###########################
-
-### R can work with a variety of data types... tho be warned these dont always play well with each other
-### here are some examples
-
-#numerical
-a= 15
-print(a)
-#mathematical -> numerical
-b = 10+5
-print(b)
-#strings and characters
-i = "10+5"
-print(i)
-# boolean
-d = TRUE
-print(d)
-
