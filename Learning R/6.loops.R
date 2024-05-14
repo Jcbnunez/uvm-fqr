@@ -1,5 +1,5 @@
 ### Loops
-### Simple loops and "forloops"
+
 library(tidyverse)
 
 iris %>% 
