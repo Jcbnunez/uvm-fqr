@@ -63,11 +63,11 @@ names(out) = c("species", "correlation", "Pvalue")
 out
 
 out %>%
-  mutate(sign = case_when(Pvalue < 0.05 ~ "Sig",
+  mutate(sign_5per= case_when(Pvalue < 0.05 ~ "Sig",
                           TRUE ~ "NotSig"))
 
 out %>%
-  mutate(sign = case_when(Pvalue < 0.01 ~ "Sig",
+  mutate(sign_1per = case_when(Pvalue < 0.01 ~ "Sig",
                           TRUE ~ "NotSig"))
 
 
