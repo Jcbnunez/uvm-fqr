@@ -43,12 +43,14 @@ library(tidyverse)
 sps = unique(iris$Species)
 
 out = data.frame()
+
 k=1
 
 for(i in sps){
   
   iris %>% filter(Species == i) -> tmp
   ## notice that "->" is also a form or "="
+  
   cor.tmp = cor.test(~Petal.Length+Petal.Width, data = tmp)
   
   out[k,1] = i
