@@ -1,10 +1,12 @@
 ###
-setwd("./scratch")
+setwd("scratch")
 getwd()
+
 list.files()
 
 ###
 system("curl https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/Learning%20R/mydata.txt > mydata.txt")
+
 list.files()
 
 ###
@@ -21,21 +23,22 @@ mydata
 
 ### binary
 save(mydata, file = "mydata.Rdata")
+
 list.files()
 load("mydata.Rdata")
 
 ### text
 ?write.table()
 
-write.table(x, 
-            file = "", 
+write.table(mydata, 
+            file = "mysavedfile.txt", 
             append = FALSE, 
-            quote = TRUE, 
-            sep = " ",
+            quote = FALSE, 
+            sep = "\t",
             eol = "\n", 
             na = "NA", 
             dec = ".", 
-            row.names = TRUE,
+            row.names = FALSE,
             col.names = TRUE, 
             qmethod = c("escape", "double"),
             fileEncoding = "")
