@@ -1,5 +1,7 @@
 ### Basic statistical operations
 
+iris
+
 #arithmetic mean
 mean(iris$Sepal.Length)
 
