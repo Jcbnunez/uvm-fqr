@@ -1,4 +1,4 @@
-Year	Low Freq (Hz)	High Freq (Hz)	Peak Freq (Hz)	Delta Freq (Hz)	Delta Time (s)	PFC Num Inf Pts
+Year	LowFreq_Hz	HighFreq_Hz	PeakFreq_Hz	DeltaFreq_Hz	DeltaTime_s	PFC_Num_Inf_Pts
 Pre-Lockdown	3745.1	23610.4	7742.7	19865.3	1.134	175
 Pre-Lockdown	1016.2	23372.6	1125	22356.4	1.507	284
 Lockdown	12777	23223	15656.2	10446	0.774	44
