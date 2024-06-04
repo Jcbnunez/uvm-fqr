@@ -11,7 +11,7 @@ Set up working directory
 library(tidyverse)
 
 ### Obtain data
-system("curl https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/Learning%20R/Gagne_etal_data.txt > Gagne_data.txt")
+system("curl https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/LearningeeeR/Gagne_etal_data.txt > Gagne_data.txt")
  list.files()
 
 ### Load data
