@@ -5,7 +5,7 @@ getwd()
 list.files()
 
 ###
-system("curl https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/Learning%20R/mydata.txt > mydata.txt")
+system("curl https://raw.githubusercontent.com/Jcbnunez/uvm-fqr/main/Learning_R/mydata.txt > mydata.txt")
 
 list.files()
 
