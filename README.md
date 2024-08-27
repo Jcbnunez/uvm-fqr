@@ -1,8 +1,5 @@
 # Foundations of Quantitative Reasoning
 
-* Tuesday, Thursday: 10:05 - 11:20
-* Location LIVING/LEARN D D107
-
 Foundations of Quantitative Reasoning (FQR) is a graduate-level class designed to provide graduate students with the knowledge and competencies needed to tackle complex problems in data analysis using first principles of evolutionary theory. As part of this process, students will work to develop a comprehensive analysis toolbox to conduct highly reproducible quantitative research in high-performance computation (HPC) environments. These topics will be pivotal to ensure success in the student’s graduate careers in data-intensive fields. This course is open to all graduate students, and may also be taken by select, highly advanced, undergraduates with permission from the instructor.
 
 ## Access to the super-computer
@@ -22,13 +19,6 @@ check the link here: https://www.uvm.edu/it/kb/article/sslvpn2/
 module load Rtidyverse
 module load rstudio
 # in VM use "rstudio"
-```
-
-### SliM modules (GUI)
-
-```bash
-module load slim
-# in VM use "SLiMgui"
 ```
 
 <!--stackedit_data:
