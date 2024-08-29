@@ -276,9 +276,6 @@ geom_hline(yintercept = 10.2) -> myplot
 ggsave(myplot, file = "myplot.pdf", w = 6, h = 4)
 ```
 
-# :mortar_board:HOMEWORK:mortar_board: : please include in your next reflection:
-1. an exploration of the variance `sd` parameter. Plot it using the `color` option in ggplot. Explore at least 4 other `sd` parameters. 
-2. Also include small reflection on "what evolutionary force may reduce variance in a phenotype?"
 
 ---
 
