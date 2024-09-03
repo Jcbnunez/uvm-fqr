@@ -42,7 +42,7 @@ X  |   12345  |  snp_111  | G  |   A   |   29  |  PASS   | NS=3;DP=14;AF=0.5;DB;
 
 I have already downloaded the genome from NCBI and have stored it in our shared VACC repository.
 ```bash
-ls /gpfs1/cl/biol6990/prac2/pycno_genome.fqr.fasta
+ls /gpfs1/cl/biol6210/prac2/pycno_genome.fqr.fasta
 ```
 
 ## Adquiring the genome
@@ -63,7 +63,7 @@ ls -l ./
 ```
 5. Copy the genome from the repo to your folder
 ```bash
-cp /gpfs1/cl/biol6990/prac2/pycno_genome.fqr.fasta ./
+cp /gpfs1/cl/biol6210/prac2/pycno_genome.fqr.fasta ./
 ## cp <from+file> <to>
 ```
 6. Check what is inside this new folder... again.
@@ -85,7 +85,7 @@ tail -n 50 pycno_genome.fqr.fasta
 
 ## Adquiring the gene feature file
 ```bash
-cp /gpfs1/cl/biol6990/prac2/GeneFeatureFile.gtf ./
+cp /gpfs1/cl/biol6210/prac2/GeneFeatureFile.gtf ./
 
 head -n 10 GeneFeatureFile.gtf
 ```
@@ -108,7 +108,7 @@ grep ">" pycno_genome.fqr.fasta
 **Author**: Dear X, my appologies that you are experiencing this road block! Our analyses was conducted before the genome was made public using our own chromosome nomenclature. Here is a file with the corresponding association of the "pycn_heli" names with the JASTWB ids.
 
 ```bash
-cp /gpfs1/cl/biol6990/prac2/JASTWB01_contigs.tsv ./
+cp /gpfs1/cl/biol6210/prac2/JASTWB01_contigs.tsv ./
 ```
 ---
 ## Exploring the corresponding file
@@ -132,13 +132,13 @@ mkdir pycno_challenge
 cd pycno_challenge
 
 # We moved the sea start genome to it
-cp /gpfs1/cl/biol6990/prac2/pycno_genome.fqr.fasta ./
+cp /gpfs1/cl/biol6210/prac2/pycno_genome.fqr.fasta ./
 
 # we moved the GFF file to the folder
-cp /gpfs1/cl/biol6990/prac2/GeneFeatureFile.gtf ./
+cp /gpfs1/cl/biol6210/prac2/GeneFeatureFile.gtf ./
 
 # we obtained a master file from the "author"
-cp /gpfs1/cl/biol6990/prac2/JASTWB01_contigs.tsv ./
+cp /gpfs1/cl/biol6210/prac2/JASTWB01_contigs.tsv ./
 ```
 
 ## Breaking down the code (lets take a reverse engineering approach!).
@@ -459,7 +459,7 @@ for i in $(seq ${ith} )
 ```
 Make sure that _needed_ files are in the same directory as the script.. otherwise an error will occur. Then, launch the script to be run by the VACC itself using:
 ```bash
-sbatch --account=biol6990 my_renaming_script.sh
+sbatch --account=biol6210 my_renaming_script.sh
 ```
 check if the job is running by using
 ```
