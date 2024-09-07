@@ -6,7 +6,7 @@ A master cheatsheet for Biol6210
 
 |Command|info|Flags|
 |--|--|--|
-|control + C|stop any code that is executing||
+|control $and$ C|stop any code that is executing||
 
 ## Understanding the Environment
 
