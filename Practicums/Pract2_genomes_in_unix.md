@@ -391,6 +391,7 @@ sed -E -i "s/${name2}.+/${name1}/g" pycno_genome_modnames.fasta
 |\b | Word boundary|
 |\B | Not word boundary|
 |.|Any character except new line (\n)|
+|*|general wildcard with 0 or more matches (i.e., *.txt)|
 |(a\|b)|a or b|
 |+| this is a modifer that means "1 or more"|
 
