@@ -42,4 +42,16 @@ A master cheatsheet for Biol6210
 |<|read into||
 |rm|delete|-r (recurrsively), -f (forced)|
 |rmdir|delete directory (must be empty)||
+|head|show the fisrt n lines of a file| -n number|
+|tail|show the last n lines of a file| -n number|
 
+## file and account space management
+|Command|info|Flags|
+|--|--|--|
+|my_accounts|show VACC accounts||
+|my_job_statistics|show information of a SLURM job||
+|squeue -u yy|show running jobs for user yy||
+|scancel yyy|cancel job yyy||
+|du|show file sizes|-ah (human readable units)|
+|df|show space usage  on disk||
+|groupquota|show VACC space allowance||
