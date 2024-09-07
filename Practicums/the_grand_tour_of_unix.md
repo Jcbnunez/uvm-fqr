@@ -1,5 +1,12 @@
 
 # A grand tour of UNIX
+A master cheatsheet for Biol6210
+
+## Keyboard commands
+
+|Command|info|Flags|
+|--|--|--|
+|control + C|stop any code that is executing||
 
 ## Understanding the Environment
 
