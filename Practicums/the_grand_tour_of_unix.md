@@ -36,7 +36,7 @@ A master cheatsheet for Biol6210
 |mkdir|make directory||
 |cp| copy file |-r (recursively)|
 |cat| open and/or concatenate files ||
-|move file|||
+|mv|move file||
 |>|save to (overwrites)||
 |>>|save to (appends)||
 |<|read into||
