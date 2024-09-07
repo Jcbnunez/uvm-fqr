@@ -15,11 +15,11 @@ A master cheatsheet for Biol6210
 |uname|Show the Unix system info| -a (details), -r (kernel)|
 |uptime|how long has the system been running||
 |who|show who is logged in||
-|who|show who is logged in||
 |w|who is online and what are they doing||
 |users|show a list of users||
 |whoami|your system identity||
 |cal|calendar information||
+|date|print date||
 |man|shows the manual for a given COMMAND||
 |echo|prints text or the context of a variable||
 |ls|list files|-l (details), -a (hidden), -t (sort); can be combined "-lta"|
