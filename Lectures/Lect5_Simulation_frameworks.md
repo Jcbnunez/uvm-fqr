@@ -136,4 +136,4 @@ $$
 p'''= \frac{p''^2 + p''(1-p'') (1-hs)}{1- 2p(1-p'')hs -(1-p'')^2s}
 $$
 
-# Using SLiM to perform complex simulations. See _practicum_ 
+# Advanced (for interested students): Using SLiM to perform complex simulations. See _practicum_ 
