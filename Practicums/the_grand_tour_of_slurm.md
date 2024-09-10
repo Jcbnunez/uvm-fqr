@@ -7,7 +7,7 @@ For the SLURM header
 |Command|info|
 |--|--|
 |-A or --account=|the account to be charged, e.g. "biol6210"|
-|-a or --array=|we will learn about this later.|
+|-a or --array=|allows to run a job in the array settting -- we will learn about this later.|
 |-b or --begin=| start the job at a delayed time ... --begin=now+1hour|
 |-D or --chdir=|run "cd" on the script|
 |--comment=|add a human readible comment|
