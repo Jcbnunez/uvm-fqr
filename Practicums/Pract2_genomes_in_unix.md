@@ -462,7 +462,19 @@ Make sure that _needed_ files are in the same directory as the script.. otherwis
 ```bash
 sbatch --account=biol6210 my_renaming_script.sh
 ```
-check if the job is running by using
+
+### if you are having the error:
+```{sh}
+sbatch: error: Batch script contains DOS line breaks (\r\n)sbatch: error: instead of expected UNIX line breaks (\n).
+```
+### you can fix that with:
+```{sh}
+sed $'s/\r$//' my_renaming_script.sh > my_renaming_script.fixed.sh
+## and now run
+sbatch --account=biol6210 my_renaming_script.fixed.sh
+```
+
+Now... check if the job is running by using
 ```
 squeue -u <username>
 ```
