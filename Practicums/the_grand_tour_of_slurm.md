@@ -13,7 +13,7 @@ For the SLURM header
 |--comment=|add a human readible comment|
 |-c or --cpus-per-task=|if, and only if, the program can paralelize, how may CPUs should be assigned to each task|
 |-J or --job-name=|Name of the job|
-|--mem=|Amount of memory rwquested for the job e.g., "60G"|
+|--mem=|Amount of memory requested for the job e.g., "60G"|
 |-w or --nodelist=|provide a list of desired notes for your job to be assingned to|
 |-N, --nodes=|Request that a **minimum** of nodes be allocated to this job.|
 |-o or --output=|save all messages produced by the code here... "file.out" or "file.txt"|
