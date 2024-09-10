@@ -465,7 +465,8 @@ sbatch --account=biol6210 my_renaming_script.sh
 
 ### if you are having the error:
 ```{sh}
-sbatch: error: Batch script contains DOS line breaks (\r\n)sbatch: error: instead of expected UNIX line breaks (\n).
+sbatch: error: Batch script contains DOS line breaks (\r\n)
+sbatch: error: instead of expected UNIX line breaks (\n).
 ```
 ### you can fix that with:
 ```{sh}
