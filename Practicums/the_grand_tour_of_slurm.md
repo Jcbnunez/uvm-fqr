@@ -28,12 +28,6 @@ For the SLURM header
 |--|--|
 |%A|Job array's master job allocation number|
 |%a|Job array ID (index) number|
-|%J|jobid.stepid of the running job|
-|%j|jobid of the running job|
-|%N|short hostname|
-|%n|short hostname|
-|%s|stepid of the running job|
-|%t|task identifier (rank) relative to current job|
 |%u|User name|
 |%x|Job name|
 
