@@ -8,9 +8,9 @@ For the SLURM header
 |--|--|
 |-A or --account=|the account to be charged, e.g. "biol6210"|
 |-a or --array=|allows to run a job in the array settting -- we will learn about this later.|
-|-b or --begin=| start the job at a delayed time ... --begin=now+1hour|
+|-b or --begin=| start the job at a delayed time ... for example "--begin=now+1hour"|
 |-D or --chdir=|run "cd" on the script|
-|--comment=|add a human readible comment|
+|--comment=|add a "human readable" comment to your SLURM header|
 |-c or --cpus-per-task=|if, and only if, the program can parallelize. The parameter determines how may CPUs should be assigned to each task|
 |-J or --job-name=|Name of the job|
 |--mem=|Amount of memory requested for the job e.g., "60G"|
