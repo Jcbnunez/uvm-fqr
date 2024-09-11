@@ -38,3 +38,6 @@ For the SLURM header
 |SLURM_ARRAY_TASK_ID|Job array's iterator|
 |SLURM_CPUS_PER_TASK|Number of CPUs requested|
 |SLURM_JOB_ID|Job id|
+
+____
+Note that the complete manual for SLURM, in all of its glory, can be found [here](https://slurm.schedmd.com/sbatch.html).
