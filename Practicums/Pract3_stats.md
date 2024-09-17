@@ -27,6 +27,7 @@ rstudio
 Note that `module load Rtidyverse` already comes with a lot of packages preinstalled. Lets load them
 ```r
 library(tidyverse)
+library(foreach) ###<--- we will get to this in a minute!
 ```
 
 ## Data challenge. Is this apples to oranges, apples to apples, or underpowered? (but it is :ocean: _sea snails_ :shell:!).
