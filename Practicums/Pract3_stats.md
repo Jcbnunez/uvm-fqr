@@ -110,6 +110,11 @@ foreach(i = 1:10, .combine = "rbind")%do%{
 rnorm(n=15, mean = 10.2, sd = 3.8) %>% mean -> xbar
 data.frame(trial=i, mean=xbar) 
 }
+
+### Wait a second! "foreach" is not a default function!
+### Install a new function use:
+### install.packages("foreach")
+### library("foreach")
 ```
 ##### Why is there noise around the mean ... when these are simulated Virtual  :robot: Snails :shell:? (hint -- sample means are strongly affected by the sample size and the variance $\sigma$ of the population )
 
