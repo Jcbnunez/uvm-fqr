@@ -217,7 +217,7 @@ sbatch myarr.sh
 ```
 
 ### What happened?
-Look at the putput files
+Look at the output files
 
 # Scaling up!!! STEP 3: ARRAYS+R
 
