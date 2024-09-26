@@ -9,6 +9,7 @@ Let's learn how to deploy paralleled computations in the VACC using arrays.
 Lets re-scale and redeploy our power analysis
 ```r  
 library(tidyverse)  
+library(foreach)  
 
 power_analysis=
 foreach(N = seq(from=10, to=1000, by=10), .combine = "rbind")%do%{
@@ -52,6 +53,7 @@ return(output)
 ## ---------------------------  
 
 library(tidyverse)  
+library(foreach) 
 
 # User define inputs  
 args = commandArgs(trailingOnly=TRUE)
@@ -59,7 +61,7 @@ args = commandArgs(trailingOnly=TRUE)
 N=as.numeric(args[1])  
 
 
-#power_analysis=
+power_analysis=
 #foreach(N = seq(from=10, to=1000, by=10), .combine = "rbind")%do%{
 foreach(k=1:100, .combine = "rbind")%do%{
 #simulate high tide
@@ -85,7 +87,7 @@ return(output)
 #} # close N  
 
 save(  
-output ,   
+power_analysis ,   
 file = paste("output1",N, "Rdata", sep =".")   
 )  
 ```  
@@ -112,7 +114,7 @@ load("output.10.Rdata")
 
 ```r
 library(tidyverse)  
-
+library(foreach)  
 
 # User define inputs  
 args = commandArgs(trailingOnly=TRUE)
@@ -121,7 +123,7 @@ N=as.numeric(args[1])
 M1=as.numeric(args[2])
 M2=as.numeric(args[3])
 
-#power_analysis=
+power_analysis=
 #foreach(N = seq(from=10, to=1000, by=10), .combine = "rbind")%do%{
 foreach(k=1:100, .combine = "rbind")%do%{
 #simulate high tide
@@ -147,7 +149,7 @@ return(output)
 #} # close N  
 
 save(  
-output ,   
+power_analysis ,   
 file = paste("output2",N,M1,M1, "Rdata", sep =".")   
 )  
 ```
