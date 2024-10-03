@@ -129,7 +129,7 @@ HW.fit(720,160,120)
 HW.fit(10,180,810)
 ```
 
-# Data challenge 2: Producing large simulations using arrays 
+# Extra Stuff: Producing large simulations using arrays 
 
 Lets say that you wanted to conduct a simulation experiment trying to determine the number of Hardy & Weinberg **false positives** that you observe as a function of _sample size_,  _allele frequency_, as well as a function of statistical stringency, i.e,. $\alpha$ across 1000 simulated loci. 
 
