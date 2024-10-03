@@ -129,6 +129,11 @@ HW.fit(720,160,120)
 HW.fit(10,180,810)
 ```
 
+## Data challenge 2: Assessing the statiscal robustness of the test statistic using permutation analyses
+
+**Parametric vs Non-Parametric testing** is a core concept of this challenge. As we have discussed in the course, many of the P-values that we have seen derive from test that make some rather "stringent" assumtions about the data and the model being tested. Yet, herein lies the challenge, what if we are unsure that our data fits the parameters of the test well. Or, alternatively, what if we wanted to test our data free of assumptions tied to distributions. Enter "permutation" tests. 
+
+
 # Extra Stuff: Producing large simulations using arrays 
 
 Lets say that you wanted to conduct a simulation experiment trying to determine the number of Hardy & Weinberg **false positives** that you observe as a function of _sample size_,  _allele frequency_, as well as a function of statistical stringency, i.e,. $\alpha$ across 1000 simulated loci. 
