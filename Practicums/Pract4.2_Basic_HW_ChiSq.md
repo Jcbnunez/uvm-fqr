@@ -28,16 +28,13 @@ Exp_aa = q^2
 
 ## Now lets calculate a statistic of goodness of fit.
 ## First create two "vectors (these are R objects)," one for the observed counts and the second for the expected counts. 
-expected = c(Exp_AA*N, Exp_Aa*N, Exp_aa*N)
+expected_freq = c(Exp_AA, Exp_Aa, Exp_aa)
 observed = c(AA, Aa, aa)
-
-# Calculate Chi-Square statistic manually
-chi_sq_statistic <- sum((observed - expected)^2 / expected)
-df <- length(observed) - 1
-p_value <- 1 - pchisq(chi_sq_statistic, df)
+#conduct the test
+test = chisq.test(observed, p = expected_freq)
 
 #output
-output = data.frame( p.value = p_value)
+output = data.frame( p.value = test$p.value)
 return(output)
 
 }## end function HW.fit
@@ -104,16 +101,12 @@ We can use the built in $\chi^2$  test in `R` to test whether the expected frequ
 > use  $\chi^2$ for large sample sizes, and Fisher's Exact test for smaller sample sizes (single digits).
 > 
 ```r
-expected = c(Exp_AA*N, Exp_Aa*N, Exp_aa*N)
+expected_freq = c(Exp_AA, Exp_Aa, Exp_aa)
 observed = c(AA, Aa, aa)
+#conduct the test
+test = chisq.test(observed, p = expected_freq)
 
-# Calculate Chi-Square statistic manually
 
-chi_sq_statistic <- sum((observed - expected)^2 / expected)
-
-df <- length(observed) - 1
-
-p_value <- 1 - pchisq(chi_sq_statistic, df)
 ```
 To be prescise here, our null hypothesis is that the observed values are derived from, or consistent with, the expectations of Hardy & Weinberg. Simply put a $P-value < 0.05$ indicates a deviation from Hardy & Weinberg.
 
@@ -121,7 +114,7 @@ To be prescise here, our null hypothesis is that the observed values are derived
 Finally we are creating an output, a data frame, that will save the $P-value$ and some information provided by the user, a `testid`. Notice, that we are telling the function to `return` the `output` object... this is key for functions, otherwise nothing will be saved to memory.
 ```r
 #output
-output = data.frame( p.value = p_value)
+output = data.frame( p.value = test$p.value)
 return(output)
 ```
 ## Some values to try it out
@@ -136,32 +129,6 @@ HW.fit(720,160,120)
 HW.fit(10,180,810)
 ```
 
-## Expanding 
-
-Assume that you have a sample of snails collected across several years, and you want to assess whether these samples show levels of heterozygocity (i.e., $A/a$; or $2pq$) consistent with the hardy-weinberg expectation.
-
-|year|N|p|Observed (A/a)| Expected (A/a)| 
-|--|--|--|--|--|
-|2001|100|0.45|51|49.5|
-|2002|60|0.49|28|29.9|
-|2003|80|0.44|37|39.4|
-|2004|110|0.46|55|54.6|
-|2005|40|0.44|19|19.7|
-|2006|74|0.47|35|36.8|
-
-### Lets calculate the "real" $\chi^2$ statistic
-```r
-expected <- c(49.5,29.9,39.4,54.6,19.7,36.8)
-observed <- c(51,28,37)
-
-# Calculate Chi-Square statistic manually
-
-chi_sq_statistic <- sum((observed - expected)^2 / expected)
-
-df <- length(observed) - 1
-
-p_value <- 1 - pchisq(chi_sq_statistic, df)
-```
 # Extra Stuff: Producing large simulations using arrays 
 
 Lets say that you wanted to conduct a simulation experiment trying to determine the number of Hardy & Weinberg **false positives** that you observe as a function of _sample size_,  _allele frequency_, as well as a function of statistical stringency, i.e,. $\alpha$ across 1000 simulated loci. 
