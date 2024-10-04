@@ -131,6 +131,16 @@ geom_hline(yintercept = 1, color = "red")
 
 ---
 
+## Data challenge 2: Assessing the statiscal robustness of the test statistic using permutation analyses
+
+**Parametric vs Non-Parametric testing** is a core concept of this challenge. As we have discussed in the course, many of the P-values that we have seen derive from test that make some rather "stringent" assumtions about the data and the model being tested. Yet, herein lies the challenge, what if we are unsure that our data fits the parameters of the test well. Or, alternatively, what if we wanted to test our data free of assumptions tied to distributions. Enter *permutation* tests. 
+
+Data IS your best friend and the same time data IS its own worst enemy. Let me explain. Under the classical parametric methods that we have been discussing in class so far, the P-values, and other metrics of significance and power, have relied on assumtions of the model itself. Yet, there are different ways to assess the statisical robustness of test statistics: asking the question **"is the statistical signal of my data"** better than what I would expect under pure **random chance?** ... Lets take a look:
+
+#### Assume that your data has some predefined order where variables are logically associated with one another ... like so: TBD
+
+
+
 # Let's explore parameter space a bit ...
 
 ## Challenge 1 (Lets create an array job to explore parameters):
@@ -238,12 +248,5 @@ my_job_statistics <id>
 ```
 
 
-## Data challenge 2: Assessing the statiscal robustness of the test statistic using permutation analyses
-
-**Parametric vs Non-Parametric testing** is a core concept of this challenge. As we have discussed in the course, many of the P-values that we have seen derive from test that make some rather "stringent" assumtions about the data and the model being tested. Yet, herein lies the challenge, what if we are unsure that our data fits the parameters of the test well. Or, alternatively, what if we wanted to test our data free of assumptions tied to distributions. Enter *permutation* tests. 
-
-Data IS your best friend and the same time data IS its own worst enemy. Let me explain. Under the classical parametric methods that we have been discussing in class so far, the P-values, and other metrics of significance and power, have relied on assumtions of the model itself. Yet, there are different ways to assess the statisical robustness of test statistics: asking the question **"is the statistical signal of my data"** better than what I would expect under pure **random chance?** ... Lets take a look:
-
-#### Assume that your data has some predefined order where variables are logically associated with one another ... like so: TBD
 
 
