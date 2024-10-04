@@ -12,7 +12,7 @@ The goal of this practicum are:
 * To deploy the script using arrays to simulate various scenarious
 * To analyze the outputs
 
-## Part 1: creating a fucntion for natural selection
+## Part 1: creating a function for natural selection
 
 The first challenge is to assess what are the variables that we may request from the user in order to generate a final product. This is an important consderation for us as "coders" that we must think about before jumping to coding. -- _Coding begins at the white board._
 
@@ -237,6 +237,13 @@ Lets look at job statisitcs
 my_job_statistics <id>
 ```
 
-## Challenge: Collate and analyse.. using our code from preacticum 4
 
-What can we infer from this simulation analysis?
+## Data challenge 2: Assessing the statiscal robustness of the test statistic using permutation analyses
+
+**Parametric vs Non-Parametric testing** is a core concept of this challenge. As we have discussed in the course, many of the P-values that we have seen derive from test that make some rather "stringent" assumtions about the data and the model being tested. Yet, herein lies the challenge, what if we are unsure that our data fits the parameters of the test well. Or, alternatively, what if we wanted to test our data free of assumptions tied to distributions. Enter *permutation* tests. 
+
+Data IS your best friend and the same time data IS its own worst enemy. Let me explain. Under the classical parametric methods that we have been discussing in class so far, the P-values, and other metrics of significance and power, have relied on assumtions of the model itself. Yet, there are different ways to assess the statisical robustness of test statistics: asking the question **"is the statistical signal of my data"** better than what I would expect under pure **random chance?** ... Lets take a look:
+
+#### Assume that your data has some predefined order where variables are logically associated with one another ... like so: TBD
+
+
