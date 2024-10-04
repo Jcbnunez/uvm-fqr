@@ -140,7 +140,7 @@ Data IS your best friend and the same time data IS its own worst enemy. Let me e
 #### Assume that your data has some predefined order where variables are logically associated with one another ... like so: TBD
 
 
-
+---
 # Let's explore parameter space a bit ...
 
 ## Challenge 1 (Lets create an array job to explore parameters):
