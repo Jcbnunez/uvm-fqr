@@ -55,7 +55,7 @@ The 30 year study indicate that, in the upper tide, :shell: diameters can be des
 |Upper Tide|$I_u \sim \mathscr N(10.2,3.8)$|
 |Lower Tide|$I_l \sim \mathscr N(11.5,5.3)$|
 
-* Note that $I_u \sim \mathscr N(10.2,3.8)$ ... **is just mathematical notation for "follow a _Gaussian_/_Normal_ dristibution with mean 1.2 and standard deviation 0.8"** (in the upper tidal zone, anyways). 
+* Note that $I_u \sim \mathscr N(10.2,3.8)$ ... **is just mathematical notation for "follow a _Gaussian_/_Normal_ dristibution with mean 1.2 and standard deviation 1.9"** (in the upper tidal zone, anyways). 
 
 The challenge is simple, based on these known statistical properties of the populations, **how many individuals** should I sample across both microhabitats in order to show that the diameters of :shell: across these habitats is different... at a significance level of 5% (i.e. two-tailed $\alpha = 0.05$)?
 
