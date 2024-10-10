@@ -156,7 +156,6 @@ This table of allele frequencies suggests that there is an "adaptive cline" up a
 
 ```r
 pop <- c("Maine","Rhode_Island", "New_York", "Pennsylvania","Virginia", "N_Carolina","S_Carolina", "Georgia", "Florida")
-
 waa <- c(1700, 1600, 1500, 1400, 1300, 1200, 1100, 1000, 900)
 lat <- c(43.8, 41.7, 40.7, 39.9, 37.8, 35.4, 34.2, 31.9, 29.0)
 
@@ -215,12 +214,72 @@ ggsave(selection_lat, file = "selection_lat.pdf")
 
 cor.test(~latitude+p, data = final_dat_lat)
 ```
+## Non-parametric assessment: Permutation test!
+How to test the "robustness" of the test?
+
+```r
+data.frame(
+real_lat=final_dat_lat$latitude,
+p=final_dat_lat$p
+)
+
+data.frame(
+real_lat=final_dat_lat$latitude,
+randomzied_lat=sample(final_dat_lat$latitude),
+p=final_dat_lat$p
+)
+
+cor.test(~sample(latitude)+p, data = final_dat_lat)
+
+```
+
+### Replication is key!
+
+```r
+real=cor.test(~latitude+p, data = final_dat_lat)$p.value
+
+perms=
+foreach(j=1:1000, .combine = "rbind")%do%{
+perm=cor.test(~sample(latitude)+p, data = final_dat_lat)$p.value
+}
+
+###
+rbind(
+data.frame(type="real", p_val=real),
+data.frame(type="perms", p_val=perms)
+) -> results
+
+
+###
+ggplot() +
+geom_density(
+data=filter(results, type == "perms"),
+aes(x=-log10(p_val)), fill = "grey"
+) +
+geom_vline(
+data=filter(results, type == "real"),
+aes(xintercept=-log10(p_val)), color = "red"
+) ->
+permutation_test
+
+ggsave(permutation_test, file = "permutation_test.pdf")
+```
+
+### Empirical statistic
+We can always calculate an empirical P-value of our real value relative to the permuted distribution!
+```r
+length(filter(results, type == "perms")$p_val) -> total_perms
+
+sum(filter(results, type == "real")$p_val > sorted_perms) -> Number_that_beat_perms
+
+#"Empirical P"
+(Number_that_beat_perms/total_perms)
+```
 
 
 ---
 # Extra stuff ...
 
-## Challenge 1 (Lets create an array job to explore parameters):
 
 Exit `R` for a moment and let's adquire a file of starting conditions
 
@@ -239,7 +298,7 @@ head -n 10 selection_array_conditions.txt
 name it `simulate.selection.R`
 
 ```r
-library(foreach, lib.loc = "/gpfs1/cl/biol6990/R_shared")
+library(foreach)
 
 
 args = commandArgs(trailingOnly=TRUE)
