@@ -127,31 +127,108 @@ geom_line() +
 geom_hline(yintercept = 1, color = "red")
 
 ```
-### how long woult it take?
+### how long would it take?
 
 ---
 
-## Data challenge 2: Assessing the statiscal robustness of the test statistic using permutation analyses
+## Data challenge 2: Assessing the statistical robustness of the test statistic using permutation analyses
 
-**Parametric vs Non-Parametric testing** is a core concept of this challenge. As we have discussed in the course, many of the P-values that we have seen derive from test that make some rather "stringent" assumtions about the data and the model being tested. Yet, herein lies the challenge, what if we are unsure that our data fits the parameters of the test well. Or, alternatively, what if we wanted to test our data free of assumptions tied to distributions. Enter *permutation* tests. 
+**Parametric vs Non-Parametric testing** is a core concept of this challenge. As we have discussed in the course, many of the P-values that we have seen derive from tests that make some rather "stringent" assumptions about the data and the model being tested. Yet, herein lies the challenge, what if we are unsure that our data fits the parameters of the test well? Or, alternatively, what if we wanted to test our data free of assumptions tied to distributions? Enter *permutation* tests. 
 
-Data IS your best friend and the same time data IS its own worst enemy. Let me explain. Under the classical parametric methods that we have been discussing in class so far, the P-values, and other metrics of significance and power, have relied on assumtions of the model itself. Yet, there are different ways to assess the statisical robustness of test statistics: asking the question **"is the statistical signal of my data"** better than what I would expect under pure **random chance?** ... Lets take a look:
+Data IS your best friend and the same time data IS its own worst enemy. Let me explain. Under the classical parametric methods that we have been discussing in class so far, the P-values, and other metrics of significance and power, have relied on assumptions of the model itself. Yet, there are different ways to assess the statistical robustness of test statistics: asking the question **" is the statistical signal of my data"** better than what I would expect under pure **random chance?** 
 
-#### Assume that your data has some predefined order where variables are logically associated with one another ... like so: TBD
+#### Let's first create a data frame that has an internal structure:
+To do this, let's simulate an adaptive cline of allele frequencies. 
+
+|State|Latitude|wAA|wAa|waa|
+|--|--|--|--|--|
+|Maine|43.8|2000|2000|1700|
+|Rhode_Island|41.7|2000|2000|1600|
+|New_York|40.7|2000|2000|1500|
+|Pennsylvania|39.9|2000|2000|1400|
+|Virginia|37.8|2000|2000|1300|
+|N_Carolina|35.4|2000|2000|1200|
+|S_Carolina|34.2|2000|2000|1100|
+|Georgia|31.9|2000|2000|1000|
+|Florida|29.0|2000|2000|900|
+
+This table of allele frequencies suggests that there is an "adaptive cline" up and down the East Coast. Let's go ahead and simulate this scenario.
+
+```r
+pop <- c("Maine","Rhode_Island", "New_York", "Pennsylvania","Virginia", "N_Carolina","S_Carolina", "Georgia", "Florida")
+
+waa <- c(1700, 1600, 1500, 1400, 1300, 1200, 1100, 1000, 900)
+lat <- c(43.8, 41.7, 40.7, 39.9, 37.8, 35.4, 34.2, 31.9, 29.0)
+
+Pop_selection =
+foreach(k=1:length(pop), .combine = "rbind")%do%{
+waa_k=waa[k]
+pop_k=pop[k]
+
+p=0.001
+wAA=2000
+wAa=2000
+
+foreach(waa)
+simulating.selection=
+  foreach(g=1:25, .combine = "rbind")%do%{
+    if(g==1){p_recur[g]=p}
+    p_recur[g+1] = calc_p_t1(p_recur[g], 
+                             (1-p_recur[g]),
+                             wAA, wAa, waa_k)
+    data.frame(gen=g, p=p_recur[g+1],
+               population = pop_k, wAA=wAA, wAa=wAa, waa=waa_k, pinit=p)
+  } # close sel
+  } # close k
+
+Pop_selection %>%
+ggplot(aes(
+x=gen,
+y=p,
+color=population
+)) +
+geom_line() +
+geom_hline(yintercept = 1) ->
+selection_pops_plot
+
+ggsave(selection_pops_plot, file = "selection_pops_plot.pdf")
+
+```
+
+#### Does the speed of selection correlated with latitude?
+```r
+Pop_selection %>%
+filter(gen == 25) %>%
+mutate(latitude = lat) ->
+final_dat_lat
+
+final_dat_lat %>%
+ggplot(aes(
+x=latitude,
+y=p,
+color=population
+)) +
+geom_point() ->
+selection_lat
+
+ggsave(selection_lat, file = "selection_lat.pdf")
+
+cor.test(~latitude+p, data = final_dat_lat)
+```
 
 
 ---
-# Let's explore parameter space a bit ...
+# Extra stuff ...
 
 ## Challenge 1 (Lets create an array job to explore parameters):
 
-Exit `R` for a moment and lets adquire a file of starting conditions
+Exit `R` for a moment and let's adquire a file of starting conditions
 
 ```bash
 cp /gpfs1/cl/biol6990/prac5/selection_array_conditions.txt ./
 ```
 
-Lets explore it
+Let's explore it
 
 ```bash
 head -n 10 selection_array_conditions.txt
