@@ -273,6 +273,8 @@ We can always calculate an empirical P-value of our real value relative to the p
 ```r
 length(filter(results, type == "perms")$p_val) -> total_perms
 
+sort(filter(results, type == "perms")$p_val) ->sorted_perms
+
 sum(filter(results, type == "real")$p_val > sorted_perms) -> Number_that_beat_perms
 
 #"Empirical P"
