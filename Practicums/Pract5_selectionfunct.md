@@ -93,6 +93,9 @@ $$
 ### Yet, this is just a prediction after one generation. How can we get we simulate multiple generations?
 
 ```r
+library(foreach)
+library(tidyverse)
+
 calc_p_t1 = function( p, q, wAA, wAa, waa ){
 num=p^2*wAA + p*q*wAa
 dem=p^2*wAA + 2*p*q*wAa + q^2*waa
@@ -100,7 +103,7 @@ p_t1 = num/dem
 return(p_t1)
 } 
 
-library(foreach, lib.loc = "/gpfs1/cl/biol6990/R_shared")
+
 #lets carry over p, wAA, wAa, waa from above
 message(paste(p, wAA, wAa, waa, sep = " ") )
 
