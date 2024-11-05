@@ -45,7 +45,7 @@ Yet, unlike Hardy–Weinberg the population is NOT infinite. Thus, alleles, as t
 Strictly speaking, the Wright-Fisher model is a stochastic  model defined in "discrete time" (i.e., every generation is discrete and parents never overlap with children), and the number of "A" alleles is modeled as a markov-chain process:
 
 $$
-X_t = \#A
+X_t = Number\ of\ 'A'\ alleles
 $$
 
 Here we are going to define $X_t$ as a random variable that denoted the number of the "A" alleles in a population of size $N$. The stochastic nature of this model becomes evident when we model this function over time, whereby $X_t$ changes state (from one time point to the next; or from state $i$ to state $j$) as a function of the transition probability:
