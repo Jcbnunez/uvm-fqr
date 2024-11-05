@@ -73,7 +73,6 @@ drift_func(100,0.5,20*2)
 
 ```R
 library(tidyverse)
-library(foreach, lib.loc = "/gpfs1/cl/biol6990/R_shared")
 
 t=100
 p0=0.5
@@ -113,7 +112,7 @@ While in class, create, deploy, and graph the outcome of a simulaiton to answer 
 
 *  You must take full advantange of array jobs!
 
-## Homework code challenge (EC)! 
+## What is to come! 
 
-How would the above simulation look like if we were to include selection in the mix? Assume that the fitness of the $x_{ii}$ genotype is 1.1 (i.e., produces 10% more offspring) and that the same is true for the $x_{ij}$ genotypes. The fitness of $x_{jj}$ is 1.0. 
+How would the above simulation look like if we were to include selection in the mix? 
 
